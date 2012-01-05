@@ -14,7 +14,10 @@
         %a.play{:href => "javascript:void(0);", :title => "Turn on autoplay"} Play
         %a.pause{:href => "javascript:void(0);", :title => "Turn off autoplay"} Pause
 
-    - @featured_posts.each do |post|
-      .backgrounds
-        .item.item_1
-          = image_tag post.image.url(:medium)
+    .backgrounds
+      .item.item_1
+        = image_tag Post.find(1).image.url(:slider)
+      .item.item_2
+        = image_tag Post.find(2).image.url(:slider)
+      .item.item_3
+        = image_tag Post.find(3).image.url(:slider)
