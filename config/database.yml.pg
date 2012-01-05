@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: prototype_robotics
+  username: jd
+  pool: 5
+  timeout: 5000
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: prototype_robotics
+  username: jd
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: prototype_robotics
+  username: jd
+  pool: 5
+  timeout: 5000
+
+cucumber:
+  <<: *test

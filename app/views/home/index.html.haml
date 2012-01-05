@@ -1,18 +1,17 @@
 .container
-  = render 'shared/content_slider'
-  .row
-    - @posts.each do |post|
-      .span5
-        %h2= post.title
-        %p= post.body
+  = render 'shared/content_slider', :posts => @featured_posts
+.row
+  - @posts.each do |post|
+    .span-one-third
+      %h2=h truncate(post.title, :length => 20)
+      %p= post.body
+
 
 :javascript
   $(document).ready(function() {
     $(".carousel").dualSlider({
       auto:true,
       autoDelay: 6000,
-      easingCarousel: "swing",
-      easingDetails: "easeOutBack",
       durationCarousel: 1000,
       durationDetails: 500
     });

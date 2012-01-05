@@ -1,12 +1,19 @@
 = simple_form_for(@post) do |f|
   = f.error_notification
 
-  .inputs
-    = f.input :title
-    = f.input :body
-    = f.input :user_id
-    = f.input :featured
-    = f.input :project_id
+  .fieldset
+    .clearfix
+      = f.label :title
+      .input= f.text_field :title
+    .clearfix
+      = f.label :body
+      .input= f.text_area :body
+    .clearfix
+      = f.label :featured
+      .input= f.check_box :featured
+    .clearfix
+      = f.label :image
+      .input= f.file_field :image
 
   .actions
     = f.button :submit

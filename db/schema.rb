@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120105195616) do
     t.integer  "user_id"
     t.boolean  "featured"
     t.integer  "project_id"
+    t.string   "image_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
