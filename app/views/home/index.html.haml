@@ -1,7 +1,48 @@
 .container
   .hero-unit
-    %h1 Hello, world!
-    %p Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    .carousel.clearfix
+      .panel
+        .details_wrapper
+          .details
+            .detail
+              %h2.Lexia-Bold
+                Penatibus et magnis dis parturient montes donos reactivus pantabular
+            .detail
+              %h2.Lexia-Bold
+                Magnis dis parturient montessociis natoque penatibus et
+            .detail
+              %h2.Lexia-Bold
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+            .detail
+              %h2.Lexia-Bold
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+            .detail
+              %h2.Lexia-Bold
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+            .detail
+              %h2.Lexia-Bold
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+        .paging
+          #numbers
+          %a.previous{:href => "javascript:void(0);", :title => "Previous"} Previous
+          %a.next{:href => "javascript:void(0);", :title => "Next"} Next
+          %a.play{:href => "javascript:void(0);", :title => "Turn on autoplay"} Play
+          %a.pause{:href => "javascript:void(0);", :title => "Turn off autoplay"} Pause
+
+      .backgrounds
+        .item.item_1
+          %h2 Hello1!
+        .item.item_2
+          %h2 Hello2!
+        .item.item_3
+          %h2 Hello3!
+        .item.item_4
+          %h2 Hello4!
+        .item.item_5
+          %h2 Hello5!
+        .item.item_6
+          %h2 Hello6!
+
   .row
     .span5
       %h2 Heading
@@ -13,3 +54,15 @@
       %h2 Heading
       %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
 
+
+:javascript
+  $(document).ready(function() {
+    $(".carousel").dualSlider({
+      auto:true,
+      autoDelay: 6000,
+      easingCarousel: "swing",
+      easingDetails: "easeOutBack",
+      durationCarousel: 1000,
+      durationDetails: 500
+    });
+  });
