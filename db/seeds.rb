@@ -8,3 +8,9 @@
 
 
 @user = User.create email: "jd@isotope11.com", password: "password", password_confirmation: "password"
+
+@post1 = Post.create title: "Robotic Chicken", body: "The first robotic chicken was created last week in Geneva, by a group of two scientists that were cloned from stem-cells and the rump of a large cappola pig. Some critics are skeptical of the results, saying that they are 'biased' toward pigs and not fair enough to cows, but others agree with Mr. Anderson.", user_id: @user.id
+
+@post2 = Post.create title: "Prototype Airplane", body: "A robotic airplane is being built that will traverse up to 200,000 miles of air in one charge and with no human pilot. The airplane is made of hydrogen which is actually impossible, but that didn't stop two brothers from the University of Jamaica from doing just that..", user_id: @user.id
+
+@post3 = Post.create title: "The Robo-boogie", body: "If a robot boogies in the forest and there is no one there to see it, does it really happen? Researchers in Mississippi don't think so.", user_id: @user.id
