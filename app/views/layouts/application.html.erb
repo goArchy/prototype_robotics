@@ -18,6 +18,11 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <% if current_user %>
+            <%= link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "btn danger logout") %>
+          <% else %>
+            <%= link_to('Sign In', new_user_session_path, :class => "btn success login") %>
+          <% end %>
         </div>
       </div>
     </div>
