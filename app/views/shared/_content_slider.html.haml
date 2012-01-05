@@ -7,6 +7,10 @@
             .detail
               %h2.Lexia-Bold
                 = post.title
+              =h truncate(post.body, :length => 200)
+              %p
+              = link_to " ... read more", root_path
+
       .paging
         #numbers
         %a.previous{:href => "javascript:void(0);", :title => "Previous"} Previous

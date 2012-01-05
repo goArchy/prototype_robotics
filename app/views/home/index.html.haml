@@ -3,7 +3,7 @@
 .row
   - @posts.each do |post|
     .span-one-third
-      %h2=h truncate(post.title, :length => 20)
+      %h2= post.title
       %p= post.body
 
 
