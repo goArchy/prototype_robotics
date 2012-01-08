@@ -7,7 +7,12 @@
     <%= javascript_include_tag "less" %>
     <%= csrf_meta_tags %>
     <div class="container">
-      <%= image_tag "logo_new_small.png", :width => "700px" %>
+      <%= image_tag "logo_new_small.png", :width => "600px" %>
+      <% if current_user %>
+        <%= link_to('Sign out', destroy_user_session_path, :method => :delete, :class => "btn danger session pull-right") %>
+      <% else %>
+        <%= link_to('Sign In', new_user_session_path, :class => "btn success session pull-right") %>
+      <% end %>
       <%= render :partial => 'shared/menu'%>
     </div>
   </head>
