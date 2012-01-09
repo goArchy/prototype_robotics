@@ -19,9 +19,7 @@
         %a.pause{:href => "javascript:void(0);", :title => "Turn off autoplay"} Pause
 
     .backgrounds
-      .item.item_1
-        = image_tag Post.find(1).image.url(:slider)
-      .item.item_2
-        = image_tag Post.find(2).image.url(:slider)
-      .item.item_3
-        = image_tag Post.find(3).image.url(:slider)
+      - for i in 0..@featured_posts.count - 1
+        .item
+          = image_tag @featured_posts[i].image.url(:medium)
+

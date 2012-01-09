@@ -4,6 +4,7 @@
   - @posts.each do |post|
     .span-one-third
       %h2= post.title
+      = image_tag post.image.url(:thumb)
       %p= post.body
 
 
