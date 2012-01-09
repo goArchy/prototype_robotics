@@ -1,0 +1,6 @@
+#container
+  .flexslider
+    %ul.slides
+      - posts.each do |post|
+        %li
+          = image_tag post.image.url(:medium) 

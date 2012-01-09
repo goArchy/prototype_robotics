@@ -7,3 +7,7 @@
       .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
       %span.post_text= post.body
 
+:javascript
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+    });
