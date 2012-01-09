@@ -3,4 +3,5 @@
     %ul.slides
       - posts.each do |post|
         %li
-          = image_tag post.image.url(:medium) 
+          = image_tag post.image.url(:slider) 
+          .flexslider_text= post.title
