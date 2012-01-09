@@ -4,6 +4,7 @@ class CreateSteps < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :tutorial_id
+      t.string :step_number
 
       t.timestamps
     end

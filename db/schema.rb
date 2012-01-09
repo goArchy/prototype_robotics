@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.string   "name"
     t.text     "description"
     t.integer  "tutorial_id"
+    t.string   "step_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

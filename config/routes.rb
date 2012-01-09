@@ -5,6 +5,8 @@ PrototypeRobotics::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :projects
+  resources :tutorials
+  resources :steps
 
   devise_for :users
   resources :posts
