@@ -4,7 +4,7 @@
       .step_box
         = step.step_number
         %p
-        = step.name
+        = image_tag step.photo.url(:thumb)
         %p
 
 .clear_steps
@@ -19,6 +19,9 @@
         .clearfix
           = f.label "Step description"
           .input= f.text_area :description, :size => "20x5"
+        .clearfix
+          = f.label "Image"
+          .input= f.file_field :photo
         .clearfix
           = f.hidden_field :tutorial_id
 
