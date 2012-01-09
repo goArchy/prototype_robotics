@@ -10,10 +10,18 @@ class StepsController < ApplicationController
 
   def new
     @step = Step.new
+    @step.tutorial_id = params[:tutorial]
+    @tutorial = @step.tutorial
   end
 
   def create
-    @step.save(params[:step])
+    @step = Step.new(params[:step])
+    if @step.save
+      @tutorial = @step.tutorial
+      @step.step_number = "Step " + "#{@tutorial.steps.count}"
+      @step.save
+      redirect_to new_step_path(tutorial: @tutorial)
+    end
   end
 
   def edit

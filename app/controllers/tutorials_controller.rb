@@ -15,14 +15,12 @@ class TutorialsController < ApplicationController
   def create
     @tutorial = Tutorial.new(params[:tutorial])
     if @tutorial.save
-      redirect_to edit_tutorial_path(@tutorial) 
+      redirect_to new_step_path(tutorial: @tutorial)
     end
   end
 
   def edit
     @tutorial = Tutorial.find(params[:id])
-    @step = @tutorial.steps.build
-    @step.step_number = "Step " + "#{@tutorial.steps.count + 1}"
   end
 
   def update

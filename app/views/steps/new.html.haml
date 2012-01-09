@@ -1,0 +1,27 @@
+- if !@tutorial.steps.empty?
+  - @tutorial.steps.each do |step|
+    - if step.description?
+      .step_box
+        = step.step_number
+        %p
+        = step.name
+        %p
+
+.clear_steps
+  = form_for @step do |f|
+    %fieldset
+      %legend
+        New Step
+      = form_for @step do |f|
+        .clearfix
+          = f.label "Step Name"
+          .input= f.text_field :name
+        .clearfix
+          = f.label "Step description"
+          .input= f.text_area :description, :size => "20x5"
+        .clearfix
+          = f.hidden_field :tutorial_id
+
+    .actions
+      = f.submit "Add Steps", :class => 'btn primary'
+      = link_to 'Back', tutorials_path, :class => 'btn'
