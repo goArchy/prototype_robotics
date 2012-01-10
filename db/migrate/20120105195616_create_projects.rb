@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :type
+      t.string :image_file_name
 
       t.timestamps
     end

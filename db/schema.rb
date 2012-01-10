@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.string   "name"
     t.text     "description"
     t.string   "type"
+    t.string   "image_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.string   "name"
     t.string   "description"
     t.string   "summary"
+    t.string   "image_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

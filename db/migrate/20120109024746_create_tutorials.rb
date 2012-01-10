@@ -4,6 +4,7 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :summary
+      t.string :image_file_name
 
       t.timestamps
     end
