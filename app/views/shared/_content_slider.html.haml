@@ -3,5 +3,6 @@
     %ul.slides
       - posts.each do |post|
         %li
-          = image_tag post.image.url(:slider) 
-          .flexslider_text= post.title
+          .image= image_tag post.image.url(:slider) 
+          %h2.title= post.title
+          .info= post.body

@@ -3,8 +3,9 @@
 - if !@tutorial.steps.empty?
   - @tutorial.steps.each do |step|
     .step_box
-      = step.step_number
+      %b= step.step_number
       = link_to image_tag(step.image.url(:thumb)), step_path(step)
+      =h truncate(step.description, :length => 20)
 
 .clear_steps
   .tutorial_description

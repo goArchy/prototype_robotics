@@ -1,20 +1,31 @@
 .container
   = render 'shared/content_slider', :posts => @featured_posts
-.row
-  %h2 Recent Posts
-  - @posts.each do |post|
-    .span-one-third
-      %h4= post.title
-      .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
-      %span.post_text= post.body
-.row
-  %h2 Recent Tutorials
-  - @tutorials.each do |tutorial|
-    .span-one-third
-      %h4= tutorial.title
-      = tutorial.body
+  .row
+    %h2 Recent Posts
+    - @posts.each do |post|
+      .span-one-third
+        %h4= post.title
+        .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
+        %span.post_text= post.body
+  .space= link_to "view all posts", posts_path
 
-:javascript
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-    });
+  .row
+    %h2 Recent Projects
+    - @projects.each do |project|
+      .span-one-third
+        %h4= project.name
+        = project.description
+  .space= link_to "view all projects", projects_path
+
+  .row
+    %h2 Recent Tutorials
+    - @tutorials.each do |tutorial|
+      .span-one-third
+        %h4= tutorial.name
+        = tutorial.description
+  .space= link_to "view all tutorials", tutorials_path
+
+  :javascript
+    $(window).load(function() {
+      $('.flexslider').flexslider();
+      });
