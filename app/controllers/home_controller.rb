@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @posts = Post.all
     @featured_posts = Post.all.select{|p| p.featured?}
     @projects = Project.all
+    @tutorials = Tutorial.all
   end
 
 end

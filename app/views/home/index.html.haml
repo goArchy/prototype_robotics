@@ -8,12 +8,11 @@
       .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
       %span.post_text= post.body
 .row
-  %h2 Recent Projects
-  - @projects.each do |project|
+  %h2 Recent Tutorials
+  - @tutorials.each do |tutorial|
     .span-one-third
-      %h4= project.title
-      .project_image= link_to image_tag(project.image.url(:thumb)), project_path(project)
-      %span.project_text= project.body
+      %h4= tutorial.title
+      = tutorial.body
 
 :javascript
   $(window).load(function() {

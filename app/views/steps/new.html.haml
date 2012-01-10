@@ -1,30 +1,32 @@
+%h2= @tutorial.name
+
 - if !@tutorial.steps.empty?
   - @tutorial.steps.each do |step|
     - if step.description?
       .step_box
         = step.step_number
-        %p
-        = image_tag step.photo.url(:thumb)
-        %p
+        = link_to image_tag(step.image.url(:thumb)), step_path(step)
+
 
 .clear_steps
-  = form_for @step do |f|
-    %fieldset
-      %legend
-        New Step
-      = form_for @step do |f|
-        .clearfix
-          = f.label "Step Name"
-          .input= f.text_field :name
-        .clearfix
-          = f.label "Step description"
-          .input= f.text_area :description, :size => "20x5"
-        .clearfix
-          = f.label "Image"
-          .input= f.file_field :photo
-        .clearfix
-          = f.hidden_field :tutorial_id
+  %h2 Add Step:
+  = simple_form_for(@step) do |f|
+    = f.error_notification
+
+    .fieldset
+      .clearfix
+        = f.label :name
+        .input= f.text_field :name
+      .clearfix
+        = f.label :description
+        .input= f.text_area :description, :size => "20x5"
+      .clearfix
+        = f.label :image
+        .input= f.file_field :image
+      .clearfix
+        = f.hidden_field :tutorial_id
 
     .actions
-      = f.submit "Add Steps", :class => 'btn primary'
+      = f.button :submit
       = link_to 'Back', tutorials_path, :class => 'btn'
+

@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.text     "description"
     t.integer  "tutorial_id"
     t.string   "step_number"
-    t.string   "photo_file_name"
+    t.string   "image_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
