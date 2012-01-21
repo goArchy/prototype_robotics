@@ -22,12 +22,30 @@ body {
   margin-top: 5px;
 }
 
+.title {
+  float: left;
+}
+
+.body {
+  float: left;
+}
+
 .post_image {
   float:left;
-  margin-right: 10px;
 }
 
 .post_text {
+  float: left;
+}
+
+.posts {
+  clear: both;
+  float: left;
+}
+
+.project_image {
+  float:left;
+  margin-right: 10px;
 }
 
 .row {

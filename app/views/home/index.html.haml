@@ -1,20 +1,22 @@
 .container
-  = render 'shared/content_slider', :posts => @featured_posts
   .row
-    %h2 Recent Posts
-    - @posts.each do |post|
-      .span-one-third
-        %h4= post.title
+    .span9
+      %h2 Featured Projects
+      = render 'shared/content_slider', :posts => @featured_posts
+    .span7
+      %h2 Recent Posts
+      - @posts.each do |post|
         .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
-        %span.post_text= post.body
-  .space= link_to "view all posts", posts_path
+        = post.title
+        = post.body
+    .space= link_to "view all posts", posts_path
 
   .row
     %h2 Recent Projects
     - @projects.each do |project|
       .span-one-third
         %h4= project.name
-        .post_image= link_to image_tag(project.image.url(:thumb)), project_path(project)
+        .project_image= link_to image_tag(project.image.url(:thumb)), project_path(project)
         = project.description
   .space= link_to "view all projects", projects_path
 
@@ -23,7 +25,7 @@
     - @tutorials.each do |tutorial|
       .span-one-third
         %h4= tutorial.name
-        .post_image= link_to image_tag(tutorial.image.url(:thumb)), tutorial_path(tutorial)
+        .project_image= link_to image_tag(tutorial.image.url(:thumb)), tutorial_path(tutorial)
         = tutorial.description
   .space= link_to "view all tutorials", tutorials_path
 
