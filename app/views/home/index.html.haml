@@ -6,9 +6,11 @@
     .span7
       %h2 Recent Posts
       - @posts.each do |post|
-        .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
-        = post.title
-        = post.body
+        .post
+          .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
+          %h4= post.title
+          =h truncate(post.body, :length => 150 )
+          %p
     .space= link_to "view all posts", posts_path
 
   .row
