@@ -39,3 +39,7 @@
 @project1 = Project.create name: "The Lawnbot400", description: "The lawnbot400 is a remotely controlled lawnmower that can mow your grass while you sit in the comfort of your home. You can add a camera, GPS, or any number of other options to make your lawnbot more dangerous. This machine is so dangerous in fact, that users are currently limited to those who can understand its workings enough to build one.", type: "robot", image: File.open(File.join(Rails.root, "db", "seeds", "images", "image13.jpg"))
 @project2 = Project.create name: "The Segbot", description: "The seg-bot is a diy segway clone that can transport a human for more than 3 hours straigh. It is my primary mode of transportation in my basement when I am going to get a drink from the fridge. This machine is so dangerous in fact, that users are currently limited to those who can understand its workings enough to build one.", type: "robot", image: File.open(File.join(Rails.root, "db", "seeds", "images", "image14.jpg"))
 @project3 = Project.create name: "The Battlebot", description: "The battle-bot is a diy fighting robot whose sole purpose is to destroy it's opponent.This machine is so dangerous in fact, that users are currently limited to those who can understand its workings enough to build one.", type: "robot", image: File.open(File.join(Rails.root, "db", "seeds", "images", "image15.jpg"))
+
+
+SpreeCore::Engine.load_seed if defined?(SpreeCore)
+SpreeAuth::Engine.load_seed if defined?(SpreeAuth)

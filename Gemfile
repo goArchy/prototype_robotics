@@ -18,6 +18,7 @@ gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'spree', '0.70.3'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'

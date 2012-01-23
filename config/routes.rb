@@ -1,10 +1,6 @@
 PrototypeRobotics::Application.routes.draw do
   mount Forem::Engine, :at => "/forums"
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   resources :projects
   resources :tutorials
   resources :steps
