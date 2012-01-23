@@ -1,4 +1,5 @@
 class TutorialsController < ApplicationController
+  before_filter :admin_required, :only => [:destroy, :new, :edit]
 
   def index
     @tutorials = Tutorial.all

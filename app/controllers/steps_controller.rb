@@ -1,4 +1,5 @@
 class StepsController < ApplicationController
+  before_filter :login_required, :only => [:new, :edit, :destroy]
 
   def index
     @steps = Step.all
