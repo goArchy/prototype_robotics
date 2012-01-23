@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body
       t.integer :user_id
       t.boolean :featured
+      t.boolean :published
       t.integer :project_id
       t.string :image_file_name
 

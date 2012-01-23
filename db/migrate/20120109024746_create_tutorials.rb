@@ -5,6 +5,8 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :description
       t.string :summary
       t.string :image_file_name
+      t.boolean :featured
+      t.boolean :published
 
       t.timestamps
     end

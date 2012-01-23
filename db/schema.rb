@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.text     "body"
     t.integer  "user_id"
     t.boolean  "featured"
+    t.boolean  "published"
     t.integer  "project_id"
     t.string   "image_file_name"
     t.datetime "created_at"
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.text     "description"
     t.string   "type"
     t.string   "image_file_name"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +83,8 @@ ActiveRecord::Schema.define(:version => 20120109025136) do
     t.string   "description"
     t.string   "summary"
     t.string   "image_file_name"
+    t.boolean  "featured"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

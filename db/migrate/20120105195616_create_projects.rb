@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :description
       t.string :type
       t.string :image_file_name
+      t.boolean :published
 
       t.timestamps
     end
