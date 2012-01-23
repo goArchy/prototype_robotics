@@ -1,4 +1,5 @@
 PrototypeRobotics::Application.routes.draw do
+  mount Forem::Engine, :at => "/forums"
 
   ActiveAdmin.routes(self)
 

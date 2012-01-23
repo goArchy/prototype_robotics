@@ -30,14 +30,14 @@
 
   <!-- begin tab - blog -->
 
-  <li><%= link_to "Blog", articles_path %>
+  <li><%= link_to "Blog", main_app.articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
         <% if !@featured_articles.nil? %>
           <% @featured_articles.each do |article| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article) %>
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), main_app.article_path(article) %>
               </div>
               <div class="menu_project_text">
                 <b><u><%= article.title.html_safe %></u></b>:
@@ -47,7 +47,7 @@
             <hr>
           <% end %>
         <% end %>
-        <center><%= link_to "view all projects", projects_path %></center>
+        <center><%= link_to "view all projects", main_app.projects_path %></center>
       </div>
     </div>
   </li>
@@ -56,7 +56,7 @@
 
     <!-- begin tab - projects -->
 
-    <li><%= link_to "Projects", projects_path, :class => "drop" %><!-- Begin 3 columns Item -->
+    <li><%= link_to "Projects", main_app.projects_path, :class => "drop" %><!-- Begin 3 columns Item -->
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
         <h2>Project Categories</h2>
@@ -93,7 +93,7 @@
           <% @featured_articles.each do |article| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article) %>
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), main_app.article_path(article) %>
               </div>
               <div class="menu_project_text">
                 <b><u><%= article.title.html_safe %></u></b>:
@@ -103,7 +103,7 @@
             <hr>
           <% end %>
         <% end %>
-        <center><%= link_to "view all projects", projects_path %></center>
+        <center><%= link_to "view all projects", main_app.projects_path %></center>
       </div>
     </div>
     </li>
@@ -112,7 +112,7 @@
 
     <!-- begin tab - tutorials -->
 
-    <li><%= link_to "Tutorials", tutorials_path, :class => "drop" %>
+    <li><%= link_to "Tutorials", main_app.tutorials_path, :class => "drop" %>
     <div class="dropdown_5columns">
       <div class="col_5">
         <h2>This is where the topic tutorials will go</h2>
@@ -184,14 +184,10 @@
 
     <!-- Begin tab - Store -->
 
-    <li><%= link_to "Store", projects_path %>
+    <li><%= link_to "Forums", forem.forums_path %>
     <div class="dropdown_1column">
       <div class="col_1">
         <ul class="simple">
-          <li><a href="#">Arduinos</a></li>
-          <li><a href="#">Robot kits</a></li>
-          <li><a href="#">Motor-controllers</a></li>
-          <li><a href="#">Misc</a></li>
         </ul>
       </div>
     </div>
