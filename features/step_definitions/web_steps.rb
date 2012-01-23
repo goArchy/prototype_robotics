@@ -1,5 +1,5 @@
-Given /^a post exists titled "([^"]*)"$/ do |title|
-  Post.create title: title
+Given /^a article exists titled "([^"]*)"$/ do |title|
+  Article.create title: title
 end
 
 Given /^I am on the home page$/ do

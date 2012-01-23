@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%p
+  %h2= @article.title
+  = image_tag(@article.image.url(:large))
+%p
+  %b Body:
+  = @article.body
+%p
+  %b User:
+  = @article.user_id
+%p
+  %b Featured:
+  = @article.featured
+%p
+  %b Project:
+  = @article.project_id
+
+- if current_user
+  - if @article.user_id == current_user.id
+    = link_to 'Edit', edit_article_path(@article)
+    \|
+= link_to 'Back', articles_path

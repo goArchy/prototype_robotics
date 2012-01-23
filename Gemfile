@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
+gem 'forem', :git => "git://github.com/radar/forem.git"
+
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'

@@ -9,7 +9,7 @@ PrototypeRobotics::Application.routes.draw do
   resources :steps
 
   devise_for :users
-  resources :posts
+  resources :articles
   get "home/index"
   root :to => 'home#index'
 

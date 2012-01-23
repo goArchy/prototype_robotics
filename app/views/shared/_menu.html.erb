@@ -21,7 +21,7 @@
       <h2>Website focus:</h2>
     </div>
     <div class="col_2">
-      <p>This website was created to help others find cheaper, easier, or better ways of building robotics projects, understanding electronics, and anything else I find that might be helpful to post on here.</p>
+      <p>This website was created to help others find cheaper, easier, or better ways of building robotics projects, understanding electronics, and anything else I find that might be helpful to article on here.</p>
     </div>
   </div><!-- End 2 columns container -->
   </li><!-- End Home Item -->
@@ -30,18 +30,18 @@
 
   <!-- begin tab - blog -->
 
-  <li><%= link_to "Blog", posts_path %>
+  <li><%= link_to "Blog", articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
-        <% if !@featured_posts.nil? %>
-          <% @featured_posts.each do |post| %>
+        <% if !@featured_articles.nil? %>
+          <% @featured_articles.each do |article| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(post.image.url(:thumb), :class => "imgshadow"), post_path(post) %>
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article) %>
               </div>
               <div class="menu_project_text">
-                <b><u><%= post.title.html_safe %></u></b>:
-                <%=h truncate(post.body.html_safe, :length => 180) %>
+                <b><u><%= article.title.html_safe %></u></b>:
+                <%=h truncate(article.body.html_safe, :length => 180) %>
               </div>
             </div>
             <hr>
@@ -67,7 +67,7 @@
           <li><a href="#">remote control</a></li>
           <li><a href="#">automation</a></li>
           <li><a href="#">utility</a></li>
-        </ul>   
+        </ul>
       </div>
       <div class="col_1">
         <ul class="greybox">
@@ -75,7 +75,7 @@
           <li><a href="#">electrical</a></li>
           <li><a href="#">plumbing</a></li>
           <li><a href="#">painting</a></li>
-        </ul>   
+        </ul>
       </div>
       <div class="col_1">
         <ul class="greybox">
@@ -83,21 +83,21 @@
           <li><a href="#">fiberglass</a></li>
           <li><a href="#">garden</a></li>
           <li><a href="#">farming</a></li>
-        </ul>   
+        </ul>
       </div>
       <div class="col_3">
         <h2>Most popular projects</h2>
       </div>
       <div class="col_3">
-        <% if !@featured_posts.nil? %>
-          <% @featured_posts.each do |post| %>
+        <% if !@featured_articles.nil? %>
+          <% @featured_articles.each do |article| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(post.image.url(:thumb), :class => "imgshadow"), post_path(post) %>
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article) %>
               </div>
               <div class="menu_project_text">
-                <b><u><%= post.title.html_safe %></u></b>:
-                <%=h truncate(post.body.html_safe, :length => 180) %>
+                <b><u><%= article.title.html_safe %></u></b>:
+                <%=h truncate(article.body.html_safe, :length => 180) %>
               </div>
             </div>
             <hr>
@@ -157,7 +157,7 @@
           <li><a href="http://reddit.com/">reddit</a></li>
           <li><a href="http://www.instructables.com/">Instructables</a></li>
           <li><a href="http://arduino.cc">Arduino</a></li>
-        </ul>   
+        </ul>
       </div>
       <div class="col_1">
         <h3>Helpful</h3>
@@ -166,7 +166,7 @@
           <li><a href="http://www.adafruit.com/tutorials">LadyAda</a></li>
           <li><a href="http://www.dannyg.com/examples/res2/resistor.htm">Resistor Colors</a></li>
           <li><a href="http://www.willingtons.com/mymac/ohm_calc.htm">Ohm Calculator</a></li>
-        </ul>   
+        </ul>
       </div>
       <div class="col_1">
         <h3>Suppliers</h3>
@@ -175,7 +175,7 @@
           <li><a href="http://www.radioshack.com/home/index.jsp">Radio Shack</a></li>
           <li><a href="http://www.seeedstudio.com/depot/">Seeed Studio</a></li>
           <li><a href="http://www.ebay.com">Ebay</a></li>
-        </ul>   
+        </ul>
       </div>
     </div><!-- End 4 columns container -->
     </li><!-- End 4 columns Item -->

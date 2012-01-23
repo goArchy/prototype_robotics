@@ -35,14 +35,6 @@ ActiveAdmin::Dashboards.build do
   #
   # Will render the "Recent Users" then the "Recent Posts" sections on the dashboard.
 
-   section "Recent Posts" do
-     ul do
-       Post.all do |post|
-         li link_to(post.title, admin_post_path(post))
-       end
-     end
-   end
-
    section "Users" do
      ul do
        User.all do |user|

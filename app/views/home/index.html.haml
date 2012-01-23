@@ -2,16 +2,16 @@
   .row
     .span9
       %h2 Featured Projects
-      = render 'shared/content_slider', :posts => @featured_posts
+      = render 'shared/content_slider', :articles => @featured_articles
     .span7
-      %h2 Recent Posts
-      - @posts.each do |post|
-        .post
-          .post_image= link_to image_tag(post.image.url(:thumb)), post_path(post)
-          %h4= post.title
-          =h truncate(post.body, :length => 150 )
+      %h2 Recent Articles
+      - @articles.each do |article|
+        .article
+          .article_image= link_to image_tag(article.image.url(:thumb)), article_path(article)
+          %h4= article.title
+          =h truncate(article.body, :length => 150 )
           %p
-    .space= link_to "view all posts", posts_path
+    .space= link_to "view all articles", articles_path
 
   .row
     %h2 Recent Projects

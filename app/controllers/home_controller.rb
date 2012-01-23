@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @posts = Post.all
-    @featured_posts = Post.all.select{|p| p.featured?}
+    @articles = Article.all
+    @featured_articles = Article.all.select{|p| p.featured?}
     @projects = Project.all
     @tutorials = Tutorial.all
   end
