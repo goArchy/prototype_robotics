@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
+gem 'capistrano'
+
 gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'spree', '0.70.3'
 
