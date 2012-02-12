@@ -57,30 +57,22 @@
       <div class="col_3">
         <h2>Project Categories</h2>
       </div>
-      <div class="col_1">
-        <ul class="greybox">
-          <li><a href="#">robots</a></li>
-          <li><a href="#">remote control</a></li>
-          <li><a href="#">automation</a></li>
-          <li><a href="#">utility</a></li>
-        </ul>
-      </div>
-      <div class="col_1">
-        <ul class="greybox">
-          <li><a href="#">carpentry</a></li>
-          <li><a href="#">electrical</a></li>
-          <li><a href="#">plumbing</a></li>
-          <li><a href="#">painting</a></li>
-        </ul>
-      </div>
-      <div class="col_1">
-        <ul class="greybox">
-          <li><a href="#">audio/video</a></li>
-          <li><a href="#">fiberglass</a></li>
-          <li><a href="#">garden</a></li>
-          <li><a href="#">farming</a></li>
-        </ul>
-      </div>
+
+      <% c = 0 %>
+      <% @project_categories.each do |category| %>
+        <% c = c + 1 %>
+        <% if c == 1 %>
+          <div class="col_1">
+            <ul class="greybox">
+        <% end %>
+              <li><%= link_to category, :controller => 'projects', :action => 'search_projects', :category => category %></li>
+        <% if c == 4 %>
+            </ul>
+          </div>
+          <% c = 0 %>
+        <% end %>
+      <% end %>
+
       <div class="col_3">
         <h2>Most popular projects</h2>
       </div>

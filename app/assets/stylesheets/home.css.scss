@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.board {
+  margin-top: -25px;
+  background: #D1D9DE;
+  padding: 0px 25px 25px 25px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  border-radius: 20px;
+}
+
 .hero-unit {
   margin-top: 0px;
 }

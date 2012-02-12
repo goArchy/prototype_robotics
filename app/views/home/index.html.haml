@@ -1,4 +1,4 @@
-.container
+.container.board
   .row
     .span9
       %h2 Featured Content
@@ -13,7 +13,7 @@
           %p
     .space= link_to "view all articles", articles_path
 
-  .row
+  .row.titlez
     %h2 Recent Projects
     - @projects.each do |project|
       .span-one-third

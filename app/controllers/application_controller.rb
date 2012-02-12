@@ -1,4 +1,14 @@
 class ApplicationController < ActionController::Base
+  before_filter :get_categories
+
+  def get_categories
+    @project_categories = []
+    Project.all.each do |p|
+      if !@project_categories.include?(p.category)
+        @project_categories.push(p.category)
+      end
+    end
+  end
 
   def forem_user
     current_user
