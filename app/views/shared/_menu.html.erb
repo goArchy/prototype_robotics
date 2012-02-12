@@ -33,16 +33,12 @@
   <li><%= link_to "Blog", main_app.articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
-        <% if !@featured_articles.nil? %>
-          <% @featured_articles.each do |article| %>
+        <% if !@articles.nil? %>
+          <% @articles.each do |article| %>
             <div class="menu_project">
-              <div class="menu_project_image">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), main_app.article_path(article) %>
-              </div>
-              <div class="menu_project_text">
-                <b><u><%= article.title.html_safe %></u></b>:
-                <%=h truncate(article.body.html_safe, :length => 180) %>
-              </div>
+              <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), main_app.article_path(article) %>
+              <b><u><%= article.name.html_safe %></u></b>:
+              <%=h truncate(article.description.html_safe, :length => 180) %>
             </div>
             <hr>
           <% end %>
@@ -118,19 +114,31 @@
         <h2>This is where the topic tutorials will go</h2>
       </div>
       <div class="col_5">
-        <h3>Electricity</h3>
+        <h3>Robotics</h3>
+        <%- Tutorial.all.select{|t| t.category == "robotics" }.each do |r| %>
+          <div class="tutorial_menu">
+            <%= link_to image_tag(r.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(r) %>
+            <%= r.name %>
+          </div>
+        <% end %>
       </div>
       <div class="col_5">
         <h3>Electronics</h3>
+        <%- Tutorial.all.select{|t| t.category == "electronics" }.each do |e| %>
+          <div class="tutorial_menu">
+            <%= link_to image_tag(e.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(e) %>
+            <%= e.name %>
+          </div>
+        <% end %>
       </div>
       <div class="col_5">
-        <h3>Carpentry</h3>
-      </div>
-      <div class="col_5">
-        <h3>Plumbing</h3>
-      </div>
-      <div class="col_5">
-        <h3>Tools</h3>
+        <h3>Web</h3>
+        <%- Tutorial.all.select{|t| t.category == "web" }.each do |w| %>
+          <div class="tutorial_menu">
+            <%= link_to image_tag(w.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(w) %>
+            <%= w.name %>
+          </div>
+        <% end %>
       </div>
     </div>
     </li>

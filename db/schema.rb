@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123233231) do
+ActiveRecord::Schema.define(:version => 20120212180402) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20120123233231) do
   add_index "adjustments", ["order_id"], :name => "index_adjustments_on_order_id"
 
   create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "name"
+    t.text     "description"
     t.integer  "user_id"
     t.boolean  "featured"
     t.boolean  "published"
@@ -412,11 +412,12 @@ ActiveRecord::Schema.define(:version => 20120123233231) do
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "type"
+    t.string   "category"
     t.string   "image_file_name"
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "featured"
   end
 
   create_table "promotion_action_line_items", :force => true do |t|
@@ -617,6 +618,7 @@ ActiveRecord::Schema.define(:version => 20120123233231) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
   create_table "users", :force => true do |t|

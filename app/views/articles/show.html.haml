@@ -1,11 +1,11 @@
 %p#notice= notice
 
 %p
-  %h2= @article.title
+  %h2= @article.name
   = image_tag(@article.image.url(:large))
 %p
   %b Body:
-  = @article.body
+  = @article.description
 %p
   %b User:
   = @article.user_id
