@@ -66,12 +66,13 @@
             <ul class="greybox">
         <% end %>
               <li><%= link_to category, :controller => 'projects', :action => 'search_projects', :category => category %></li>
-        <% if c == 4 %>
+        <% if c == @project_categories.count / 3 %>
             </ul>
           </div>
           <% c = 0 %>
         <% end %>
       <% end %>
+      <p />
 
       <div class="col_3">
         <h2>Most popular projects</h2>
