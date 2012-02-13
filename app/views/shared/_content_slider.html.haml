@@ -3,7 +3,7 @@
     %ul.slides
       - content.each do |c|
         %li
-          .image= image_tag c.image.url(:slider) 
+          .image= link_to image_tag(c.image.url(:slider)), c
           %h2.title
             = c.name if c.name.present?
           .info
