@@ -8,8 +8,8 @@ role :db,  "50.56.206.231", :primary => true # This is where Rails migrations wi
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-set :deploy_to, "/home/jd/prototype_robotics"
-set :user, "jd"
+set :deploy_to, "/home/deployer/prototype_robotics"
+set :user, "deployer"
 set :use_sudo, false
 
 # repo details
