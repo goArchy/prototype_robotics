@@ -1,12 +1,13 @@
-%h2= @tutorial.name
+.board
+  %h2= @tutorial.name
 
-- if !@tutorial.steps.empty?
-  - @tutorial.steps.each do |step|
-    .step_box
-      %b= step.step_number
-      = link_to image_tag(step.image.url(:thumb)), step_path(step)
-      =h truncate(step.description, :length => 20)
+  - if !@tutorial.steps.empty?
+    - @tutorial.steps.each do |step|
+      .step_box
+        %b= step.step_number
+        = link_to image_tag(step.image.url(:thumb)), step_path(step)
+        =h truncate(step.description, :length => 20)
 
-.clear_steps
-  .tutorial_description
-    = @tutorial.description
+  .clear_steps
+    .tutorial_description
+      = @tutorial.description

@@ -1,6 +1,7 @@
-%h2 Tutorials Listing
-%ul
-  - @tutorials.each do |tutorial|
-    %li= link_to tutorial.name, tutorial_path(tutorial)
+.board
+  %h2 Tutorials Listing
+  %ul
+    - @tutorials.each do |tutorial|
+      %li= link_to tutorial.name, tutorial_path(tutorial)
 
-= link_to "new tutorial", new_tutorial_path
+  = link_to "new tutorial", new_tutorial_path

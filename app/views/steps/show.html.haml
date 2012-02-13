@@ -1,9 +1,10 @@
-%h2= @step.step_number
-%p
-= @step.name
-%p
-= image_tag @step.image.url(:large)
-%p
-= @step.description
-%p
-= link_to 'back', :back
+.board
+  %h2= @step.step_number
+  %p
+  = @step.name
+  %p
+  = image_tag @step.image.url(:large)
+  %p
+  = @step.description
+  %p
+  = link_to 'back', :back

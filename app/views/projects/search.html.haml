@@ -1,14 +1,15 @@
-%h1 Project search results
+.board
+  %h1 Project search results
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th Type
-
-  - @projects.each do |project|
+  %table.zebra-striped
     %tr
-      %td= link_to project.name, project
-      %td= project.description
-      %td= project.category
+      %th Name
+      %th Description
+      %th Type
+
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.name, project
+        %td= project.description
+        %td= project.category
 

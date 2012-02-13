@@ -1,12 +1,13 @@
-%h1 Listing articles
+.board
+  %h1 Listing articles
 
-- @articles.each do |article|
-  %table
-    %tr
-      %td= link_to image_tag(article.image.url(:thumb)), article_path(article)
-      %td= article.name
-      %td= "Posted:" + "#{article.created_at.strftime("%m/%d/%Y at %I:%M%p")}"
+  - @articles.each do |article|
+    %table
+      %tr
+        %td= link_to image_tag(article.image.url(:thumb)), article_path(article)
+        %td= article.name
+        %td= "Posted:" + "#{article.created_at.strftime("%m/%d/%Y at %I:%M%p")}"
 
-%br
-- if current_user
-  = link_to 'New Article', new_article_path
+  %br
+  - if current_user
+    = link_to 'New Article', new_article_path
