@@ -1,6 +1,5 @@
 PrototypeRobotics::Application.routes.draw do
-  mount Forem::Engine, :at => "/forums"
-
+  
   resources :projects
   resources :tutorials
   resources :steps

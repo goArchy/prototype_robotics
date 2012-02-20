@@ -48,5 +48,5 @@
 @project8 = Project.create name: "Chicken Coop", description: "The seg-bot is a diy segway clone that can transport a human for more than 3 hours straigh. It is my primary mode of transportation in my basement when I am going to get a drink from the fridge. This machine is so dangerous in fact, that users are currently limited to those who can understand its workings enough to build one.", category: "robotics", image: File.open(File.join(Rails.root, "db", "seeds", "images", "image14.jpg"))
 @project9 = Project.create name: "RFID", description: "The battle-bot is a diy fighting robot whose sole purpose is to destroy it's opponent.This machine is so dangerous in fact, that users are currently limited to those who can understand its workings enough to build one.", category: "electronics", image: File.open(File.join(Rails.root, "db", "seeds", "images", "image15.jpg"))
 
-SpreeCore::Engine.load_seed if defined?(SpreeCore)
+#SpreeCore::Engine.load_seed if defined?(SpreeCore)
 SpreeAuth::Engine.load_seed if defined?(SpreeAuth)
