@@ -1,10 +1,12 @@
 PrototypeRobotics::Application.routes.draw do
-  
+
+  mount Spree::Core::Engine, :at => '/shop'
+
   resources :projects
   resources :tutorials
   resources :steps
 
-  devise_for :users
+  #devise_for :users
   resources :articles
   get "home/index"
   root :to => 'home#index'

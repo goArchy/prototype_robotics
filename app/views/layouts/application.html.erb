@@ -6,11 +6,11 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <div class="container">
-      <%= image_tag "logo_new_small.png", :width => "600px", :class => "logo" %>
+      <%= image_tag "logo_new_small.png", :class => "logo" %>
       <% if current_user %>
-        <%= link_to('Sign out', main_app.destroy_user_session_path, :method => :delete, :class => "btn danger session pull-right") %>
+        <%= link_to('Sign out', spree.destroy_user_session_path, :method => :delete, :class => "btn danger session pull-right") %>
       <% else %>
-        <%= link_to('Sign In', main_app.new_user_session_path, :class => "btn success session pull-right") %>
+        <%= link_to('Sign In', spree.new_user_session_path, :class => "btn success session pull-right") %>
       <% end %>
       <%= render :partial => 'shared/menu'%>
     </div>

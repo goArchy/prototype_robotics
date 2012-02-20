@@ -20,7 +20,8 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'capistrano'
 
-gem 'spree', '0.70.3'
+#gem 'spree', '0.70.3'
+gem 'spree', '1.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
@@ -48,3 +49,5 @@ group :test do
   gem 'shoulda'
   gem 'simplecov'
 end
+
+gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'

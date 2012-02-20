@@ -7,10 +7,10 @@
     = f.input :category
     = f.input :published
     = f.input :featured
-    = f.input :image
-    %p
     = f.input :remove_image
+    %p
     .centered_image= image_tag(@project.image.url(:slider), :class => "imgshadow")
+    = f.input :image
 
   .actions
     = f.button :submit

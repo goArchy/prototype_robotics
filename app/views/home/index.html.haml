@@ -1,37 +1,38 @@
 .container.board
-  .row
-    .span9
-      %h2 Featured Content
-      = render 'shared/content_slider', :content => @featured_content
-    .span7
-      %h2 Recent Articles
-      - @articles.each do |article|
-        .article
-          .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
-          %h4= article.name
-          =h truncate(article.description, :length => 150 )
-          %p
-    .space= link_to "view all articles", articles_path
+  .tile
+    .row
+      .span9
+        %h2 Featured Content
+        = render 'shared/content_slider', :content => @featured_content
+      .span6
+        %h2 Recent Articles
+        - @articles.each do |article|
+          .article
+            .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+            %h4= article.name
+            =h truncate(article.description, :length => 150 )
+            %p
+      .space= link_to "view all articles", articles_path
 
-  .row.titlez
-    %h2 Recent Projects
-    - @projects.each do |project|
-      .span-one-third
-        %h4= project.name
-        .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
-        =h truncate(project.description, :length => 150 )
-  .space= link_to "view all projects", projects_path
+    .row.titlez
+      %h2 Recent Projects
+      - @projects.each do |project|
+        .span5
+          %h4= project.name
+          .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+          =h truncate(project.description, :length => 150 )
+    .space= link_to "view all projects", projects_path
 
-  .row
-    %h2 Recent Tutorials
-    - @tutorials.each do |tutorial|
-      .span-one-third
-        %h4= tutorial.name
-        .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
-        =h truncate(tutorial.description, :length => 150 )
-  .space= link_to "view all tutorials", tutorials_path
+    .row
+      %h2 Recent Tutorials
+      - @tutorials.each do |tutorial|
+        .span5
+          %h4= tutorial.name
+          .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
+          =h truncate(tutorial.description, :length => 150 )
+    .space= link_to "view all tutorials", tutorials_path
 
-:javascript
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-    });
+  :javascript
+    $(window).load(function() {
+      $('.flexslider').flexslider();
+      });
