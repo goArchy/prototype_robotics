@@ -1,5 +1,5 @@
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-#require 'bundler/capistrano'
+require 'bundler/capistrano'
 
 set :application, "prototyperobotics.com"
 role :web, "50.56.206.231"                          # Your HTTP server, Apache/etc
