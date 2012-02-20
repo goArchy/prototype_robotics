@@ -8,7 +8,7 @@
     <div class="container">
       <%= image_tag "logo_new_small.png", :width => "600px", :class => "logo" %>
       <% if current_user %>
-        <%= link_to('Sign out', spree.destroy_user_session_path, :method => :delete, :class => "btn danger session pull-right") %>
+        <%= button_to('Sign out', spree.destroy_user_session_path, :method => :delete, :class => "btn danger session pull-right") %>
       <% else %>
         <%= link_to('Sign In', spree.new_user_session_path, :class => "btn success session pull-right") %>
       <% end %>
