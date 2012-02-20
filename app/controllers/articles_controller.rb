@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :admin_required, :only => [:destroy]
-  before_filter :login_required, :only => [:new, :edit]
+  before_filter :admin_required, :only => [:destroy, :new, :edit]
 
   def index
     @articles = Article.all
