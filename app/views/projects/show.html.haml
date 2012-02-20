@@ -1,9 +1,8 @@
 .board
   %p#notice= notice
 
-  %p
-    %b Name:
-    = @project.name
+  .centered_image= image_tag(@project.image.url(:slider), :class => "imgshadow")
+  %h3= @project.name
   %p
     %b Description:
     = @project.description

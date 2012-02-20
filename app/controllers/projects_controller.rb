@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_filter :admin_required, :only => [:destroy]
   before_filter :login_required, :only => [:new, :edit]
+  before_filter :remove_image, :only => [:edit]
 
   def index
     @projects = Project.all
@@ -46,4 +47,17 @@ class ProjectsController < ApplicationController
     @projects = Project.all.select{|p| p.category == params[:category]}
     render "search"
   end
+
+  def remove_image
+    @project = Project.find(params[:id])
+    if @project.remove_image?
+      begin
+        @project.image.destroy
+      rescue
+      end
+      @project.remove_image = false
+      @project.save
+    end
+  end
+
 end

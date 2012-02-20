@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120212180402) do
+ActiveRecord::Schema.define(:version => 20120220191953) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -362,6 +362,7 @@ ActiveRecord::Schema.define(:version => 20120212180402) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "featured"
+    t.boolean  "remove_image"
   end
 
   create_table "promotion_action_line_items", :force => true do |t|
