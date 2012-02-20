@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/radar/forem.git
-  revision: 0d6f46c61fb3da15832bb02cfac0e1b50b57c28e
-  specs:
-    forem (0.1)
-      cancan
-      forem-redcarpet (= 1.0.0)
-      kaminari
-      rails (~> 3.1)
-      simple_form
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -60,7 +49,6 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
-    blankslate (2.1.2.4)
     braintree (2.13.4)
       builder (>= 2.0.0)
     builder (3.0.0)
@@ -122,9 +110,6 @@ GEM
       i18n (~> 0.4)
     fastercsv (1.5.4)
     ffi (1.0.11)
-    forem-redcarpet (1.0.0)
-      pygments.rb (= 0.2.4)
-      redcarpet (= 2.0.1)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -195,8 +180,6 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
-    pygments.rb (0.2.4)
-      rubypython (~> 0.5.3)
     rack (1.3.6)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -230,7 +213,6 @@ GEM
     rd_resource_controller (1.0.1)
     rdoc (3.12)
       json (~> 1.4)
-    redcarpet (2.0.1)
     responders (0.6.4)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
@@ -255,9 +237,6 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
-    rubypython (0.5.3)
-      blankslate (>= 2.1.2.3)
-      ffi (~> 1.0.7)
     rubyzip (0.9.5)
     sass (3.1.12)
     sass-rails (3.1.5)
@@ -358,7 +337,6 @@ DEPENDENCIES
   devise
   execjs
   factory_girl_rails
-  forem!
   haml
   haml-rails
   jquery-rails
