@@ -19,7 +19,7 @@
       .span-one-third
         %h4= project.name
         .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
-        = project.description
+        =h truncate(project.description, :length => 150 )
   .space= link_to "view all projects", projects_path
 
   .row
@@ -28,7 +28,7 @@
       .span-one-third
         %h4= tutorial.name
         .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
-        = tutorial.description
+        =h truncate(tutorial.description, :length => 150 )
   .space= link_to "view all tutorials", tutorials_path
 
 :javascript

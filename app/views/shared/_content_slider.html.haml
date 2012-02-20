@@ -7,4 +7,5 @@
           %h2.title
             = c.name if c.name.present?
           .info
-            = c.description if c.description.present?
+            =h truncate(article.description, :length => 150 ) if c.description.present?
+
