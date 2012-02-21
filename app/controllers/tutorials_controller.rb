@@ -1,5 +1,6 @@
 class TutorialsController < ApplicationController
   before_filter :admin_required, :only => [:destroy, :new, :edit]
+  before_filter :remove_image, :only => [:edit]
 
   def index
     @tutorials = Tutorial.all
@@ -32,4 +33,15 @@ class TutorialsController < ApplicationController
     end
   end
 
+  def remove_image
+    @tutorial = Tutorial.find(params[:id])
+    if @tutorial.remove_image?
+      begin
+        @tutorial.image.destroy
+      rescue
+      end
+      @tutorial.remove_image = false
+      @tutorial.save
+    end
+  end
 end

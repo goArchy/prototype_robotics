@@ -1,16 +1,23 @@
 = simple_form_for(@project) do |f|
   = f.error_notification
 
-  .inputs
-    = f.input :name
-    = f.input :description
-    = f.input :category
-    = f.input :published
-    = f.input :featured
-    = f.input :remove_image
-    %p
-    .centered_image= image_tag(@project.image.url(:slider), :class => "imgshadow")
-    = f.input :image
+  .fieldset
+    .clearfix
+      = f.input :name
+    .clearfix
+      = f.input :description
+    .clearfix
+      = f.input :category
+    .clearfix
+      = f.input :published
+    .clearfix
+      = f.input :featured
+    .clearfix
+      = f.input :remove_image
+    .clearfix
+      .centered_image= image_tag(@project.image.url(:slider), :class => "imgshadow")
+    .clearfix
+      = f.input :image
 
   .actions
     = f.button :submit

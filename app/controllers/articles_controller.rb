@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :admin_required, :only => [:destroy, :new, :edit]
+  before_filter :remove_image, :only => [:edit]
 
   def index
     @articles = Article.all
@@ -39,5 +40,17 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_url
+  end
+
+  def remove_image
+    @article = Article.find(params[:id])
+    if @article.remove_image?
+      begin
+        @article.image.destroy
+      rescue
+      end
+      @article.remove_image = false
+      @article.save
+    end
   end
 end
