@@ -27,6 +27,7 @@ class StepsController < ApplicationController
 
   def edit
     @step = Step.find(params[:id])
+    @tutorial = @step.tutorial
   end
 
   def update

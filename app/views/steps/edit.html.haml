@@ -1,5 +1,5 @@
 .board
-  %h2= "Add #{@tutorial.name}, #{@step.step_number}"
+  %h2= "Edit #{@tutorial.name}, #{@step.step_number}"
 
   - if !@tutorial.steps.empty?
     - @tutorial.steps.each do |step|
@@ -8,4 +8,4 @@
           = step.step_number
           = link_to image_tag(step.image.url(:thumb)), step_path(step)
 
-  = render 'form'
+  = render 'form', :step => @step

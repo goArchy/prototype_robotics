@@ -1,0 +1,21 @@
+.clear_steps
+  = simple_form_for(step) do |f|
+    = f.error_notification
+
+    .fieldset
+      .clearfix
+        = f.label :name
+        .input= f.text_field :name
+      .clearfix
+        = f.label :description
+        .input= f.text_area :description, :size => "20x5"
+      .clearfix
+        = f.label :image
+        .input= f.file_field :image
+      .clearfix
+        = f.hidden_field :tutorial_id
+
+    .actions
+      = f.button :submit
+      = link_to 'Back', tutorials_path, :class => 'btn'
+
