@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-#gem 'sqlite3'
 gem 'pg'
 
 gem 'therubyracer'
@@ -11,16 +10,14 @@ gem 'haml-rails', :group => :development
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'twitter-bootstrap-rails'
-gem 'devise'
 gem 'jquery-rails'
 
 # Gemfile in Rails >= 3.1
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+#gem 'activeadmin'
+#gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'capistrano'
 
-#gem 'spree', '0.70.3'
 gem 'spree', '1.0.0'
 
 group :assets do
@@ -31,9 +28,6 @@ end
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 group :test do
   # Pretty printed test output
