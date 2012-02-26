@@ -18,7 +18,7 @@
     = @article.project_id
 
   - if current_user
-    - if @article.user_id == current_user.id
+    - if @article.spree_user_id == current_user.id
       = link_to 'Edit', edit_article_path(@article)
       \|
   = link_to 'Back', articles_path
