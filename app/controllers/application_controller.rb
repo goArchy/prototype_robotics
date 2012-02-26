@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def login_required
-    redirect_to(new_user_session_path) if current_user.blank?
+    redirect_to(spree.new_user_session_path) if current_user.blank?
   end
 
   def admin_required
