@@ -6,7 +6,7 @@
     = image_tag(@article.image.url(:large))
   %p
     %b Body:
-    = @article.description
+    = @article.description.html_safe
   %p
     %b User:
     = @article.spree_user_id

@@ -5,7 +5,7 @@
   %h3= @project.name
   %p
     %b Description:
-    = @project.description
+    = @project.description.html_safe
   %p
     %b Type:
     = @project.category

@@ -33,17 +33,21 @@
   <li><%= link_to "Blog", main_app.articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
-        <% if !@articles.nil? %>
+        <% if @articles %>
           <% @articles.each do |article| %>
-            <div class="menu_project">
-              <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), main_app.article_path(article) %>
-              <b><u><%= article.name.html_safe %></u></b>:
-              <%=h truncate(article.description.html_safe, :length => 180) %>
+            <div class="menu_article">
+              <span class="menu_article_image">
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), main_app.article_path(article) %>
+              </span>
+              <span class="menu_article_image">
+                <b><u><%= article.name.html_safe %></u></b>:
+                <%=h truncate(article.description.html_safe, :length => 180) %>
+              </span>
             </div>
             <hr>
           <% end %>
         <% end %>
-        <center><%= link_to "view all projects", main_app.projects_path %></center>
+        <center><%= link_to "view all articles", main_app.articles_path %></center>
       </div>
     </div>
   </li>
@@ -78,15 +82,15 @@
         <h2>Most popular projects</h2>
       </div>
       <div class="col_3">
-        <% if !@featured_articles.nil? %>
-          <% @featured_articles.each do |article| %>
+        <% if @projects %>
+          <% @projects.each do |project| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), main_app.article_path(article) %>
+                <%= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), main_app.project_path(project) %>
               </div>
               <div class="menu_project_text">
-                <b><u><%= article.title.html_safe %></u></b>:
-                <%=h truncate(article.body.html_safe, :length => 180) %>
+                <b><u><%= project.name.html_safe %></u></b>:
+                <%=h truncate(project.description.html_safe, :length => 180) %>
               </div>
             </div>
             <hr>
