@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_required
-    if !current_user.blank?
-      if current_user.id != params[:id]
+    if current_user
+      unless current_user.id.to_s == params[:id]
         redirect_to '/'
         flash[:error] = "You must be an Admin to do that!"
       end
