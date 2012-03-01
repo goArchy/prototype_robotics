@@ -9,4 +9,5 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= jquery.flexslider-min
+//= require ckeditor/ckeditor
 
