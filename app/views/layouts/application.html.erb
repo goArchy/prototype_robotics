@@ -12,6 +12,9 @@
       <% else %>
         <%= link_to('Sign In', spree.new_user_session_path, :class => "btn success session pull-right") %>
       <% end %>
+      <%= form_tag %>
+        <%= text_field_tag, :search %>
+      <% end %>
       <%= render :partial => 'shared/menu'%>
     </div>
   </head>
