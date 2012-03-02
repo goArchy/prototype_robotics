@@ -61,5 +61,8 @@ module PrototypeRobotics
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
+    #ckeditor load path
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
   end
 end

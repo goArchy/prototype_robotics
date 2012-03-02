@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226000039) do
+ActiveRecord::Schema.define(:version => 20120301213521) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(:version => 20120226000039) do
     t.datetime "updated_at"
     t.boolean  "remove_image"
   end
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -640,7 +654,7 @@ ActiveRecord::Schema.define(:version => 20120226000039) do
 
   create_table "tutorials", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.string   "summary"
     t.string   "image_file_name"
     t.boolean  "featured"

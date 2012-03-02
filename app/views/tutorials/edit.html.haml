@@ -1,36 +1,3 @@
 .board
-  = form_for @tutorial do |f|
-    - if @tutorial.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(@tutorial.errors.count, "error")
-          prohibited this tutorial from being saved:
-        %ul
-          - @tutorial.errors.full_messages.each do |msg|
-            %li= msg
-
-    - if !@tutorial.steps.empty?
-      - @tutorial.steps.each do |step|
-        - if step.description?
-          .step_box
-            = step.step_number
-            %p
-            = step.name
-            %p
-
-    %fieldset
-      %legend
-        Tutorial: Steps
-      = f.fields_for :steps do |s|
-        .clearfix
-          = s.label "Step Name"
-          .input= s.text_field :name
-        .clearfix
-          = s.label "Step description"
-          .input= s.text_area :description, :size => "20x5"
-        .clearfix
-          = s.hidden_field :step_number
-
-    .actions
-      = f.submit "Add Steps", :class => 'btn primary'
-      = link_to 'Back', tutorials_path, :class => 'btn'
+  %h2 Edit Tutorial
+  = render 'form'

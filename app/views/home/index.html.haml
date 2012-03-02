@@ -1,10 +1,10 @@
 .container.board
   .tile
     .row
-      .span9
+      .span7
         %h2 Featured Content
         = render 'shared/content_slider', :content => @featured_content
-      .span6
+      .span5
         %h2 Recent Articles
         - @articles.each do |article|
           .article
@@ -12,12 +12,12 @@
             %h4= article.name
             =h truncate(article.description.html_safe, :length => 150 )
             %p
-      .space= link_to "view all articles", articles_path
+    .space= link_to "view all articles", articles_path
 
-    .row.titlez
+    .row
       %h2 Recent Projects
       - @projects.each do |project|
-        .span5
+        .span4
           %h4= project.name
           .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
           =h truncate(project.description.html_safe, :length => 150 )
@@ -26,7 +26,7 @@
     .row
       %h2 Recent Tutorials
       - @tutorials.each do |tutorial|
-        .span5
+        .span4
           %h4= tutorial.name
           .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
           =h truncate(tutorial.description.html_safe, :length => 150 )
