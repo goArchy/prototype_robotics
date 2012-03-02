@@ -13,7 +13,7 @@
     - @projects.each do |project|
       %tr
         %td= link_to project.name, project
-        %td= project.description
+        %td=h truncate(project.description.html_safe, :length => 500)
         %td= project.category
         - if current_user && current_user.has_role?("admin")
           %td= link_to 'Edit', edit_project_path(project)
