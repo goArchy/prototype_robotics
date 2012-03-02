@@ -5,6 +5,9 @@ module Spree
     devise :database_authenticatable, :token_authenticatable, :recoverable,
            :rememberable, :trackable, :validatable, :encryptable, :encryptor => 'authlogic_sha512'
 
+    has_many :projects
+    has_many :articles
+
     has_many :orders
     has_and_belongs_to_many :roles, :join_table => 'spree_roles_users'
     belongs_to :ship_address, :foreign_key => 'ship_address_id', :class_name => 'Spree::Address'
