@@ -29,8 +29,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_required
+    if params["controller"] == "projects"
+      object_owner = Project.find(params[:id]).spree_user_id
+    elsif params["controller"] == "articles"
+      object_owner = Article.find(params[:id]).spree_user_id
+    end
+
     if current_user
-      unless current_user.id.to_s == params[:id]
+      unless current_user.id == object_owner
         redirect_to '/'
         flash[:error] = "You must be an Admin to do that!"
       end
