@@ -1,7 +1,7 @@
 .board
   %h1 Listing projects
 
-  %table.zebra-striped
+  %table.table-striped
     %tr
       %th Name
       %th Description
@@ -18,6 +18,8 @@
         - if current_user && current_user.has_role?("admin")
           %td= link_to 'Edit', edit_project_path(project)
           %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+        - elsif current_user && current_user.id == project.spree_user_id
+          %td= link_to 'Edit', edit_project_path(project)
 
   %br
 

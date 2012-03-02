@@ -1,7 +1,24 @@
 .board
-  %h2 Tutorials Listing
-  %ul
-    - @tutorials.each do |tutorial|
-      %li= link_to tutorial.name, tutorial_path(tutorial)
+  %h2 Tutorials List
 
-  = link_to "new tutorial", new_tutorial_path
+  %table.table-striped
+    %tr
+      %th Image
+      %th Name
+      %th Number of Steps
+      - if current_user && current_user.has_role?("admin")
+        %th Edit
+        %th Destroy
+    - @tutorials.each do |tutorial|
+      %tr
+        %td= link_to image_tag(tutorial.image.url(:thumb)), tutorial_path(tutorial)
+        %td= link_to tutorial.name, tutorial_path(tutorial)
+        %td= tutorial.steps.count
+        - if current_user && current_user.has_role?("admin")
+          %td= link_to 'Edit', edit_tutorial_path(tutorial)
+          %td= link_to 'Destroy', tutorial, :confirm => 'Are you sure?', :method => :delete
+
+  %p
+
+  - if current_user && current_user.has_role?("admin")
+    = link_to 'New Tutorial', new_tutorial_path

@@ -10,6 +10,7 @@
     %b Type:
     = @project.category
 
-  = link_to 'Edit', edit_project_path(@project)
-  \|
+  - if current_user.has_role?("admin")
+    = link_to 'Edit', edit_project_path(@project)
+    \|
   = link_to 'Back', projects_path
