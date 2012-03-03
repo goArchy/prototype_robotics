@@ -31,7 +31,9 @@ class StepsController < ApplicationController
   end
 
   def update
+    @step = Step.find(params[:id])
     @step.update_attributes(params[:step])
+    redirect_to edit_tutorial_path(@step.tutorial)
   end
 
 end
