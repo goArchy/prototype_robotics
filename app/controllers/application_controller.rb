@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_required
-    if !current_user.blank?
+    if current_user
       if !current_user.has_role?("admin")
         redirect_to '/'
         flash[:error] = "You must be an Admin to do that!"
