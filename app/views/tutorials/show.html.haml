@@ -6,7 +6,7 @@
       .step_box
         %b= step.step_number
         = link_to image_tag(step.image.url(:thumb)), step_path(step)
-        =h truncate(step.description.html_safe, :length => 120)
+        = step.name.html_safe
 
   .clear_steps
     .tutorial_description
