@@ -44,7 +44,8 @@
                 <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), main_app.article_path(article) %>
               </span>
               <span class="menu_article_image">
-                <b><u><%= article.name.html_safe %></u></b>:
+                <b><u><%= article.name.html_safe %></u></b>: <%= article.created_at.strftime(" published on %_m/%e/%y") %>
+                <br>
                 <%=h truncate(article.description.html_safe, :length => 180) %>
               </span>
             </div>
