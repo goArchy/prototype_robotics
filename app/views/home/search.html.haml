@@ -19,7 +19,7 @@
         - @projects.each do |project|
           %tr
             %td= link_to project.name, project
-            %td=h truncate(project.description.html_safe, :length => 500)
+            %td=h truncate(project.description.html_safe, :length => 250)
             - if current_user && current_user.has_role?("admin")
               %td= link_to 'Edit', edit_project_path(project)
               %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
@@ -39,7 +39,7 @@
         - @articles.each do |article|
           %tr
             %td= link_to article.name, article
-            %td=h truncate(article.description.html_safe, :length => 500)
+            %td=h truncate(article.description.html_safe, :length => 250)
             - if current_user && current_user.has_role?("admin")
               %td= link_to 'Edit', edit_article_path(article)
               %td= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
@@ -59,7 +59,7 @@
         - @tutorials.each do |tutorial|
           %tr
             %td= link_to tutorial.name, tutorial
-            %td=h truncate(tutorial.description.html_safe, :length => 500)
+            %td=h truncate(tutorial.description.html_safe, :length => 250)
             - if current_user && current_user.has_role?("admin")
               %td= link_to 'Edit', edit_tutorial_path(tutorial)
               %td= link_to 'Destroy', tutorial, :confirm => 'Are you sure?', :method => :delete
