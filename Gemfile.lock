@@ -247,7 +247,7 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
-    shoulda (3.0.0)
+    shoulda (3.0.1)
       shoulda-context (~> 1.0.0)
       shoulda-matchers (~> 1.0.0)
     shoulda-context (1.0.0)
