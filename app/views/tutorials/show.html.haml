@@ -1,6 +1,9 @@
 .board
   %h2= @tutorial.name
 
+  .clear_steps
+    = @tutorial.description.html_safe
+
   - if !@tutorial.steps.empty?
     - @tutorial.steps.each do |step|
       .step_box
@@ -9,5 +12,10 @@
         = step.name.html_safe
 
   .clear_steps
-    .tutorial_description
-      = @tutorial.description.html_safe
+    = "Category: #{@tutorial.category}"
+
+  %p
+  - if current_user && current_user.has_role?("admin")
+    = link_to 'Edit', edit_project_path(@project)
+    \|
+  = link_to 'Back', projects_path
