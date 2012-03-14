@@ -1,7 +1,5 @@
 .board
-  %h2= @step.step_number
-  %p
-  = @step.name
+  %h1= "#{@step.step_number.capitalize}: #{@step.name}"
   %p
   = image_tag @step.image.url(:large)
   %p
