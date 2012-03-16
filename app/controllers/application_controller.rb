@@ -1,4 +1,10 @@
 class ApplicationController < ActionController::Base
+
+  def forem_user
+    current_user
+  end
+  helper_method :forem_user
+
   before_filter :get_categories
 
   def get_categories
