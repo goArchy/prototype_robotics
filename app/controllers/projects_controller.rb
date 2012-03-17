@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 
   def search_projects
     @projects = Project.all.select{|p| p.category == params[:category]}
-    render "search"
+    render "index"
   end
 
   def remove_image

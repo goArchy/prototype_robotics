@@ -8,14 +8,6 @@
     %b Body:
     = @article.description.html_safe
   %p
-    %b User:
-    = @article.spree_user_id
-  %p
-    %b Featured:
-    = @article.featured
-  %p
-    %b Project:
-    = @article.project_id
 
   - if current_user
     - if @article.spree_user_id == current_user.id
