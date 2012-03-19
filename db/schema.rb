@@ -11,20 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310060207) do
-
-  create_table "articles", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "spree_user_id"
-    t.boolean  "featured"
-    t.boolean  "published"
-    t.integer  "project_id"
-    t.string   "image_file_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "remove_image"
-  end
+ActiveRecord::Schema.define(:version => 20120319200757) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -40,37 +27,12 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
-  create_table "galleries", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "gallery_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "tutorial_id"
-    t.integer  "article_id"
-    t.integer  "project_id"
-    t.integer  "step_id"
-  end
-
   create_table "pg_search_documents", :force => true do |t|
     t.text     "content"
     t.integer  "searchable_id"
     t.string   "searchable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "projects", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "category"
-    t.string   "image_file_name"
-    t.boolean  "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "featured"
-    t.boolean  "remove_image"
-    t.integer  "spree_user_id"
   end
 
   create_table "spree_activators", :force => true do |t|
@@ -126,6 +88,19 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
   end
 
   add_index "spree_adjustments", ["adjustable_id"], :name => "index_adjustments_on_order_id"
+
+  create_table "spree_articles", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "spree_user_id"
+    t.boolean  "featured"
+    t.boolean  "published"
+    t.integer  "project_id"
+    t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "remove_image"
+  end
 
   create_table "spree_assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -185,6 +160,18 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
     t.datetime "updated_at"
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
+  end
+
+  create_table "spree_galleries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "gallery_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tutorial_id"
+    t.integer  "article_id"
+    t.integer  "project_id"
+    t.integer  "step_id"
   end
 
   create_table "spree_gateways", :force => true do |t|
@@ -417,6 +404,19 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
   add_index "spree_products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
   add_index "spree_products_taxons", ["taxon_id"], :name => "index_products_taxons_on_taxon_id"
 
+  create_table "spree_projects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "category"
+    t.string   "image_file_name"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "featured"
+    t.boolean  "remove_image"
+    t.integer  "spree_user_id"
+  end
+
   create_table "spree_promotion_action_line_items", :force => true do |t|
     t.integer "promotion_action_id"
     t.integer "variant_id"
@@ -539,6 +539,17 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
     t.integer "country_id"
   end
 
+  create_table "spree_steps", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "tutorial_id"
+    t.string   "step_number"
+    t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
   create_table "spree_tax_categories", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -602,6 +613,19 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
     t.datetime "updated_at"
   end
 
+  create_table "spree_tutorials_", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "summary"
+    t.string   "image_file_name"
+    t.boolean  "featured"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "remove_image"
+    t.string   "category"
+  end
+
   create_table "spree_users", :force => true do |t|
     t.string   "encrypted_password"
     t.string   "password_salt"
@@ -662,30 +686,6 @@ ActiveRecord::Schema.define(:version => 20120310060207) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "default_tax", :default => false
-  end
-
-  create_table "steps", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "tutorial_id"
-    t.string   "step_number"
-    t.string   "image_file_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "project_id"
-  end
-
-  create_table "tutorials", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "summary"
-    t.string   "image_file_name"
-    t.boolean  "featured"
-    t.boolean  "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "remove_image"
-    t.string   "category"
   end
 
 end

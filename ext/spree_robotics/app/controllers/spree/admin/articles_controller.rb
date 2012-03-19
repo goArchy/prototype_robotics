@@ -1,6 +1,6 @@
-class ArticlesController < ApplicationController
-  before_filter :admin_required, :only => [:destroy, :new, :edit]
-  before_filter :remove_image, :only => [:edit]
+class Spree::Admin::ArticlesController < Spree::Admin::ResourceController
+#  before_filter :admin_required, :only => [:destroy, :new, :edit]
+#  before_filter :remove_image, :only => [:edit]
 
   def index
     @articles = Article.all

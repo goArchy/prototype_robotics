@@ -1,4 +1,4 @@
-class TutorialsController < ApplicationController
+class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
   before_filter :admin_required, :only => [:destroy, :new, :edit]
   before_filter :remove_image, :only => [:edit]
 

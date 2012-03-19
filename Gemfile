@@ -47,3 +47,5 @@ end
 gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'
 gem "ckeditor", "3.7.0.rc2"
 gem 'pg_search'
+
+gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'

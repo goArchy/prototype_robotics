@@ -39,14 +39,14 @@
 
   <!-- begin tab - blog -->
 
-  <li><%= link_to "Blog", main_app.articles_path %>
+  <li><%= link_to "Blog", articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
         <% if @articles %>
           <% @articles.each do |article| %>
             <div class="menu_article">
               <span class="menu_article_image">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), main_app.article_path(article) %>
+                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), article_path(article) %>
               </span>
               <span class="menu_article_image">
                 <b><u><%= article.name.html_safe %></u></b>: <%= article.created_at.strftime(" published on %_m/%e/%y") %>
@@ -57,7 +57,7 @@
             <hr>
           <% end %>
         <% end %>
-        <center><%= link_to "view all articles", main_app.articles_path %></center>
+        <center><%= link_to "view all articles", articles_path %></center>
       </div>
     </div>
   </li>
@@ -66,7 +66,7 @@
 
     <!-- begin tab - projects -->
 
-    <li><%= link_to "Projects", main_app.projects_path, :class => "drop" %><!-- Begin 3 columns Item -->
+    <li><%= link_to "Projects", projects_path, :class => "drop" %><!-- Begin 3 columns Item -->
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
       <div class="col_3">
         <h2>Project Categories</h2>
@@ -96,7 +96,7 @@
           <% @projects.each do |project| %>
             <div class="menu_project">
               <div class="menu_project_image">
-                <%= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), main_app.project_path(project) %>
+                <%= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project) %>
               </div>
               <div class="menu_project_text">
                 <b><u><%= project.name.html_safe %></u></b>:
@@ -106,7 +106,7 @@
             <hr>
           <% end %>
         <% end %>
-        <center><%= link_to "view all projects", main_app.projects_path %></center>
+        <center><%= link_to "view all projects", projects_path %></center>
       </div>
     </div>
     </li>
@@ -115,34 +115,34 @@
 
     <!-- begin tab - tutorials -->
 
-    <li><%= link_to "Tutorials", main_app.tutorials_path, :class => "drop" %>
+    <li><%= link_to "Tutorials", tutorials_path, :class => "drop" %>
     <div class="dropdown_5columns">
       <div class="col_5">
         <h2>This is where the topic tutorials will go</h2>
       </div>
       <div class="col_5">
         <h3>Robotics</h3>
-        <%- Tutorial.all.select{|t| t.category == "robotics" }.each do |r| %>
+        <%- Spree::Tutorial.all.select{|t| t.category == "robotics" }.each do |r| %>
           <div class="tutorial_menu">
-            <%= link_to image_tag(r.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(r) %>
+            <%= link_to image_tag(r.image.url(:thumb), :class => "imgshadow"), tutorial_path(r) %>
             <%= r.name %>
           </div>
         <% end %>
       </div>
       <div class="col_5">
         <h3>Electronics</h3>
-        <%- Tutorial.all.select{|t| t.category == "electronics" }.each do |e| %>
+        <%- Spree::Tutorial.all.select{|t| t.category == "electronics" }.each do |e| %>
           <div class="tutorial_menu">
-            <%= link_to image_tag(e.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(e) %>
+            <%= link_to image_tag(e.image.url(:thumb), :class => "imgshadow"), tutorial_path(e) %>
             <%= e.name %>
           </div>
         <% end %>
       </div>
       <div class="col_5">
         <h3>Web</h3>
-        <%- Tutorial.all.select{|t| t.category == "web" }.each do |w| %>
+        <%- Spree::Tutorial.all.select{|t| t.category == "web" }.each do |w| %>
           <div class="tutorial_menu">
-            <%= link_to image_tag(w.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(w) %>
+            <%= link_to image_tag(w.image.url(:thumb), :class => "imgshadow"), tutorial_path(w) %>
             <%= w.name %>
           </div>
         <% end %>

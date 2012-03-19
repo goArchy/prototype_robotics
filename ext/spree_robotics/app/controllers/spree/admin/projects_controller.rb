@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   before_filter :admin_required, :only => [:destroy]
   before_filter :login_required, :only => [:new]
   before_filter :current_user_required, :only => [:edit]
