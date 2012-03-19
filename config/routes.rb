@@ -7,8 +7,6 @@ PrototypeRobotics::Application.routes.draw do
   #get "home/index"
   #root :to => 'home#index'
 
-  match "search_projects" => "projects#search_projects"
-  match "search" => "home#search"
 
 end
 

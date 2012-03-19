@@ -613,7 +613,7 @@ ActiveRecord::Schema.define(:version => 20120319200757) do
     t.datetime "updated_at"
   end
 
-  create_table "spree_tutorials_", :force => true do |t|
+  create_table "spree_tutorials", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "summary"

@@ -1,4 +1,4 @@
-class Spree::NamespaceTopLevelModels < ActiveRecord::Migration
+class NamespaceTopLevelModels < ActiveRecord::Migration
   def change
     rename_table :activators,              :spree_activators
     rename_table :addresses,               :spree_addresses

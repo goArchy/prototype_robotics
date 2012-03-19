@@ -11,4 +11,8 @@ Spree::Core::Engine.routes.draw do
   resources :tutorials
   resources :steps
   resources :articles
+  
+  match "search_projects" => "projects#search_projects"
+  match "search" => "home#search"
+  
 end
