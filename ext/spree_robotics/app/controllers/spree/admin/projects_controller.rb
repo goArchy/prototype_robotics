@@ -5,23 +5,23 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   before_filter :remove_image, :only => [:edit]
 
   def index
-    @projects = Project.all
+    @projects = Spree::Project.all
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Spree::Project.find(params[:id])
   end
 
   def new
-    @project = Project.new
+    @project = Spree::Project.new
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @project = Spree::Project.find(params[:id])
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Spree::Project.new(params[:project])
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
     else
@@ -30,7 +30,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   end
 
   def update
-    @project = Project.find(params[:id])
+    @project = Spree::Project.find(params[:id])
     if @project.update_attributes(params[:project])
       redirect_to @project, notice: 'Project was successfully updated.'
     else
@@ -39,18 +39,18 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @project = Spree::Project.find(params[:id])
     @project.destroy
     redirect_to projects_url
   end
 
   def search_projects
-    @projects = Project.all.select{|p| p.category == params[:category]}
+    @projects = Spree::Project.all.select{|p| p.category == params[:category]}
     render "index"
   end
 
   def remove_image
-    @project = Project.find(params[:id])
+    @project = Spree::Project.find(params[:id])
     if @project.remove_image?
       begin
         @project.image.destroy
