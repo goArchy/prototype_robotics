@@ -8,6 +8,10 @@
     <div class="container">
       <%= image_tag "logo_new_small.png", :width => "600px", :class => "logo" %>
       <div class="pull-right search-box">
+        <%= form_tag({:controller => "home", :action => "search"}, :method => :post) do %>
+          <%= text_field_tag "search" %>
+          <%= submit_tag "search", :class => "btn-success" %>
+        <% end %>
       </div>
       <% if current_user %>
         <%= link_to('Sign out', spree.destroy_user_session_path, :class => "btn session pull-right") %>

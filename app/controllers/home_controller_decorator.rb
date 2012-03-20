@@ -21,18 +21,18 @@ Spree::HomeController.class_eval do
       @search_results = PgSearch.multisearch(@search)
 
       @projects = []
-      @search_results.select{|p| p.searchable_type == "Project"}.each do |project|
-        @projects.push(Project.find(project.searchable_id))
+      @search_results.select{|p| p.searchable_type == "Spree::Project"}.each do |project|
+        @projects.push(Spree::Project.find(project.searchable_id))
       end
 
       @articles = []
-      @search_results.select{|p| p.searchable_type == "Article"}.each do |article|
-        @articles.push(Article.find(article.searchable_id))
+      @search_results.select{|p| p.searchable_type == "Spree::Article"}.each do |article|
+        @articles.push(Spree::Article.find(article.searchable_id))
       end
 
       @tutorials = []
-      @search_results.select{|p| p.searchable_type == "Tutorial"}.each do |tutorial|
-        @tutorials.push(Tutorial.find(tutorial.searchable_id))
+      @search_results.select{|p| p.searchable_type == "Spree::Tutorial"}.each do |tutorial|
+        @tutorials.push(Spree::Tutorial.find(tutorial.searchable_id))
       end
       render 'home/search'
     else
