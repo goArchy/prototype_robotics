@@ -49,3 +49,4 @@ gem "ckeditor", "3.7.0.rc2"
 gem 'pg_search'
 
 gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
+gem 'forem', :git => "git://github.com/radar/forem.git"
