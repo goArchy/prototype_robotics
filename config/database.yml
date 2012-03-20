@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   database: prototype_robotics_development
-  user: developer
+  user: deployer
   pool: 5
   timeout: 5000
 
@@ -16,14 +16,14 @@ development:
 test: &test
   adapter: postgresql
   database: prototype_robotics_test
-  user: developer
+  user: deployer
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
   database: prototype_robotics_production
-  user: developer
+  user: deployer
   pool: 5
   timeout: 5000
 

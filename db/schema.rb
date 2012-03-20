@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319200757) do
+ActiveRecord::Schema.define(:version => 20120320184458) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -735,6 +735,8 @@ ActiveRecord::Schema.define(:version => 20120319200757) do
     t.string   "api_key",              :limit => 40
     t.boolean  "forem_admin",                        :default => false
     t.string   "forem_state",                        :default => "pending_review"
+    t.string   "username"
+    t.boolean  "active"
   end
 
   add_index "spree_users", ["persistence_token"], :name => "index_users_on_persistence_token"

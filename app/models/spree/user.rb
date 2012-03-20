@@ -2,7 +2,7 @@ module Spree
   class User < ActiveRecord::Base
     include Core::UserBanners
 
-    devise :database_authenticatable, :token_authenticatable, :recoverable,
+    devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
            :rememberable, :trackable, :validatable, :encryptable, :encryptor => 'authlogic_sha512'
 
     has_many :projects
@@ -18,7 +18,9 @@ module Spree
     before_destroy :check_completed_orders
 
     # Setup accessible (or protected) attributes for your model
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :username
+    validates_presence_of :username
+    validates_uniqueness_of :username
 
     users_table_name = User.table_name
     roles_table_name = Role.table_name
