@@ -7,7 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.boolean :featured
       t.boolean :published
       t.integer :project_id
-      t.string :article_image_file_name
+      t.string :image_file_name
 
       t.timestamps
     end
