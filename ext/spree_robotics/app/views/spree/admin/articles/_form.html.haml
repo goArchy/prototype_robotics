@@ -12,9 +12,6 @@
     .clearfix
       = f.label :remove_image
       = f.check_box :remove_image
-    - if @article && @article.image 
-      .clearfix
-        .centered_image= image_tag(@article.image.url(:slider), :class => "imgshadow")
     .clearfix
       = f.label :image
       = f.file_field :image
