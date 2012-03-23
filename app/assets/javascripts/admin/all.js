@@ -9,6 +9,6 @@
 //= require admin/spree_auth
 //= require admin/spree_api
 //= require admin/spree_promo
-//= require ckeditor/ckeditor
+//= require ckeditor/init
 
 //= require_tree .
