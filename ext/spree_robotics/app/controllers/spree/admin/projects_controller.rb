@@ -20,7 +20,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   def create
     @project = Spree::Project.new(params[:project])
     if @project.save
-      redirect_to @project, notice: 'Project was successfully created.'
+      redirect_to admin_projects_path, notice: 'Project was successfully created.'
     else
       render action: "new"
     end
@@ -29,7 +29,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   def update
     @project = Spree::Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to admin_project_path(project), notice: 'Project was successfully updated.'
     else
       render action: "edit"
     end
@@ -38,7 +38,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   def destroy
     @project = Spree::Project.find(params[:id])
     @project.destroy
-    redirect_to projects_url
+    redirect_to admin_projects_path
   end
 
   def search_projects
