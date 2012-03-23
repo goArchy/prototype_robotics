@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def get_categories
     @project_categories = []
-    Project.all.each do |p|
+    Spree::Project.all.each do |p|
       if !@project_categories.include?(p.category)
         @project_categories.push(p.category)
       end
