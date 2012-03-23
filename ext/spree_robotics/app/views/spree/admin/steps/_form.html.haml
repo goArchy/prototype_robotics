@@ -6,7 +6,7 @@
     .clearfix
       = f.label :description
       = f.cktext_area :description
-    - if @article.image 
+    - if @step && @step.image 
       .clearfix
         .centered_image= image_tag(@step.image.url(:slider), :class => "imgshadow")
     .clearfix
