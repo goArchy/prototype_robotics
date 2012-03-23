@@ -5,7 +5,7 @@ class CreateSteps < ActiveRecord::Migration
       t.text :description
       t.integer :tutorial_id
       t.string :step_number
-      t.string :image_file_name
+      t.string :step_image_file_name
 
       t.timestamps
     end
