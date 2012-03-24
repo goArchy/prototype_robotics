@@ -1,5 +1,4 @@
 class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
-  before_filter :admin_required, :only => [:destroy, :new, :edit]
   before_filter :remove_image, :only => [:edit]
 
   def index
@@ -17,7 +16,7 @@ class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
   def create
     @tutorial = Spree::Tutorial.new(params[:tutorial])
     if @tutorial.save
-      redirect_to new_step_path(tutorial: @tutorial)
+      redirect_to admin_tutorials_path
     end
   end
 
@@ -29,8 +28,14 @@ class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
     @tutorial = Spree::Tutorial.find(params[:id])
     @tutorial.update_attributes(params[:tutorial])
     if @tutorial.save
-      redirect_to edit_tutorial_path(@tutorial) 
+      redirect_to edit_admin_tutorial_path(@tutorial)
     end
+  end
+
+  def destroy
+    @tutorial = Spree::Tutorial.find(params[:id])
+    @tutorial.destroy
+    redirect_to admin_tutorials_path
   end
 
   def remove_image

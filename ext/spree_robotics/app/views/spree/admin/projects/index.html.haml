@@ -3,6 +3,7 @@
 
   %table.table-striped
     %tr
+      %th Image
       %th Name
       %th Description
       %th Type
@@ -11,7 +12,8 @@
 
     - @projects.each do |project|
       %tr
-        %td= link_to project.name, project
+        %td= link_to image_tag(project.image.url(:thumb)), project_path(project)
+        %td= link_to project.name, admin_project_path(project)
         %td=h truncate(project.description.html_safe, :length => 500)
         %td= project.category
         %td= link_to 'Edit', edit_admin_project_path(project)

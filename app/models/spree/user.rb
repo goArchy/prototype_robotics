@@ -18,7 +18,7 @@ module Spree
     before_destroy :check_completed_orders
 
     # Setup accessible (or protected) attributes for your model
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :username
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :username, :forem_admin, :forem_state, :active
     validates_presence_of :username
     validates_uniqueness_of :username
 
