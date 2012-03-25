@@ -31,7 +31,7 @@ class Spree::Admin::StepsController < Spree::Admin::ResourceController
   def update
     @step = Spree::Step.find(params[:id])
     @step.update_attributes(params[:step])
-    redirect_to edit_tutorial_path(@step.tutorial)
+    redirect_to edit_admin_tutorial_path(@step.tutorial)
   end
 
   def destroy
