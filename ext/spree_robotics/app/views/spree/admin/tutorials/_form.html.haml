@@ -23,6 +23,9 @@
     .clearfix
       = f.label :image
       .input= f.file_field :image
+    - if @tutorial.image
+      .clearfix
+        .centered_image= image_tag(@tutorial.image.url(:slider), :class => "imgshadow")
 
   .actions
     = f.submit :submit, :class => 'btn primary'
