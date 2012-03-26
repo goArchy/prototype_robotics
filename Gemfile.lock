@@ -17,6 +17,12 @@ GIT
       spree_core (>= 1.0.0.rc1)
 
 PATH
+  remote: ext/spree_forem
+  specs:
+    spree_forem (1.0.0)
+      spree_core (~> 1.0.0)
+
+PATH
   remote: ext/spree_robotics
   specs:
     spree_robotics (1.0.0)
@@ -384,6 +390,7 @@ DEPENDENCIES
   simplecov
   spree (= 1.0.0)
   spree_analytics!
+  spree_forem!
   spree_robotics!
   therubyracer
   turn (= 0.8.2)
