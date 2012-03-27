@@ -117,35 +117,19 @@
     <li><%= link_to "Tutorials", tutorials_path, :class => "drop" %>
     <div class="dropdown_3columns">
       <div class="col_3">
-        <h2>This is where the topic tutorials will go</h2>
+        <h2>DIY Tutorials</h2>
       </div>
-      <div class="col_3">
-        <h3>Robotics</h3>
-        <%- Spree::Tutorial.all.select{|t| t.category == "robotics" }.each do |r| %>
-          <div class="tutorial_menu">
-            <%= link_to image_tag(r.image.url(:thumb), :class => "imgshadow"), tutorial_path(r) %>
-            <%= r.name %>
-          </div>
-        <% end %>
-      </div>
-      <div class="col_3">
-        <h3>Electronics</h3>
-        <%- Spree::Tutorial.all.select{|t| t.category == "electronics" }.each do |e| %>
-          <div class="tutorial_menu">
-            <%= link_to image_tag(e.image.url(:thumb), :class => "imgshadow"), tutorial_path(e) %>
-            <%= e.name %>
-          </div>
-        <% end %>
-      </div>
-      <div class="col_3">
-        <h3>Web</h3>
-        <%- Spree::Tutorial.all.select{|t| t.category == "web" }.each do |w| %>
-          <div class="tutorial_menu">
-            <%= link_to image_tag(w.image.url(:thumb), :class => "imgshadow"), tutorial_path(w) %>
-            <%= w.name %>
-          </div>
-        <% end %>
-      </div>
+      <%- @tutorial_categories.each do |category| %>
+        <div class="col_3">
+          <h3><%= category %></h3>
+          <%- Spree::Tutorial.all.select{|t| t.category == category }.take(3).each do |w| %>
+            <div class="tutorial_menu">
+              <%= link_to image_tag(w.image.url(:thumb), :class => "imgshadow"), tutorial_path(w) %>
+              <%= w.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     </li>
 
