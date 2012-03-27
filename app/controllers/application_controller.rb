@@ -13,10 +13,6 @@ class ApplicationController < ActionController::Base
         @project_categories.push(p.category)
       end
     end
-    @articles = Spree::Article.all.reverse.take(3)
-    @projects = Spree::Project.all.reverse.take(3)
-    @tutorials = Spree::Tutorial.all.reverse.take(3)
-    @tutorial_categories = Spree::Tutorial.all.collect{|p| p.category}.uniq
   end
 
   protect_from_forgery
