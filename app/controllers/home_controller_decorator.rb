@@ -10,9 +10,6 @@ Spree::HomeController.class_eval do
         @featured_content.push(project)
       end
     end
-    @articles = Spree::Article.all.reverse.take(3)
-    @projects = Spree::Project.all.reverse.take(3)
-    @tutorials = Spree::Tutorial.all.reverse.take(3)
   end
 
   def search
