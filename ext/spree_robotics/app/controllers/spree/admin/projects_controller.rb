@@ -41,11 +41,6 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
     redirect_to admin_projects_path
   end
 
-  def search_projects
-    @projects = Spree::Project.all.select{|p| p.category == params[:category]}
-    render "index"
-  end
-
   def remove_image
     @project = Spree::Project.find(params[:id])
     if @project.remove_image?
