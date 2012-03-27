@@ -41,6 +41,11 @@
 
   <li><%= link_to "Blog", articles_path %>
     <div class="dropdown_3columns"><!-- Begin 3 columns container -->
+
+      <div class="col_3">
+        <h2>Recent Articles</h2>
+      </div>
+
       <div class="col_3">
         <% if @articles %>
           <% @articles.each do |article| %>
