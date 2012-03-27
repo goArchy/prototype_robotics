@@ -4,13 +4,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :forem_user
 
-  before_filter :get_categories
-
-  def get_categories
-    @project_categories = Spree::Project.all.collect{|p| p.category}.uniq
-    @tutorial_categories = Spree::Tutorial.all.collect{|p| p.category}.uniq
-  end
-
   protect_from_forgery
 
   def login_required
