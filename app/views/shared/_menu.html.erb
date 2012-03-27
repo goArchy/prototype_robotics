@@ -47,19 +47,17 @@
       </div>
 
       <div class="col_3">
-        <% if @articles %>
-          <% @articles.each do |article| %>
-            <div class="row">
-              <span class="span2">
-                <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), article_path(article) %>
-              </span>
-              <span class="span3">
-                <a href="<%= article_path(article) %>"><b><u><%= article.name.html_safe %></u></b>: <%= article.updated_at.strftime(" published on %_m/%e/%y") %></a>
-                <%=h truncate(article.description.html_safe, :length => 100) %>
-              </span>
-            </div>
-            <hr>
-          <% end %>
+        <% Spree::Article.all.take(3).each do |article| %>
+          <div class="row">
+            <span class="span2">
+              <%= link_to image_tag(article.image.url(:thumb), :class => "imgshadow inline"), article_path(article) %>
+            </span>
+            <span class="span3">
+              <a href="<%= article_path(article) %>"><b><u><%= article.name.html_safe %></u></b>: <%= article.updated_at.strftime(" published on %_m/%e/%y") %></a>
+              <%=h truncate(article.description.html_safe, :length => 100) %>
+            </span>
+          </div>
+          <hr>
         <% end %>
         <center><%= link_to "view all articles", articles_path %></center>
       </div>
@@ -97,7 +95,7 @@
       </div>
       <div class="col_3">
         <% if @projects %>
-          <% @projects.each do |project| %>
+          <% Spree::Project.all.take(3).each do |project| %>
             <div class="row">
               <div class="span2">
                 <%= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project) %>

@@ -7,15 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_categories
 
   def get_categories
-    @project_categories = []
-    Spree::Project.all.each do |p|
-      if !@project_categories.include?(p.category)
-        @project_categories.push(p.category)
-      end
-    end
-    @articles = Spree::Article.all.reverse.take(3)
-    @projects = Spree::Project.all.reverse.take(3)
-    @tutorials = Spree::Tutorial.all.reverse.take(3)
+    @project_categories = Spree::Project.all.collect{|p| p.category}.uniq
     @tutorial_categories = Spree::Tutorial.all.collect{|p| p.category}.uniq
   end
 

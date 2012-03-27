@@ -13,7 +13,6 @@ Spree::HomeController.class_eval do
     @articles = Spree::Article.all.reverse.take(3)
     @projects = Spree::Project.all.reverse.take(3)
     @tutorials = Spree::Tutorial.all.reverse.take(3)
-    @tutorial_categories = Spree::Tutorial.all.collect{|p| p.category}.uniq
   end
 
   def search
