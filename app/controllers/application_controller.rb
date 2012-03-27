@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   def forem_user
     current_user
   end
@@ -14,6 +13,9 @@ class ApplicationController < ActionController::Base
         @project_categories.push(p.category)
       end
     end
+    @articles = Spree::Article.all.reverse.take(3)
+    @projects = Spree::Project.all.reverse.take(3)
+    @tutorials = Spree::Tutorial.all.reverse.take(3)
   end
 
   protect_from_forgery
