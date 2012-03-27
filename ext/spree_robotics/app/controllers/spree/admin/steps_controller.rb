@@ -1,4 +1,5 @@
 class Spree::Admin::StepsController < Spree::Admin::ResourceController
+  before_filter :remove_image, :only => [:edit]
 
   def index
     @steps = Spree::Step.all
@@ -31,13 +32,25 @@ class Spree::Admin::StepsController < Spree::Admin::ResourceController
   def update
     @step = Spree::Step.find(params[:id])
     @step.update_attributes(params[:step])
-    redirect_to edit_admin_tutorial_path(@step.tutorial)
+    redirect_to edit_admin_step_path(@step)
   end
 
   def destroy
     @step = Spree::Step.find(params[:id])
     @step.destroy
     redirect_to admin_tutorials_path
+  end
+
+  def remove_image
+    @step = Spree::Step.find(params[:id])
+    if @step.remove_image?
+      begin
+        @step.image.destroy
+      rescue
+      end
+      @step.remove_image = false
+      @step.save
+    end
   end
 
 end
