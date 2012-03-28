@@ -1,12 +1,13 @@
 .board
   %p#notice= notice
 
+  %center.white_box
+    %h3= "Article: #{@article.name}"
+  %center
+    = image_tag(@article.image.url(:slider), :class => "imgshadow")
   %p
-    %h2= @article.name
-    = image_tag(@article.image.url(:large))
-  %p
-    %b Body:
+  .white_box
+    %b Description:
     = @article.description.html_safe
   %p
-
-  = link_to 'Back', articles_path
+    = link_to 'Back', :back

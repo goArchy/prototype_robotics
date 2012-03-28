@@ -1,8 +1,14 @@
 .board
-  %h1= "#{@step.step_number.capitalize}: #{@step.name}"
+  %p#notice= notice
+
+  %center.white_box
+    %h3= "#{@step.tutorial.name.capitalize}, #{@step.step_number.capitalize}: #{@step.name}"
+  %center
+    = image_tag(@step.image.url(:slider), :class => "imgshadow")
   %p
-  = image_tag @step.image.url(:large)
+  .white_box
+    %b Description:
+    = @step.description.html_safe
   %p
-  = @step.description.html_safe
-  %p
-  = link_to 'back', :back
+    = link_to 'Back', :back
+
