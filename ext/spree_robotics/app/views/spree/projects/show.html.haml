@@ -12,6 +12,11 @@
     %p
     %b Type:
     = @project.category
+
+  - if @project.galleries.present?
+    - @object = @project
+    = render 'shared/gallery', :content => @object
+
   %p
     = link_to 'Back', :back
 
