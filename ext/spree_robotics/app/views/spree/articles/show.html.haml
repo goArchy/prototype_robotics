@@ -9,5 +9,11 @@
   .white_box
     %b Description:
     = @article.description.html_safe
+
+  - if @article.galleries.present?
+    - @object = @article
+    = render 'shared/gallery', :content => @object
+
   %p
     = link_to 'Back', :back
+
