@@ -5,6 +5,8 @@ Spree::Core::Engine.routes.draw do
     resources :tutorials
     resources :steps
     resources :articles
+    resources :galleries
+    match "remove_image" => "galleries#remove_image"
   end
 
   resources :projects

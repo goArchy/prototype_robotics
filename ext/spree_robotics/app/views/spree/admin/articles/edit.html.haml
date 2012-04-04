@@ -1,8 +1,8 @@
 .board
-  %h1 Editing article
+  %h2= "Editing #{@article.name}"
 
   = render 'form'
 
-  = link_to 'Show', @article
-  \|
+  = render 'gallery_form'
+
   = link_to 'Back', articles_path

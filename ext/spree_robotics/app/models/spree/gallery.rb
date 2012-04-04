@@ -5,4 +5,5 @@ class Spree::Gallery < ActiveRecord::Base
   belongs_to :step
 
   has_many :images, :class_name => "Spree::Image"
+  accepts_nested_attributes_for :images
 end
