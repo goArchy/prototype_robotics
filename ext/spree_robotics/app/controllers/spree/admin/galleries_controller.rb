@@ -21,12 +21,12 @@ class Spree::Admin::GalleriesController < Spree::Admin::ResourceController
       @gallery.gallery_type = "tutorial"
     else
     end
-    @gallery.images.build
+    @gallery_image = @gallery.images.build
   end
 
   def edit
     @gallery = Spree::Gallery.find(params[:id])
-    @gallery.images.build
+    @gallery_image = @gallery.images.build
   end
 
   def create
