@@ -45,7 +45,7 @@ group :test do
   gem 'simplecov'
 end
 
-gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'
+#gem 'spree_analytics', '0.1.0', :git => 'git://github.com/spree/spree_analytics'
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
