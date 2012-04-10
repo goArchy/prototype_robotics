@@ -365,7 +365,7 @@ DEPENDENCIES
   capistrano
   capybara
   ckeditor (= 3.7.0.rc3)
-  coffee-rails (~> 3.1.1)
+  coffee-rails
   cucumber-rails
   database_cleaner
   execjs
@@ -382,7 +382,7 @@ DEPENDENCIES
   rails3-generators
   rspec-rails
   ruby-debug19
-  sass-rails (~> 3.1.5)
+  sass-rails (< 3.1.15)
   shoulda
   simple_form
   simplecov
@@ -393,4 +393,4 @@ DEPENDENCIES
   therubyracer
   turn (= 0.8.2)
   twitter-bootstrap-rails
-  uglifier (>= 1.0.3)
+  uglifier
