@@ -21,7 +21,8 @@ gem 'capistrano'
 gem 'spree', '1.0.0'
 
 group :assets do
-  gem 'sass-rails', '< 3.1.15'
+  gem 'sass-rails', '<= 3.1.12'
+  gem 'sass', '<= 3.1.12'
   gem 'coffee-rails'
   gem 'uglifier'
 end
@@ -44,7 +45,7 @@ group :test do
   gem 'simplecov'
 end
 
-gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'
+#gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
