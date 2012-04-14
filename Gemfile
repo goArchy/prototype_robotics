@@ -21,9 +21,10 @@ gem 'capistrano'
 gem 'spree', '1.0.0'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '<= 3.1.12'
+  gem 'sass', '<= 3.1.12'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 # Use unicorn as the web server
@@ -44,7 +45,7 @@ group :test do
   gem 'simplecov'
 end
 
-gem 'spree_analytics', :git => 'git://github.com/spree/spree_analytics'
+gem 'spree_analytics', '0.1.0', :git => 'git://github.com/spree/spree_analytics'
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
