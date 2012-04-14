@@ -9,7 +9,7 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '2.0.2'
 gem 'jquery-rails'
 
 # Gemfile in Rails >= 3.1
