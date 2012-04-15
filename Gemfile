@@ -9,7 +9,7 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
-gem 'twitter-bootstrap-rails', '2.0.2'
+gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 
 # Gemfile in Rails >= 3.1
@@ -18,7 +18,7 @@ gem 'jquery-rails'
 
 gem 'capistrano'
 
-gem 'spree', '1.0.0'
+gem 'spree', '1.0.3'
 
 group :assets do
   gem 'sass-rails', '<= 3.1.12'
@@ -50,5 +50,5 @@ gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
 gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
-gem 'spree_forem', :path => 'ext/spree_forem', :require => 'spree_forem'
+#gem 'spree_forem', :path => 'ext/spree_forem', :require => 'spree_forem'
 gem 'forem', :git => "git://github.com/radar/forem.git"
