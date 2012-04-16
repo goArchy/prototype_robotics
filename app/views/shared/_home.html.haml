@@ -17,8 +17,6 @@
           .article
             .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
             %h4= article.name
-            = "By: #{article.user.username}"
-            %br
             = article.created_at.strftime("Date: %m/%d/%Y")
             %p
     .space= link_to "view all articles", articles_path
