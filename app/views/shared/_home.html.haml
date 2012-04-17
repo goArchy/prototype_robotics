@@ -11,7 +11,9 @@
       .span6
         %h2 Featured Content
         = render 'shared/content_slider', :content => @featured_content
-      .span3.offset6
+
+    .row.pad
+      .span4
         %h2 Recent Articles
         - @articles.each do |article|
           .article
@@ -19,7 +21,7 @@
             %h4= article.name
             = article.created_at.strftime("Date: %m/%d/%Y")
             %p
-    .space= link_to "view all articles", articles_path
+      .space= link_to "view all articles", articles_path
 
     .row.pad
       %h2 Recent Projects
