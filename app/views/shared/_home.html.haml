@@ -13,14 +13,13 @@
         = render 'shared/content_slider', :content => @featured_content
 
     .row.pad
-      .span4
-        %h2 Recent Articles
-        - @articles.each do |article|
-          .article
-            .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
-            %h4= article.name
-            = article.created_at.strftime("Date: %m/%d/%Y")
-            %p
+      %h2 Recent Articles
+      - @articles.each do |article|
+        .span4.article
+          .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+          %h4= article.name
+          = article.created_at.strftime("Date: %m/%d/%Y")
+          %p
       .space= link_to "view all articles", articles_path
 
     .row.pad
