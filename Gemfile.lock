@@ -78,9 +78,6 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
-    ckeditor (3.7.0.rc3)
-      mime-types (~> 1.17.2)
-      orm_adapter (~> 0.0.6)
     cocaine (0.2.1)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -338,7 +335,6 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capybara
-  ckeditor (= 3.7.0.rc3)
   coffee-rails
   cucumber-rails
   database_cleaner

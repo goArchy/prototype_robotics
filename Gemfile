@@ -46,7 +46,7 @@ group :test do
 end
 
 gem 'spree_analytics', '0.1.0', :git => 'git://github.com/spree/spree_analytics'
-gem "ckeditor", "3.7.0.rc3"
+#gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
 gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
