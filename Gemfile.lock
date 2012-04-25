@@ -376,7 +376,6 @@ DEPENDENCIES
   sass
   sass-rails
   shoulda
-  simple_form
   simplecov
   spree (= 1.0.3)
   spree_analytics (= 0.1.0)!

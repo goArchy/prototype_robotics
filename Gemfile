@@ -7,7 +7,7 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
-gem 'simple_form'
+#gem 'simple_form'
 gem "paperclip"
 #gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
