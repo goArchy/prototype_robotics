@@ -5,8 +5,8 @@ gem 'pg'
 
 gem 'therubyracer'
 gem 'execjs'
-gem 'haml'
-gem 'haml-rails', :group => :development
+gem 'haml', '3.1.3'
+gem 'haml-rails'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'twitter-bootstrap-rails'
