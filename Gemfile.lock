@@ -9,13 +9,6 @@ GIT
       simple_form
       workflow (= 0.8.0)
 
-GIT
-  remote: git://github.com/spree/spree_analytics
-  revision: 23767dfbe2751f922d9478c36417bbb59c5d51ea
-  specs:
-    spree_analytics (0.1.0)
-      spree_core (>= 1.0.0.rc1)
-
 PATH
   remote: ext/spree_forem
   specs:
@@ -263,7 +256,7 @@ GEM
       blankslate (>= 2.1.2.3)
       ffi (~> 1.0.7)
     rubyzip (0.9.8)
-    sass (3.1.16)
+    sass (3.1.12)
     sass-rails (3.1.4)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
@@ -378,13 +371,12 @@ DEPENDENCIES
   rails3-generators
   rspec-rails
   ruby-debug19
-  sass
+  sass (= 3.1.12)
   sass-rails (= 3.1.4)
   shoulda
   simple_form
   simplecov
   spree (= 1.0.3)
-  spree_analytics (= 0.1.0)!
   spree_forem!
   spree_robotics!
   therubyracer
