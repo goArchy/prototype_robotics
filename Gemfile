@@ -6,7 +6,6 @@ gem 'pg'
 gem 'therubyracer'
 gem 'execjs'
 gem 'haml', '3.1.3'
-gem 'haml-rails'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'twitter-bootstrap-rails'
@@ -21,8 +20,8 @@ gem 'capistrano'
 gem 'spree', '1.0.3'
 
 group :assets do
-  gem 'sass-rails', '<= 3.1.12'
-  gem 'sass', '<= 3.1.12'
+  gem 'sass-rails'
+  gem 'sass'
   gem 'coffee-rails'
   gem 'uglifier'
 end
@@ -50,5 +49,5 @@ gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 
 gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
-#gem 'spree_forem', :path => 'ext/spree_forem', :require => 'spree_forem'
+gem 'spree_forem', :path => 'ext/spree_forem', :require => 'spree_forem'
 gem 'forem', :git => "git://github.com/radar/forem.git"

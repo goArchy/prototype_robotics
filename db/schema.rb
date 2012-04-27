@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416161428) do
+ActiveRecord::Schema.define(:version => 20120420004927) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20120416161428) do
     t.string  "title"
     t.text    "description"
     t.integer "category_id"
+    t.integer "views_count", :default => 0
   end
 
   create_table "forem_groups", :force => true do |t|
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20120416161428) do
     t.boolean  "hidden",       :default => false
     t.datetime "last_post_at"
     t.string   "state",        :default => "pending_review"
+    t.integer  "views_count",  :default => 0
   end
 
   add_index "forem_topics", ["forum_id"], :name => "index_forem_topics_on_forum_id"
@@ -99,15 +101,18 @@ ActiveRecord::Schema.define(:version => 20120416161428) do
 
   create_table "forem_views", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "topic_id"
+    t.integer  "viewable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "count",      :default => 0
+    t.integer  "count",             :default => 0
+    t.string   "viewable_type"
+    t.datetime "current_viewed_at"
+    t.datetime "past_viewed_at"
   end
 
-  add_index "forem_views", ["topic_id"], :name => "index_forem_views_on_topic_id"
   add_index "forem_views", ["updated_at"], :name => "index_forem_views_on_updated_at"
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
+  add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
 
   create_table "pg_search_documents", :force => true do |t|
     t.text     "content"
@@ -197,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20120416161428) do
     t.datetime "attachment_updated_at"
     t.text     "alt"
     t.integer  "gallery_id"
+    t.string   "text"
   end
 
   add_index "spree_assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
