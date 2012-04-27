@@ -20,7 +20,7 @@ gem 'capistrano'
 gem 'spree', '1.0.3'
 
 group :assets do
-  gem 'sass-rails', '3.1.4'
+  gem 'sass-rails', '3.1.5'
   gem 'sass', '3.1.12'
   gem 'coffee-rails'
   gem 'uglifier'
