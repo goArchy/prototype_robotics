@@ -1,14 +1,14 @@
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 require 'bundler/capistrano'
 
-set :application, "prototyperobotics.com"
-role :web, "50.56.206.231"                          # Your HTTP server, Apache/etc
-role :app, "50.56.206.231"                          # This may be the same as your `Web` server
-role :db,  "50.56.206.231", :primary => true # This is where Rails migrations will run
+set :application, "staging.prototyperobotics.com"
+role :web, "staging.prototyperobotics.com"                          # Your HTTP server, Apache/etc
+role :app, "staging.prototyperobotics.com"                          # This may be the same as your `Web` server
+role :db,  "staging.prototyperobotics.com", :primary => true # This is where Rails migrations will run
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-set :deploy_to, "/home/deployer/prototyperobotics"
+set :deploy_to, "/home/deployer/staging"
 set :user, "deployer"
 set :use_sudo, false
 
@@ -16,7 +16,7 @@ set :use_sudo, false
 set :scm, :git
 #set :git_username, "johndavid400"
 set :repository, "git@github.com:johndavid400/prototype_robotics.git"
-set :branch, "master"
+set :branch, "staging"
 set :git_enable_submodules, 1
 
 # runtime dependencies
