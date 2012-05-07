@@ -8,21 +8,6 @@
         %p
         I have also been having a problem with my suppliers keeping parts long enough for me to write about them, so I will be starting my own Prototype Robotics web store to secure and sell sensors, motor-controllers, robotics kits (Seg-bot and Lawnbot400), and whatever else I can share. This means that I will also have user accounts to be able to purchase items from the store. Once you have a user account, you can add projects of your own to the site - I would love for anyone who has built a project from my book or instructables to please add their project to my site. It would be great for others to see how many people have built a Lawnbot or Segbot, and to share their parts used, build tips, and any modifications made. I will also be hosting links to all code on this site, so stay tuned and if you have a suggestion, feel free to let me know.
 
-.row
-  .span7
-    %h2 Featured Content
-    = render 'shared/content_slider', :content => @featured_content
-  .span5
-    %h2 Recent Articles
-    .row
-      - @articles.each do |article|
-        .span4.article
-          .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
-          %h4= article.name
-          %br
-          = article.created_at.strftime("Date: %m/%d/%Y")
-    .space= link_to "view all articles", articles_path
-    %p
 
 .row
   .span12
