@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420004927) do
+ActiveRecord::Schema.define(:version => 20120507194117) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -202,7 +202,6 @@ ActiveRecord::Schema.define(:version => 20120420004927) do
     t.datetime "attachment_updated_at"
     t.text     "alt"
     t.integer  "gallery_id"
-    t.string   "text"
   end
 
   add_index "spree_assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
@@ -502,7 +501,7 @@ ActiveRecord::Schema.define(:version => 20120420004927) do
     t.datetime "updated_at"
     t.boolean  "featured"
     t.boolean  "remove_image"
-    t.integer  "spree_user_id"
+    t.integer  "user_id"
   end
 
   create_table "spree_promotion_action_line_items", :force => true do |t|

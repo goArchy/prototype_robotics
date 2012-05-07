@@ -10,5 +10,6 @@
 //= require store/spree_api
 //= require store/spree_promo
 //= require ckeditor/ckeditor
+//= require twitter/bootstrap
 
 //= require_tree .
