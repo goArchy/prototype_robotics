@@ -8,9 +8,7 @@ gem 'execjs'
 gem 'haml', '3.1.3'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
-#gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
-
 gem 'bootstrap-sass-rails'
 
 # Gemfile in Rails >= 3.1
