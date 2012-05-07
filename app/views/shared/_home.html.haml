@@ -16,7 +16,7 @@
     %h2 Recent Articles
     .row
       - @articles.each do |article|
-        .span4
+        .span4.article
           .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
           %h4= article.name
           %br
