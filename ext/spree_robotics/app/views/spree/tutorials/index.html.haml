@@ -1,6 +1,5 @@
-.board
-  %h2 Tutorials List
-
+%h1.title Tutorials List
+.listing
   %table.table-striped
     %tr
       %th Image
@@ -13,4 +12,3 @@
         %td= link_to tutorial.name, tutorial_path(tutorial)
         %td= tutorial.steps.count
 
-  %p

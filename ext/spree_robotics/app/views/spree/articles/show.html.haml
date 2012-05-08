@@ -1,14 +1,15 @@
-.board
+%h2.title
+  = link_to "Articles ", articles_path
+  = "/ #{@article.name}" 
+.listing
   %p#notice= notice
 
   %center.white_box
-    %h3= "Article: #{@article.name}"
+    %h3= @article.name
   %center
     = image_tag(@article.image.url(:slider), :class => "imgshadow")
   %p
-  .white_box
-    %b Description:
-    = @article.description.html_safe
+  .heading= @article.description.html_safe
 
   - if @article.galleries.present?
     - @object = @article

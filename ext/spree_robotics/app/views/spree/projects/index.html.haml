@@ -1,6 +1,5 @@
-.board
-  %h1 Listing projects
-
+%h1.title Projects List
+.listing
   %table.table-striped
     %tr
       %th Name
@@ -12,6 +11,4 @@
         %td= link_to project.name, project
         %td=h truncate(project.description.html_safe, :length => 500)
         %td= project.category
-
-  %br
 

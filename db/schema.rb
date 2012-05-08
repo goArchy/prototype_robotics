@@ -202,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
     t.datetime "attachment_updated_at"
     t.text     "alt"
     t.integer  "gallery_id"
+    t.string   "text"
   end
 
   add_index "spree_assets", ["viewable_id"], :name => "index_assets_on_viewable_id"

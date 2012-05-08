@@ -2,13 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.flex {
+  margin-left: 10px;
+}
+
+.heading {
+  margin-top: 10px;
+  background: rgba(209, 217, 222, 0.9);
+  padding: 10px 10px 10px 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
 .board {
   background: rgba(209, 217, 222, 0.9);
-  padding: 0px 30px 30px 30px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   -khtml-border-radius: 20px;
   border-radius: 20px;
+}
+
+.listing{
+  margin-top: 20px;
 }
 
 .tile {
@@ -20,17 +38,12 @@
   margin-top: 0px;
 }
 
-
-.session {
-  margin-top: 5px;
-}
-
 .space {
   margin-top: 5px;
 }
 
 .title {
-  display: inline;
+  color: #00ADEE;
 }
 
 .body {
@@ -58,10 +71,6 @@
 .project_image {
   float:left;
   margin-right: 10px;
-}
-
-.row {
-  margin-top: 50px;
 }
 
 .step_box {
@@ -106,17 +115,6 @@
   margin-bottom: 15px;
 }
 
-.heading {
-  background: white;
-  padding: 0px 10px 10px 10px;
-  margin-top: -35px;
-  width: 94%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  font-size: 15px;
-}
 
 a#book {
   color: red;
