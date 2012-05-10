@@ -1,4 +1,9 @@
 %h1.title Projects List
+
+.categories
+  - @project_categories.each do |category|
+    .category= link_to category, :controller => 'projects', :action => 'search_projects', :category => category  
+
 .listing
   %table.table-striped
     %tr

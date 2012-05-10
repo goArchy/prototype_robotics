@@ -134,3 +134,28 @@ a#book {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+.inline{
+  margin-right: 50px;
+  display: inline-block;
+}
+
+.pad{
+  padding: 10px;
+}
+
+.categories {
+  margin: 15px;
+}
+
+.category {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px gray solid;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}

@@ -2,6 +2,12 @@ Spree::HomeController.class_eval do
   before_filter :add_vars, :only => [:index]
   layout 'application'
 
+  def about_me
+  end
+
+  def links
+  end
+
   def add_vars
     @featured_content = Spree::Article.all.select{|a| a.featured?}
     @featured_projects = Spree::Project.all.select{|p| p.featured?}

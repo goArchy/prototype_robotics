@@ -1,15 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_filter :get_categories
-
-  def get_categories
-    @project_categories = []
-    Spree::Project.all.each do |p|
-      if !@project_categories.include?(p.category)
-        @project_categories.push(p.category)
-      end
-    end
-  end
-
   protect_from_forgery
 
   def login_required
@@ -30,9 +19,9 @@ class ApplicationController < ActionController::Base
 
   def current_user_required
     if params["controller"] == "projects"
-      object_owner = Project.find(params[:id]).spree_user_id
+      object_owner = Project.find(params[:id]).user_id
     elsif params["controller"] == "articles"
-      object_owner = Article.find(params[:id]).spree_user_id
+      object_owner = Article.find(params[:id]).user_id
     end
 
     if current_user

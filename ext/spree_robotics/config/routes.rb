@@ -17,4 +17,7 @@ Spree::Core::Engine.routes.draw do
   match "search_projects" => "projects#search_projects"
   match "search" => "home#search"
 
+  match "about_me" => "home#about_me"
+  match "links" => "home#links"
+
 end

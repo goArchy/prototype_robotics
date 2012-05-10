@@ -29,7 +29,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   def update
     @project = Spree::Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      redirect_to edit_admin_project_path(project), notice: 'Project was successfully updated.'
+      redirect_to edit_admin_project_path(@project), notice: 'Project was successfully updated.'
     else
       render action: "edit"
     end

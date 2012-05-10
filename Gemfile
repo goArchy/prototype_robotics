@@ -2,21 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 gem 'pg'
+gem 'capistrano'
 
 gem 'therubyracer'
 gem 'execjs'
+
 gem 'haml', '3.1.3'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
-
-# Gemfile in Rails >= 3.1
-#gem 'activeadmin'
-#gem "meta_search",    '>= 1.1.0.pre'
-
-gem 'capistrano'
-
 gem 'spree', '1.0.3'
 
 group :assets do
