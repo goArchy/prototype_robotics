@@ -24,5 +24,8 @@
         = step.name.html_safe
 
   .clear_steps
-    %p
-    = link_to 'Back', projects_path
+%p
+= render :partial => "shared/disqus", :locals => { title: @tutorial.name }
+%p
+  = link_to 'Back', :back
+

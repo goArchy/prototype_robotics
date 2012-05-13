@@ -16,7 +16,8 @@
   - if @project.galleries.present?
     - @object = @project
     = render 'shared/gallery', :content => @object
-
-  %p
-    = link_to 'Back', :back
+%p
+= render :partial => "shared/disqus", :locals => { title: @project.name }
+%p
+  = link_to 'Back', :back
 

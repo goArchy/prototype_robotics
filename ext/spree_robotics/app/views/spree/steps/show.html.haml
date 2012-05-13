@@ -14,7 +14,7 @@
   - if @step.galleries.present?
     - @object = @step
     = render 'shared/gallery', :content => @object
-
-  %p
-    = link_to 'Back', :back
-
+%p
+= render :partial => "shared/disqus", :locals => { title: @step.name }
+%p
+  = link_to 'Back', :back
