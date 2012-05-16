@@ -12,17 +12,13 @@ Feature: User authentication
     And I should see "Logout" on the page
 
   Scenario: User logs in
-    Given a test user exists
-    When I am on the user login page
-    And I fill in the login information and press submit
+    Given a registered user is logged in
     Then I should be on the home page
     And I should see "Welcome test@example.com" on the page
     And I should see "Logout" on the page
 
   Scenario: User logs out
-    Given a test user exists
-    And the user is logged in
-    Then I should be on the home page
+    Given a registered user is logged in
     When I click "Logout"
     Then I should be on the home page
     And I should see "Login" on the page

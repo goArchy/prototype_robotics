@@ -14,12 +14,6 @@ When /^I fill in the registration information and press submit$/ do
   click_on("Create")
 end
 
-When /^I fill in the login information and press submit$/ do
-  fill_in("user_email", :with => "test@example.com")
-  fill_in("user_password", :with => "password")
-  click_on("Login")
-end
-
 Then /^I should be on the home page$/ do
   current_path.should == "/"
 end
@@ -29,15 +23,12 @@ Given /^a test user exists$/ do
 end
 
 When /^I am on the user login page$/ do
-  visit "/login"
+  visit "/user/sign_in"
 end
 
-Given /^the user is logged in$/ do
-  step %{a test user exists}
-  step %{I am on the user login page}
-  fill_in("user_email", :with => "test@example.com")
-  fill_in("user_password", :with => "password")
-  step %{I am on the home page}
+Given /^a registered user is logged in$/ do
+  step %{I should be on the new user registration page}
+  step %{I fill in the registration information and press submit}
   step %{I should see "Welcome test@example.com" on the page}
 end
 
