@@ -9,6 +9,7 @@
       <%= image_tag "logo_new_small.png", :width => "600px", :class => "logo" %>
       <%= render :partial => 'shared/menu'%>
     </div>
+    <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
     <div class="container">
