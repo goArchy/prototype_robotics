@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#logo{
+  display: inline;
+}
+
+#google_ad_top{
+  position: absolute;
+  width: 270px;
+  height: 57px;
+  margin: 5px 0px 0px 10px;
+  display: inline-block;
+  background: rgba(209, 217, 222, 0.9);
+  padding: 7px 0px 10px 40px;
+
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#google_ad_bottom{
+  position: absolute;
+  background: rgba(209, 217, 222, 0.9);
+  padding: 10px 108px 10px 108px;
+  margin-bottom: 10px;
+
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+
 .flex {
   margin-left: 10px;
 }
