@@ -16,7 +16,6 @@ class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
   def create
     @tutorial = Spree::Tutorial.new(params[:tutorial])
     if @tutorial.save
-      redirect_to admin_tutorials_path
       redirect_to admin_tutorials_path, notice: 'Tutorial was successfully created.'
     end
   end
@@ -29,8 +28,7 @@ class Spree::Admin::TutorialsController < Spree::Admin::ResourceController
     @tutorial = Spree::Tutorial.find(params[:id])
     @tutorial.update_attributes(params[:tutorial])
     if @tutorial.save
-      redirect_to edit_admin_tutorial_path(@tutorial)
-      redirect_to admin_tutorial_path(@article), notice: 'Tutorial was successfully updated.'
+      redirect_to edit_admin_tutorial_path(@tutorial), notice: 'Tutorial was successfully updated.'
     end
   end
 
