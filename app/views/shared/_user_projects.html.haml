@@ -1,0 +1,16 @@
+%h3
+  My Projects
+  .pull-right= link_to "New Project", new_project_path(:id => @user.id)
+
+%hr
+
+.row
+  .span12
+    - if @user.projects
+      - @user.projects.each do |project|
+        .span4
+          %h4= project.name
+          .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+          =h truncate(project.description.html_safe, :length => 100 )
+          .space= link_to "edit project", edit_project_path(project)
+    %p

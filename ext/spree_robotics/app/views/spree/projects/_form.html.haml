@@ -10,12 +10,6 @@
       = f.label :category
       = f.text_field :category
     .clearfix
-      = f.label :featured
-      = f.check_box :featured
-    .clearfix
-      = f.label :published
-      = f.check_box :published
-    .clearfix
       = f.label :remove_image
       = f.check_box :remove_image
     .clearfix
@@ -23,6 +17,8 @@
     .clearfix
       = f.label :image
       = f.file_field :image
+    .clearfix
+      = f.hidden_field :user_id
 
   %p
 
