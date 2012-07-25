@@ -9,15 +9,15 @@ Spree::HomeController.class_eval do
   end
 
   def add_vars
-    @featured_content = Spree::Article.all.select{|a| a.featured?}
-    @featured_projects = Spree::Project.all.select{|p| p.featured?}
+    @featured_content = Spree::Article.all.select{|a| a.featured? && a.published?}
+    @featured_projects = Spree::Project.all.select{|p| p.featured? && p.published?}
     if !@featured_projects.empty?
       @featured_projects.each do |project|
         @featured_content.push(project)
       end
     end
-    @articles = Spree::Article.all.reverse.take(3)
-    @projects = Spree::Project.all.reverse.take(3)
+    @articles = Spree::Article.where(:published => "true").reverse.take(3)
+    @projects = Spree::Project.where(:published => "true").all.reverse.take(3)
     @tutorials = Spree::Tutorial.all.reverse.take(3)
   end
 
