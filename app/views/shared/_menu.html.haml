@@ -15,7 +15,7 @@
 
       %ul.nav.pull-right
         - if user_signed_in?
-          %li= "Welcome #{current_user.email}"
+          %li= link_to "Welcome #{current_user.username}", '/account'
           %li= link_to 'Logout', spree.destroy_user_session_path
         - else
           %li= link_to "Login", new_user_session_path
