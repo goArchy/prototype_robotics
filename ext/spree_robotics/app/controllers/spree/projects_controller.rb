@@ -2,7 +2,7 @@ class Spree::ProjectsController < ApplicationController
   before_filter :get_categories, :only => [:index, :search_projects]
 
   def index
-    @projects = Spree::Project.all
+    @projects = Spree::Project.where(:published => "true")
   end
 
   def show
