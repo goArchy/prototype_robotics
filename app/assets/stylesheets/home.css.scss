@@ -198,3 +198,20 @@ a#book {
   border-radius: 10px;
   font-weight: bold;
 }
+
+#post_title {
+  margin-top: 30px;
+  a {
+    color: #4A85C2;
+  }
+}
+
+.box{
+  background: #EEEEEE;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.post_footer {
+  @extend .box;
+  padding: 5px;
+}

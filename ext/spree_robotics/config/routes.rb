@@ -12,7 +12,7 @@ Spree::Core::Engine.routes.draw do
   resources :projects
   resources :tutorials
   resources :steps
-  resources :articles
+  resources :articles, :path => "blog"
 
   match "search_projects" => "projects#search_projects"
   match "search" => "home#search"
