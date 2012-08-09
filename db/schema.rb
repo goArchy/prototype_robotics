@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120507194117) do
+ActiveRecord::Schema.define(:version => 20120808234236) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -187,7 +187,10 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "remove_image"
+    t.string   "slug"
   end
+
+  add_index "spree_articles", ["slug"], :name => "index_spree_articles_on_slug", :unique => true
 
   create_table "spree_assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -202,6 +205,7 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
     t.datetime "attachment_updated_at"
     t.text     "alt"
     t.integer  "gallery_id"
+    t.string   "text"
   end
 
   add_index "spree_assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
@@ -299,6 +303,14 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
 
   add_index "spree_line_items", ["order_id"], :name => "index_line_items_on_order_id"
   add_index "spree_line_items", ["variant_id"], :name => "index_line_items_on_variant_id"
+
+  create_table "spree_links", :force => true do |t|
+    t.string   "name"
+    t.text     "url"
+    t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_log_entries", :force => true do |t|
     t.integer  "source_id"
@@ -502,7 +514,10 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
     t.boolean  "featured"
     t.boolean  "remove_image"
     t.integer  "user_id"
+    t.string   "slug"
   end
+
+  add_index "spree_projects", ["slug"], :name => "index_spree_projects_on_slug", :unique => true
 
   create_table "spree_promotion_action_line_items", :force => true do |t|
     t.integer "promotion_action_id"
@@ -712,7 +727,10 @@ ActiveRecord::Schema.define(:version => 20120507194117) do
     t.datetime "updated_at"
     t.boolean  "remove_image"
     t.string   "category"
+    t.string   "slug"
   end
+
+  add_index "spree_tutorials", ["slug"], :name => "index_spree_tutorials_on_slug", :unique => true
 
   create_table "spree_users", :force => true do |t|
     t.string   "encrypted_password"

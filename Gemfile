@@ -44,5 +44,4 @@ gem 'pg_search'
 #gem 'google-analytics-rails'
 
 gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
-gem 'spree_forem', :path => 'ext/spree_forem', :require => 'spree_forem'
-gem 'forem', :git => "git://github.com/radar/forem.git"
+gem "friendly_id"
