@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031212114) do
+ActiveRecord::Schema.define(:version => 20120808234236) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -644,8 +644,8 @@ ActiveRecord::Schema.define(:version => 20121031212114) do
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                      :default => 0,                :null => false
-    t.integer  "failed_attempts",                    :default => 0,                :null => false
+    t.integer  "sign_in_count",                      :default => 0, :null => false
+    t.integer  "failed_attempts",                    :default => 0, :null => false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -661,8 +661,6 @@ ActiveRecord::Schema.define(:version => 20121031212114) do
     t.datetime "locked_at"
     t.datetime "remember_created_at"
     t.string   "api_key",              :limit => 40
-    t.boolean  "forem_admin",                        :default => false
-    t.string   "forem_state",                        :default => "pending_review"
     t.string   "username"
     t.boolean  "active"
   end
