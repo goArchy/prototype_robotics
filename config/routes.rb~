@@ -1,5 +1,10 @@
-Spree::Core::Engine.routes.draw do
-  # Add your extension routes here
+PrototypeRobotics::Application.routes.draw do
+
+#  mount Forem::Engine, :at => "/forums"
+  mount Ckeditor::Engine => '/ckeditor'
+  mount Spree::Core::Engine, :at => '/'
+
+
   namespace :admin do
     resources :projects
     resources :tutorials
@@ -21,3 +26,4 @@ Spree::Core::Engine.routes.draw do
   match "links" => "home#links"
 
 end
+
