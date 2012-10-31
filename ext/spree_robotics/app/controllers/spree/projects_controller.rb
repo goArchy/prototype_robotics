@@ -40,7 +40,7 @@ class Spree::ProjectsController < ApplicationController
   end
 
   def search_projects
-    @projects = Spree::Project.all.select{|p| p.category == params[:category]}
+    @projects = Spree::Project.all.select{|p| p.category == params[:category] && p.published == true }
     render "index"
   end
 
