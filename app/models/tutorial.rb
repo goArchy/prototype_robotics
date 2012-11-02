@@ -1,4 +1,4 @@
-class Spree::Tutorial < ActiveRecord::Base
+class Tutorial < ActiveRecord::Base
 
   has_many :steps
   has_many :galleries

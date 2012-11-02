@@ -1,4 +1,4 @@
-class Spree::Project < ActiveRecord::Base
+class Project < ActiveRecord::Base
 
   belongs_to :spree_user
   has_many :steps

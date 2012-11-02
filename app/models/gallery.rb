@@ -1,4 +1,4 @@
-class Spree::Gallery < ActiveRecord::Base
+class Gallery < ActiveRecord::Base
   belongs_to :article
   belongs_to :project
   belongs_to :tutorial

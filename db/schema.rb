@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102215926) do
+ActiveRecord::Schema.define(:version => 20121102220626) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20121102215926) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "galleries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "gallery_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tutorial_id"
+    t.integer  "article_id"
+    t.integer  "project_id"
+    t.integer  "step_id"
+  end
 
   create_table "pg_search_documents", :force => true do |t|
     t.text     "content"
@@ -179,18 +191,6 @@ ActiveRecord::Schema.define(:version => 20121102215926) do
     t.datetime "updated_at"
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
-  end
-
-  create_table "spree_galleries", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "gallery_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "tutorial_id"
-    t.integer  "article_id"
-    t.integer  "project_id"
-    t.integer  "step_id"
   end
 
   create_table "spree_gateways", :force => true do |t|
