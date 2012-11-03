@@ -23,11 +23,11 @@
         .row
           - @articles.each do |article|
             .span4
-              .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+              .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), main_app.article_path(article)
               %h4= article.name
               %br
               = article.created_at.strftime("Date: %m/%d/%Y")
-              .space= link_to "view all articles", articles_path
+              .space= link_to "view all articles", main_app.articles_path
               %p
 
 .row
@@ -37,9 +37,9 @@
       - @projects.each do |project|
         .span4
           %h4= project.name
-          .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+          .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), main_app.project_path(project)
           =h truncate(project.description.html_safe, :length => 100 )
-    .space= link_to "view all projects", projects_path
+    .space= link_to "view all projects", main_app.projects_path
     %p
 
 .row
@@ -49,9 +49,9 @@
       - @tutorials.each do |tutorial|
         .span4
           %h4= tutorial.name
-          .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
+          .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), main_app.tutorial_path(tutorial)
           =h truncate(tutorial.description.html_safe, :length => 100 )
-    .space= link_to "view all tutorials", tutorials_path
+    .space= link_to "view all tutorials", main_app.tutorials_path
     %p
 
 :javascript

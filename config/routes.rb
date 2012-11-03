@@ -20,7 +20,7 @@ PrototypeRobotics::Application.routes.draw do
   resources :articles, :path => "blog"
 
   match "search_projects" => "projects#search_projects"
-  match "search" => "home#search"
+  match "search" => "search#search"
 
   match "about_me" => "home#about_me"
   match "links" => "home#links"
