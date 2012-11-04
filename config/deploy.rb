@@ -48,9 +48,9 @@ namespace :deploy do
 
   desc "Precompile assets"
   task :precompile_assets, :roles => :app do
-    run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+    run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=production"
   end
 end
 
+after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:update_code', 'deploy:precompile_assets'
-after 'deploy:precompile_assets', 'deploy:symlink_shared'
