@@ -5,15 +5,12 @@
     .category= link_to category, :controller => 'projects', :action => 'search_projects', :category => category  
 
 .listing
-  %table.table-striped
-    %tr
-      %th Name
-      %th Description
-      %th Type
-
-    - @projects.each do |project|
-      %tr
-        %td= link_to project.name, project
-        %td=h truncate(project.description.html_safe, :length => 500)
-        %td= project.category
+  - @projects.each do |project|
+    .display_box
+      .display_image
+        %center
+          = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+      .display_title
+        %center
+          =h link_to truncate(project.name, :length => 20), project
 
