@@ -1,8 +1,9 @@
 PrototypeRobotics::Application.routes.draw do
 
+  root :to => 'home#index'
 #  mount Forem::Engine, :at => "/forums"
   mount Ckeditor::Engine => '/ckeditor'
-  mount Spree::Core::Engine, :at => '/'
+  mount Spree::Core::Engine, :at => '/store'
 
 
   namespace :admin do

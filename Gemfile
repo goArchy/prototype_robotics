@@ -4,25 +4,24 @@ gem 'rails', '3.1.3'
 gem 'pg'
 gem 'capistrano'
 
-gem 'therubyracer'
-gem 'execjs'
-
+gem 'spree', '1.0.3'
 gem 'haml', '3.1.3'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
-gem 'spree', '1.0.3'
+gem "ckeditor", "3.7.0.rc3"
+gem 'pg_search'
+gem "friendly_id"
 
 group :assets do
   gem 'sass-rails', '3.1.5'
   gem 'sass', '3.1.12'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'therubyracer'
+  gem 'execjs'
 end
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 group :test do
   # Pretty printed test output
@@ -39,9 +38,3 @@ group :test do
   gem 'simplecov'
 end
 
-gem "ckeditor", "3.7.0.rc3"
-gem 'pg_search'
-#gem 'google-analytics-rails'
-
-#gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
-gem "friendly_id"
