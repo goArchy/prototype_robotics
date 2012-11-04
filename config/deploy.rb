@@ -45,6 +45,12 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/ckeditor_assets #{release_path}/public/ckeditor_assets"
   end
+
+  desc "Precompile assets"
+  task :precompile_assets, :roles => :app do
+    run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+  end
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
+after 'deploy:update_code', 'deploy:precompile_assets'
+after 'deploy:precompile_assets', 'deploy:symlink_shared'
