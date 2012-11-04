@@ -5,7 +5,6 @@ PrototypeRobotics::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   mount Spree::Core::Engine, :at => '/store'
 
-
   namespace :admin do
     resources :projects
     resources :tutorials

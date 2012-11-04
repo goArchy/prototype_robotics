@@ -1,11 +1,11 @@
 class TutorialsController < ApplicationController
 
   def index
-    @tutorials = Spree::Tutorial.all
+    @tutorials = Tutorial.all
   end
 
   def show
-    @tutorial = Spree::Tutorial.find(params[:id])
+    @tutorial = Tutorial.find(params[:id])
   end
 
 end

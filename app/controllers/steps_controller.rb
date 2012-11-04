@@ -1,11 +1,11 @@
 class StepsController < ApplicationController
 
   def index
-    @steps = Spree::Step.all
+    @steps = Step.all
   end
 
   def show
-    @step = Spree::Step.find(params[:id])
+    @step = Step.find(params[:id])
   end
 
 end
