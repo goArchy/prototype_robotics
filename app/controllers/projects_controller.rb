@@ -1,4 +1,4 @@
-class Spree::ProjectsController < ApplicationController
+class ProjectsController < ApplicationController
   before_filter :get_categories, :only => [:index, :search_projects]
 
   def index

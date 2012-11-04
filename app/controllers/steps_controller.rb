@@ -1,4 +1,4 @@
-class Spree::StepsController < ApplicationController
+class StepsController < ApplicationController
 
   def index
     @steps = Spree::Step.all

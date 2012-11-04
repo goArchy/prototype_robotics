@@ -1,4 +1,4 @@
-Spree::UsersController.class_eval do
+UsersController.class_eval do
 
 
 end

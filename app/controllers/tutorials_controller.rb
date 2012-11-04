@@ -1,4 +1,4 @@
-class Spree::TutorialsController < ApplicationController
+class TutorialsController < ApplicationController
 
   def index
     @tutorials = Spree::Tutorial.all

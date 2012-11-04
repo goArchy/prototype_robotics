@@ -1,4 +1,4 @@
-Spree::UserSessionsController.class_eval do
+UserSessionsController.class_eval do
 
   def create
     authenticate_user!
