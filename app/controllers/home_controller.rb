@@ -15,9 +15,9 @@ class HomeController < ApplicationController
         @featured_content.push(project)
       end
     end
-    @articles = Article.where(:published => "true").last(3)
-    @projects = Project.where(:published => "true").last(3)
-    @tutorials = Tutorial.all.last(3)
+    @articles = Article.where(:published => "true").last(3).reverse
+    @projects = Project.where(:published => "true").last(3).reverse
+    @tutorials = Tutorial.all.last(3).reverse
   end
 
 end
