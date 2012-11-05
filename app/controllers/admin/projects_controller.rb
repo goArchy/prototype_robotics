@@ -1,24 +1,24 @@
-class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
+class Admin::ProjectsController < ApplicationController
   before_filter :remove_image, :only => [:edit]
 
   def index
-    @projects = Spree::Project.all
+    @projects = Project.all
   end
 
   def show
-    @project = Spree::Project.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def new
-    @project = Spree::Project.new
+    @project = Project.new
   end
 
   def edit
-    @project = Spree::Project.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def create
-    @project = Spree::Project.new(params[:project])
+    @project = Project.new(params[:project])
     if @project.save
       redirect_to admin_projects_path, notice: 'Project was successfully created.'
     else
@@ -27,7 +27,7 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   end
 
   def update
-    @project = Spree::Project.find(params[:id])
+    @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       redirect_to edit_admin_project_path(@project), notice: 'Project was successfully updated.'
     else
@@ -36,13 +36,13 @@ class Spree::Admin::ProjectsController < Spree::Admin::ResourceController
   end
 
   def destroy
-    @project = Spree::Project.find(params[:id])
+    @project = Project.find(params[:id])
     @project.destroy
     redirect_to admin_projects_path
   end
 
   def remove_image
-    @project = Spree::Project.find(params[:id])
+    @project = Project.find(params[:id])
     if @project.remove_image?
       begin
         @project.image.destroy

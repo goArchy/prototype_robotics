@@ -17,7 +17,8 @@ PrototypeRobotics::Application.routes.draw do
   resources :projects
   resources :tutorials
   resources :steps
-  resources :articles, :path => "blog"
+#  resources :articles, :path => "blog"
+  resources :articles
 
   match "search_projects" => "projects#search_projects"
   match "search" => "search#search"

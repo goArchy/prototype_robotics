@@ -1,24 +1,24 @@
-class Spree::Admin::ArticlesController < Spree::Admin::ResourceController
+class Admin::ArticlesController < ApplicationController
   before_filter :remove_image, :only => [:edit]
 
   def index
-    @articles = Spree::Article.all
+    @articles = Article.all
   end
 
   def show
-    @article = Spree::Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def new
-    @article = Spree::Article.new
+    @article = Article.new
   end
 
   def edit
-    @article = Spree::Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def create
-    @article = Spree::Article.new(params[:article])
+    @article = Article.new(params[:article])
     if @article.save
       redirect_to admin_articles_path, notice: 'Article was successfully created.'
     else
@@ -27,7 +27,7 @@ class Spree::Admin::ArticlesController < Spree::Admin::ResourceController
   end
 
   def update
-    @article = Spree::Article.find(params[:id])
+    @article = Article.find(params[:id])
     if @article.update_attributes(params[:article])
       redirect_to admin_article_path(@article), notice: 'Article was successfully updated.'
     else
@@ -36,13 +36,13 @@ class Spree::Admin::ArticlesController < Spree::Admin::ResourceController
   end
 
   def destroy
-    @article = Spree::Article.find(params[:id])
+    @article = Article.find(params[:id])
     @article.destroy
     redirect_to admin_articles_path
   end
 
   def remove_image
-    @article = Spree::Article.find(params[:id])
+    @article = Article.find(params[:id])
     if @article.remove_image?
       begin
         @article.image.destroy
