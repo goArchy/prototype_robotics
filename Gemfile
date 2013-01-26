@@ -12,7 +12,7 @@ gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
-gem 'spree'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails'
@@ -20,9 +20,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 group :test do
   # Pretty printed test output
@@ -39,7 +36,4 @@ end
 
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
-gem 'forem', :git => "git://github.com/radar/forem.git"
-
-gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
 gem "friendly_id"

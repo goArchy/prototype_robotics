@@ -8,6 +8,9 @@ class HomeController < ApplicationController
   def links
   end
 
+  def index
+  end
+
   def add_vars
     @featured_content = Article.all.select{|a| a.featured? && a.published?}
     @featured_projects = Project.all.select{|p| p.featured? && p.published?}

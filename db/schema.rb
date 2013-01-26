@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20130126172706) do
     t.string   "slug"
   end
 
-  add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true
+  add_index "articles", ["slug"], :name => "index_spree_articles_on_slug", :unique => true
 
   create_table "assets", :force => true do |t|
     t.integer  "viewable_id"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130126172706) do
     t.string   "slug"
   end
 
-  add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
+  add_index "projects", ["slug"], :name => "index_spree_projects_on_slug", :unique => true
 
   create_table "steps", :force => true do |t|
     t.string   "name"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20130126172706) do
     t.string   "slug"
   end
 
-  add_index "tutorials", ["slug"], :name => "index_tutorials_on_slug", :unique => true
+  add_index "tutorials", ["slug"], :name => "index_spree_tutorials_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "encrypted_password"

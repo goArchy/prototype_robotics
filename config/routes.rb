@@ -2,6 +2,8 @@ PrototypeRobotics::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
+  root :to => 'home#index'
+
   namespace :admin do
     resources :projects
     resources :tutorials
