@@ -1,0 +1,33 @@
+%h2.title
+  = link_to "Tutorials ", tutorials_path
+  = "/ #{@tutorial.name}" 
+%center
+  .google_ad_show= render "shared/google_ad_show"
+.listing
+  %p#notice= notice
+
+  %center.white_box
+    %h3= @tutorial.name
+  %center
+    = image_tag(@tutorial.image.url(:large), :class => "imgshadow")
+  %p
+  .clear_steps.white_box
+    = @tutorial.description.html_safe
+    %p
+    %b Category:
+    = @tutorial.category
+
+
+  - if !@tutorial.steps.empty?
+    - @tutorial.steps.each do |step|
+      .step_box
+        %b= step.step_number
+        = link_to image_tag(step.image.url(:thumb)), step_path(step)
+        = step.name.html_safe
+
+  .clear_steps
+%p
+= render :partial => "shared/disqus", :locals => { title: @tutorial.name }
+%p
+  = link_to 'Back', :back
+

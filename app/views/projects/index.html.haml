@@ -1,0 +1,16 @@
+%h1.title Projects List
+
+.categories
+  - @project_categories.each do |category|
+    .category= link_to category, :controller => 'projects', :action => 'search_projects', :category => category  
+
+.listing
+  - @projects.each do |project|
+    .display_box
+      .display_image
+        %center
+          = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+      .display_title
+        %center
+          =h link_to truncate(project.name, :length => 20), project
+
