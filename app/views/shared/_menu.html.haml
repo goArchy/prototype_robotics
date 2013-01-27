@@ -9,6 +9,8 @@
         %li= link_to "Projects", projects_path
         %li= link_to "Tutorials", tutorials_path
         %li= link_to "Forums", "/forums"
+        - if current_user && current_user.forem_admin
+          %li= link_to "Moderate", forem.admin_forums_path
 
       %ul.nav.pull-right
         - if current_user

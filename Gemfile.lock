@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/radar/forem-theme-orange.git
+  revision: 8e78cb15c986d8d7b4322fb92f5fc87d5ca670ad
+  specs:
+    forem-theme-orange (0.0.1)
+
+GIT
   remote: git://github.com/radar/forem.git
   revision: 9e23290fb55582ccdd287c87e27da39d40d5e328
   specs:
@@ -263,6 +269,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   forem!
+  forem-theme-orange!
   friendly_id
   haml
   jquery-rails
