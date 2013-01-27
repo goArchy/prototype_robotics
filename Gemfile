@@ -4,8 +4,8 @@ gem "rails", "~> 3.2.11"
 gem 'pg'
 gem 'capistrano'
 
-gem 'therubyracer'
-gem 'execjs'
+#gem 'therubyracer'
+#gem 'execjs'
 
 gem 'haml'
 gem 'simple_form'
@@ -23,7 +23,6 @@ end
 
 group :test do
   # Pretty printed test output
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

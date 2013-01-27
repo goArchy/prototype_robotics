@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title Prototype Robotics
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    .container-fluid
+      .row-fluid
+        .span8
+          #logo
+            = image_tag "Logo_10.png", :width => "600px", :class => "logo"
+        .span4
+          .pull-right= render :partial => 'layouts/ad_top'
+    = render :partial => 'layouts/analytics'
+    = render :partial => 'layouts/skimlinks'
+  %body
+    .container-fluid
+      .row-fluid
+        = render :partial => 'shared/menu'
+      = render :partial => 'layouts/notifications'
+      = yield
+      %br.clear
+        = render :partial => 'layouts/ad_bottom'
+        %br.clear

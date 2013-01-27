@@ -9,14 +9,10 @@
         %li= link_to "Projects", projects_path
         %li= link_to "Tutorials", tutorials_path
 
-      = form_tag({:controller => "home", :action => "search"}, :method => :post, :class => "navbar-search pull-right") do
-        = text_field_tag "search"
-        = submit_tag "search"
-
       %ul.nav.pull-right
         - if current_user
-          %li= link_to "Welcome #{current_user.username}", '/account'
-          %li= link_to 'Logout', spree.destroy_user_session_path
+          %li= link_to "Welcome #{current_user.username}", '#'
+          %li= link_to 'Logout', destroy_user_session_path
         - else
           %li= link_to "Login", new_user_session_path
           %li= link_to "Register", new_user_registration_path
