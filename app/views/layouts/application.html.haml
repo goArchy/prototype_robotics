@@ -18,8 +18,6 @@
     .container-fluid
       .row-fluid
         = render :partial => 'shared/menu'
-      = render :partial => 'layouts/notifications'
-      = yield
-      %br.clear
+        = render :partial => 'layouts/notifications'
+        = yield
         = render :partial => 'layouts/ad_bottom'
-        %br.clear
