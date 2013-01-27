@@ -2,41 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.display_box{
-  display: inline-block;
-  width:150px;
-  height: 170px;
-  //background: gray;
-  border-radius: 5px;
-  padding-top: 10px;
-  border: 1px gray solid;
-  margin: 5px 10px;
-  .display_image{
-    width: 80%;
-    height: 70%;
-    background: white;
-    margin-bottom: 10px;
-    @extend .center;
-  }
-  .display_title{
-    width: 80%;
-    height: 20%;
-    background: white;
-    @extend .center;
-  }
-}
-
-
-.center{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#logo{
-  display: inline;
-}
-
 .google_ad_show{
   margin-top: 20px;
   border: 1px solid black;
@@ -54,177 +19,214 @@
   margin-bottom: 10px;
 }
 
-.flex {
-  margin-left: 10px;
-}
-
-.heading {
-  margin-top: 10px;
-  background: rgba(209, 217, 222, 0.9);
-  padding: 10px 10px 10px 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  font-size: 15px;
-}
-
-.board {
-  background: rgba(209, 217, 222, 0.9);
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -khtml-border-radius: 20px;
-  border-radius: 20px;
-}
-
-.listing{
-  margin-top: 20px;
-}
-
-.tile {
-  margin-left: 10px;
-  padding-left: 10px;
-}
-
-.hero-unit {
-  margin-top: 0px;
-}
-
-.space {
-  margin-top: 5px;
-}
-
-.title {
-  color: #00ADEE;
-}
-
-.body {
-  float: left;
-}
-
-.article_text {
-  float: left;
-}
-
-.articles {
-  clear: both;
-  float: left;
-}
-
-.article {
-  margin-bottom: 20px;
-}
-
-.article_image {
-  float:left;
-  margin: 0px 15px 0px 5px;
-}
-
-.project_image {
-  float:left;
-  margin-right: 10px;
-}
-
-.step_box {
-  width: 100px;
-  border: solid black 1px;
-  float: left;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px 0px 0px 20px;
-  background: white;
-}
-
-.tutorial_description {
-  width: 100%;
-  border: solid black 1px;
-  padding: 10px;
-}
-
-.clear_steps {
-  clear: both;
-  padding-top: 20px;
-}
-
-.image {
-  float: left;
-  clear: both;
-}
-
-.centered_image {
-  position: relative;
-  width: 480px;
-  margin: auto;
-  padding: auto;
-}
-
-.search_group {
-  margin-top: 30px;
-}
-
-.steps_listing {
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-
-a#book {
-  color: red;
-}
-
-.center{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.white_box {
-  background: white;
-  padding: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.inline{
-  margin-right: 50px;
-  display: inline-block;
-}
-
-.pad{
-  padding: 10px;
-}
-
-.categories {
-  margin: 15px;
-}
-
-.category {
-  display: inline-block;
-  margin-right: 5px;
-  padding: 5px;
-  border: 1px gray solid;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
-#post_title {
-  margin-top: 30px;
-  a {
-    color: #4A85C2;
+.main_app{
+  .display_box{
+    display: inline-block;
+    width:150px;
+    height: 170px;
+    //background: gray;
+    border-radius: 5px;
+    padding-top: 10px;
+    border: 1px gray solid;
+    margin: 5px 10px;
+    .display_image{
+      width: 80%;
+      height: 70%;
+      background: white;
+      margin-bottom: 10px;
+      @extend .center;
+    }
+    .display_title{
+      width: 80%;
+      height: 20%;
+      background: white;
+      @extend .center;
+    }
   }
-}
 
-.box{
-  background: #EEEEEE;
-  border-radius: 5px 5px 5px 5px;
-}
 
-.post_footer {
-  @extend .box;
-  padding: 5px;
+  .center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #logo{
+    display: inline;
+  }
+
+
+  .flex {
+    margin-left: 10px;
+  }
+
+  .heading {
+    margin-top: 10px;
+    background: rgba(209, 217, 222, 0.9);
+    padding: 10px 10px 10px 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .board {
+    background: rgba(209, 217, 222, 0.9);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  .listing{
+    margin-top: 20px;
+  }
+
+  .tile {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+
+  .hero-unit {
+    margin-top: 0px;
+  }
+
+  .space {
+    margin-top: 5px;
+  }
+
+  .title {
+    color: #00ADEE;
+  }
+
+  .body {
+    float: left;
+  }
+
+  .article_text {
+    float: left;
+  }
+
+  .articles {
+    clear: both;
+    float: left;
+  }
+
+  .article {
+    margin-bottom: 20px;
+  }
+
+  .article_image {
+    float:left;
+    margin: 0px 15px 0px 5px;
+  }
+
+  .project_image {
+    float:left;
+    margin-right: 10px;
+  }
+
+  .step_box {
+    width: 100px;
+    border: solid black 1px;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px 0px 0px 20px;
+    background: white;
+  }
+
+  .tutorial_description {
+    width: 100%;
+    border: solid black 1px;
+    padding: 10px;
+  }
+
+  .clear_steps {
+    clear: both;
+    padding-top: 20px;
+  }
+
+  .image {
+    float: left;
+    clear: both;
+  }
+
+  .centered_image {
+    position: relative;
+    width: 480px;
+    margin: auto;
+    padding: auto;
+  }
+
+  .search_group {
+    margin-top: 30px;
+  }
+
+  .steps_listing {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+
+  a#book {
+    color: red;
+  }
+
+  .center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .white_box {
+    background: white;
+    padding: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .inline{
+    margin-right: 50px;
+    display: inline-block;
+  }
+
+  .pad{
+    padding: 10px;
+  }
+
+  .categories {
+    margin: 15px;
+  }
+
+  .category {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px gray solid;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  #post_title {
+    margin-top: 30px;
+    a {
+      color: #4A85C2;
+    }
+  }
+
+  .box{
+    background: #EEEEEE;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .post_footer {
+    @extend .box;
+    padding: 5px;
+  }
 }
