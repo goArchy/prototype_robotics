@@ -36,3 +36,6 @@ end
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
 gem "friendly_id"
+
+gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'kaminari', '0.13.0'
