@@ -39,3 +39,4 @@ gem "friendly_id"
 
 gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'kaminari', '0.13.0'
+gem 'decorators'

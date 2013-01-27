@@ -259,6 +259,7 @@ DEPENDENCIES
   coffee-rails
   cucumber-rails
   database_cleaner
+  decorators
   devise
   factory_girl_rails
   forem!
