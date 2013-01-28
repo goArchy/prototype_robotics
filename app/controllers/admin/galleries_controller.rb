@@ -1,4 +1,4 @@
-class Admin::GalleriesController < Admin::ApplicationController
+class Admin::GalleriesController < Admin::AdminController
 
   def new
     if params[:type] == "article"

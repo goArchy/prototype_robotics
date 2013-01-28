@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127151537) do
+ActiveRecord::Schema.define(:version => 20130128065657) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -28,24 +28,6 @@ ActiveRecord::Schema.define(:version => 20130127151537) do
   end
 
   add_index "articles", ["slug"], :name => "index_spree_articles_on_slug", :unique => true
-
-  create_table "assets", :force => true do |t|
-    t.integer  "viewable_id"
-    t.integer  "attachment_width"
-    t.integer  "attachment_height"
-    t.integer  "attachment_size"
-    t.integer  "position"
-    t.string   "viewable_type",           :limit => 50
-    t.string   "attachment_content_type"
-    t.string   "attachment_file_name"
-    t.string   "type",                    :limit => 75
-    t.datetime "attachment_updated_at"
-    t.text     "alt"
-    t.integer  "gallery_id"
-  end
-
-  add_index "assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
-  add_index "assets", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -168,6 +150,24 @@ ActiveRecord::Schema.define(:version => 20130127151537) do
     t.integer  "step_id"
   end
 
+  create_table "images", :force => true do |t|
+    t.integer  "viewable_id"
+    t.integer  "attachment_width"
+    t.integer  "attachment_height"
+    t.integer  "attachment_size"
+    t.integer  "position"
+    t.string   "viewable_type",           :limit => 50
+    t.string   "attachment_content_type"
+    t.string   "attachment_file_name"
+    t.string   "type",                    :limit => 75
+    t.datetime "attachment_updated_at"
+    t.text     "alt"
+    t.integer  "gallery_id"
+  end
+
+  add_index "images", ["viewable_id"], :name => "index_assets_on_viewable_id"
+  add_index "images", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
+
   create_table "pg_search_documents", :force => true do |t|
     t.text     "content"
     t.integer  "searchable_id"
@@ -250,6 +250,7 @@ ActiveRecord::Schema.define(:version => 20130127151537) do
     t.boolean  "forem_admin",                        :default => false
     t.string   "forem_state",                        :default => "pending_review"
     t.boolean  "forem_auto_subscribe",               :default => false
+    t.boolean  "admin"
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"

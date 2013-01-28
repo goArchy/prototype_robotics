@@ -41,3 +41,4 @@ gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'forem-theme-orange', :git => "git://github.com/radar/forem-theme-orange.git"
 gem 'kaminari', '0.13.0'
 gem 'decorators'
+gem 'pry'
