@@ -1,7 +1,8 @@
 .carousel-inner
   - content.each do |c|
     .item
-      = link_to image_tag(c.image.url(:large)), c
+      %center
+        = link_to image_tag(c.image.url(:large)), c
       .carousel-caption
         %h4= c.name if c.name.present?
         %p
@@ -10,3 +11,7 @@
 %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} ‹
 %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} ›
 
+:javascript
+  $(document).ready(function(){
+    $('.carousel').carousel()
+  });

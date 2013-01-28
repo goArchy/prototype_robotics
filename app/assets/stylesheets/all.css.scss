@@ -6,21 +6,12 @@ table {
   @extend .table-striped;
 }
 
-.item{
-  img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .carousel{
   width: 640px;
 }
 
 .carousel-inner{
   width: 640px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .carousel-caption{
