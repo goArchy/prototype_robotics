@@ -27,7 +27,6 @@
     }
   }
 
-
   .center{
     margin-left: auto;
     margin-right: auto;
@@ -43,14 +42,14 @@
   }
 
   .heading {
-    margin-top: 10px;
-    background: rgba(209, 217, 222, 0.9);
+    margin: 20px 0px;
+    //background: rgba(209, 217, 222, 0.9);
     padding: 10px 10px 10px 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .board {
