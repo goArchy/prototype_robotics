@@ -1,0 +1,18 @@
+.board
+  %h1.inline Admin Users List
+  .pull-right= link_to 'New User', new_admin_user_path, :class => "btn btn-success"
+  %p
+  %table
+    %tr
+      %th Name
+      %th Created at
+      %th Actions
+
+    - @users.each do |user|
+      %tr
+        %td= link_to user.email, admin_user_path(user)
+        %td= user.created_at.strftime("%m/%d/%Y at %I:%M%p")
+        %td
+          = link_to 'Edit', edit_admin_user_path(user), :class => "btn btn-warning"
+          = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+
