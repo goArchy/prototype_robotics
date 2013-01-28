@@ -6,6 +6,37 @@ table {
   @extend .table-striped;
 }
 
+.item{
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.carousel{
+  width: 640px;
+}
+
+.carousel-inner{
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-caption{
+  color: white;
+}
+
+.imgshadow{
+  background:#FFFFFF;
+  padding:4px;
+  border:1px solid #777777;
+  margin-top:5px;
+  -moz-box-shadow:0px 0px 5px #666666;
+  -webkit-box-shadow:0px 0px 5px #666666;
+  box-shadow:0px 0px 5px #666666;
+}
+
 .google_ad_show{
   margin-top: 20px;
 }

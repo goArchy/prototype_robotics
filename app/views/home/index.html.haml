@@ -13,7 +13,7 @@
 
 .row-fluid
   .span7
-    .flex
+    #myCarousel.carousel.slide
       %h2 Featured Content
       = render 'shared/content_slider', :content => @featured_content
   .span5
@@ -27,24 +27,23 @@
       %p
 
 .row-fluid
-  %h2 Recent Projects
-  - @projects.each do |project|
-    .span3
-      %h4= project.name
-      .project_image= link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
-      =h truncate(project.description.html_safe, :length => 100 )
-  .space= link_to "view all projects", projects_path
-  %p
-
-.row-fluid
-  %h2 Recent Tutorials
-  - @tutorials.each do |tutorial|
-    .span3
-      %h4= tutorial.name
-      .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
-      =h truncate(tutorial.description.html_safe, :length => 100 )
-  .space= link_to "view all tutorials", tutorials_path
-  %p
+  .span6
+    %h2 Recent Projects
+    - @projects.each do |project|
+      .span3
+        %h4= project.name
+        = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+        =h truncate(project.description.html_safe, :length => 100 )
+      %p
+  .span6
+    %h2 Recent Tutorials
+    - @tutorials.each do |tutorial|
+      .span3
+        %h4= tutorial.name
+        .project_image= link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
+        =h truncate(tutorial.description.html_safe, :length => 100 )
+    .space= link_to "view all tutorials", tutorials_path
+    %p
 
 :javascript
   $(window).load(function() {

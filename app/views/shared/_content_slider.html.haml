@@ -1,11 +1,12 @@
-#container
-  .flexslider
-    %ul.slides
-      - content.each do |c|
-        %li
-          .image= link_to image_tag(c.image.url(:slider)), c
-          %h2.title
-            = c.name if c.name.present?
-          .info
-            =h truncate(c.description.html_safe, :length => 150 ) if c.description.present?
+.carousel-inner
+  - content.each do |c|
+    .item
+      = link_to image_tag(c.image.url(:large)), c
+      .carousel-caption
+        %h4= c.name if c.name.present?
+        %p
+          =h truncate(c.description.html_safe, :length => 100 )
+
+%a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} ‹
+%a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} ›
 
