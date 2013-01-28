@@ -2,20 +2,20 @@
 %html
   %head
     %title Prototype Robotics
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    .container-fluid
+    = render :partial => 'layouts/analytics'
+    = render :partial => 'layouts/skimlinks'
+  %body
+    .container
       .row-fluid
         .span8
           #logo
             = image_tag "Logo_10.png", :width => "600px", :class => "logo"
         .span4
           .pull-right= render :partial => 'layouts/ad_top'
-    = render :partial => 'layouts/analytics'
-    = render :partial => 'layouts/skimlinks'
-  %body
-    .container-fluid
       .row-fluid
         = render :partial => 'shared/menu'
         = render :partial => 'layouts/notifications'

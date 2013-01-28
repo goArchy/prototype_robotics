@@ -5,3 +5,28 @@ table {
   @extend .table-bordered;
   @extend .table-striped;
 }
+
+.google_ad_show{
+  margin-top: 20px;
+}
+
+#google_ad_top{
+  display: inline-block;
+}
+
+#google_ad_bottom{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .google_ad_show{
+    display: none;
+  }
+  #google_ad_top{
+    display: none;
+  }
+  #google_ad_bottom{
+    display: none;
+  }
+}
