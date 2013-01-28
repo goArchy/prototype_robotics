@@ -1,4 +1,4 @@
-class Admin::ArticlesController < Admin::ResourceController
+class Admin::ArticlesController < Admin::ApplicationController
   before_filter :remove_image, :only => [:edit]
 
   def index

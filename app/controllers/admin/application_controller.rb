@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class Admin::ApplicationController < ActionController::Base
   protect_from_forgery
 
   def login_required

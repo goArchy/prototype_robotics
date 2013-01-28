@@ -1,6 +1,4 @@
-class Admin::GalleriesController < Admin::ResourceController
-#  before_filter :remove_image, :only => [:edit]
-  #
+class Admin::GalleriesController < Admin::ApplicationController
 
   def new
     if params[:type] == "article"

@@ -1,4 +1,4 @@
-class StepsController < ApplicationController
+class StepsController < Admin::ApplicationController
 
   def index
     @steps = Step.all

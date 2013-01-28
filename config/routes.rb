@@ -13,6 +13,7 @@ PrototypeRobotics::Application.routes.draw do
 
   root :to => 'home#index'
 
+  match "/admin" => "admin/dashboard#index"
   namespace :admin do
     resources :projects
     resources :tutorials
