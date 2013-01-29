@@ -6,6 +6,16 @@ table {
   @extend .table-striped;
 }
 
+.footer{
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  background: #F5F5F5;
+  margin-top: 20px;
+  li {
+    display: inline-block;
+  }
+}
+
 .carousel{
   width: 640px;
 }

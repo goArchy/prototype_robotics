@@ -1,9 +1,19 @@
-.container
+.container.footer
   %center
-    .visible-desktop
-      %p
-        why do I not copyright my material?
-        freely you receive, freely you shall give
     .footer-nav
-      %ul.nav.visible-desktop
-        %li= link_to "Home", root_path
+      %ul.nav
+        %li
+          %h5= link_to "Home", root_path
+        |
+        %li
+          %h5= link_to "About", about_me_path
+        |
+        %li
+          %h5= link_to "Blog", articles_path
+        |
+        %li
+          %h5= link_to "Links", links_path
+        |
+        %li
+          %h5= link_to "Forums", "/forums"
+
