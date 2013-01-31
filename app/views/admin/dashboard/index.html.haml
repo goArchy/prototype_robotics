@@ -1,2 +1,19 @@
 .dashboard
   %h3 Admin Panel
+
+  %table
+    %tr
+      %th Image
+      %th Name
+      %th Type
+      %th Actions
+
+    - Project.all.select{|s| s.published != true }.each do |project|
+      %tr
+        %td= link_to image_tag(project.image.url(:thumb)), project_path(project)
+        %td= link_to project.name, admin_project_path(project)
+        %td= project.category
+        %td
+          = link_to 'Edit', edit_admin_project_path(project), :class => "btn btn-warning"
+          = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+          = link_to 'Approve', admin_approve_project_path(id: project), :class => "btn btn-success" unless project.published

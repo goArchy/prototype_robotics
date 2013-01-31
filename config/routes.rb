@@ -19,6 +19,7 @@ PrototypeRobotics::Application.routes.draw do
   namespace :admin do
     resources :users
     resources :projects
+    match "approve_project" => "projects#approve"
     resources :tutorials
     resources :steps
     resources :articles

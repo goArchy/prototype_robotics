@@ -30,13 +30,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def destroy
-    @project = Project.find(params[:id])
-    @project.deleted = true
-    @project.save
-    redirect_to dashboard_index_path, notice: 'Project was successfully created.'
-  end
-
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
@@ -44,6 +37,13 @@ class ProjectsController < ApplicationController
     else
       render action: "edit"
     end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.deleted = true
+    @project.save
+    redirect_to dashboard_index_path, notice: 'Project was successfully deleted.'
   end
 
   def search_projects

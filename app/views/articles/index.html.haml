@@ -2,14 +2,15 @@
   %center
     %h1.title JD's Attempt at a Blog
     %br
-    %h6 Here you might find posts about electronics, robotics, building, Arduino, programming, or anything else that I feel compelled to share.
+    %h4 A blog about electronics, robotics, building, Arduino, programming, or anything else that I feel compelled to share.
   %hr
   - @articles.each do |post|
-    .row-fluid
-      .span2
-        = link_to image_tag(post.image.url(:thumb), :class => "imgshadow"), article_path(post)
-      .span10
+    .row-fluid.article
+      .span3
+        = link_to image_tag(post.image.url(:medium), :class => "imgshadow"), article_path(post)
+      .span9
         %h3= link_to post.name, post
         = truncate(post.description.html_safe, :length => 300)
         %p
         .post_footer= "Most likely posted By: JD | #{post.created_at.strftime("Published on %m/%d/%Y at %I:%M%p")}"
+    %hr

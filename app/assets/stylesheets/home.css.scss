@@ -6,6 +6,18 @@ body{
   font-size: 1.2em;
 }
 
+.alert{
+  padding: 10px;
+}
+
+.info{
+  padding: 10px;
+}
+
+.notice{
+  padding: 10px;
+}
+
 .main_app{
   .display_box{
     display: inline-block;
@@ -208,5 +220,15 @@ body{
   .post_footer {
     @extend .box;
     padding: 5px;
+  }
+
+  .article{
+    margin-top: 20px;
+  }
+
+  .links{
+    li {
+      margin-top: 10px; 
+    }
   }
 }

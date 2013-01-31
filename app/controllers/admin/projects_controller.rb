@@ -41,16 +41,11 @@ class Admin::ProjectsController < Admin::AdminController
     redirect_to admin_projects_path
   end
 
-  def remove_image
+  def approve
     @project = Project.find(params[:id])
-    if @project.remove_image?
-      begin
-        @project.image.destroy
-      rescue
-      end
-      @project.remove_image = false
-      @project.save
-    end
+    @project.published = true
+    @project.save
+    redirect_to admin_projects_path
   end
 
 end

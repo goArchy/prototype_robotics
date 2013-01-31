@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   has_many :steps
   has_many :galleries
 
-  scope :valid, lambda { where("deleted != ?", true) }
+  scope :published, where(:published => true)
 
   accepts_nested_attributes_for :steps
 
