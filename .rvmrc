@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 rvm use 1.9.2@prototype --create
+=======
+rvm use 1.9.3@prototype --create
+>>>>>>> slider

@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Prototype Robotics
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      .row-fluid
+        .admin
+          = render :partial => 'admin/dashboard/admin_menu'
+          = render :partial => 'layouts/notifications'
+          = yield

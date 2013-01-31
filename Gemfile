@@ -1,35 +1,34 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem "rails", "~> 3.2.11"
 gem 'pg'
 gem 'capistrano'
 
-gem 'therubyracer'
-gem 'execjs'
+#gem 'therubyracer'
+#gem 'execjs'
 
-gem 'haml', '3.1.3'
+gem 'haml'
 gem 'simple_form'
 gem "paperclip", "~> 2.4"
 gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
-gem 'spree', '1.0.3'
+gem 'devise'
 
 group :assets do
-  gem 'sass-rails', '3.1.5'
-  gem 'sass', '3.1.12'
+  gem 'sass-rails'
+  gem 'sass'
   gem 'coffee-rails'
   gem 'uglifier'
 end
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
 group :test do
   # Pretty printed test output
+<<<<<<< HEAD
   gem 'turn', '0.8.2', :require => false
   gem 'pry'
+=======
+>>>>>>> slider
   gem 'database_cleaner'
-  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
@@ -41,7 +40,10 @@ end
 
 gem "ckeditor", "3.7.0.rc3"
 gem 'pg_search'
-#gem 'google-analytics-rails'
-
-gem 'spree_robotics', :path => 'ext/spree_robotics', :require => 'spree_robotics'
 gem "friendly_id"
+
+gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'forem-theme-orange', :git => "git://github.com/radar/forem-theme-orange.git"
+gem 'kaminari', '0.13.0'
+gem 'decorators'
+gem 'pry'

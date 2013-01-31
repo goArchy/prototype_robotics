@@ -1,0 +1,20 @@
+.board
+  %h1.inline Admin Articles List
+  .pull-right= link_to 'New Article', new_admin_article_path, :class => "btn btn-success"
+  %p
+  %table
+    %tr
+      %th Image
+      %th Name
+      %th Created at
+      %th Actions
+
+    - @articles.each do |article|
+      %tr
+        %td= link_to image_tag(article.image.url(:thumb)), article_path(article)
+        %td= link_to article.name, admin_article_path(article)
+        %td= "Posted:" + "#{article.created_at.strftime("%m/%d/%Y at %I:%M%p")}"
+        %td
+          = link_to 'Edit', edit_admin_article_path(article), :class => "btn btn-warning"
+          = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+

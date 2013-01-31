@@ -1,0 +1,62 @@
+@import "twitter/bootstrap";
+
+table {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-striped;
+}
+
+.footer{
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  background: #F5F5F5;
+  margin-top: 20px;
+  li {
+    display: inline-block;
+  }
+}
+
+.carousel{
+  width: 640px;
+}
+
+.carousel-inner{
+  width: 640px;
+}
+
+.carousel-caption{
+  color: white;
+}
+
+.imgshadow{
+  background:#FFFFFF;
+  padding:4px;
+  border:1px solid #777777;
+  margin-top:5px;
+  -moz-box-shadow:0px 0px 5px #666666;
+  -webkit-box-shadow:0px 0px 5px #666666;
+  box-shadow:0px 0px 5px #666666;
+}
+
+.google_ad_show{
+  margin-top: 20px;
+}
+
+#google_ad_top{
+  display: inline-block;
+}
+
+#google_ad_bottom{
+}
+
+@media (max-width: 1200px) {
+  .google_ad_show{
+    display: none;
+  }
+  #google_ad_top{
+    display: none;
+  }
+  #google_ad_bottom{
+    display: none;
+  }
+}

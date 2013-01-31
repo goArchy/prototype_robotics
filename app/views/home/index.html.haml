@@ -1,0 +1,58 @@
+.row-fluid
+  %center
+    %h1
+      .title Welcome to Prototype Robotics
+    %i the new home of Rediculouslygoodlooking.com
+  .heading
+    My old website
+    = link_to "rediculouslygoodlooking.com", 'http://rediculous.prototyperobotics.com'
+    was pretty basic, so I thought I would update it - I hope you will bear with me as I improve the site.
+    %p
+      If you are visiting my website to find out more about my book "Arduino Robotics",
+      = link_to "click here", "http://prototyperobotics.com/blog/arduino-robotics"
+      or you can check it out on Amazon:
+      = link_to "Arduino Robotics", "http://www.amazon.com/Arduino-Robotics-John-David-Warren/dp/1430231831"
+
+.row-fluid
+  .span7.visible-desktop
+    #myCarousel.carousel.slide
+      %h2 Featured Content
+      = render 'shared/content_slider', :content => @featured_content
+  .span5
+    %h2.inline Recent Articles
+    %h5.inline= link_to "view all articles", articles_path
+    - @articles.each do |article|
+      .well
+        .article
+          .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+          %h3= article.name
+          %h5
+            - if article.user
+              = "posted by: #{article.user.username}"
+            - else
+              n/a
+          %h5= article.created_at.strftime("Date: %m/%d/%Y")
+
+%hr
+.row-fluid
+  .span6
+    %h2.inline Recent Projects
+    %h5.inline= link_to "view all projects", projects_path
+    - @projects.each do |project|
+      .well
+        .row-fluid
+          .span3
+            = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
+          %h4= link_to project.name, project_path(project)
+          =h truncate(project.description.html_safe, :length => 100 )
+  .span6
+    %h2.inline Recent Tutorials
+    %h5.inline= link_to "view all tutorials", tutorials_path
+    - @tutorials.each do |tutorial|
+      .well
+        .row-fluid
+          .span3
+            = link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
+          %h4= link_to tutorial.name, tutorial_path(tutorial)
+          =h truncate(tutorial.description.html_safe, :length => 100 )
+

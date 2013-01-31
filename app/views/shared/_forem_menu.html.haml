@@ -1,0 +1,23 @@
+.navbar
+  .navbar-inner
+    .container
+      %ul.nav
+        %li= link_to "Home", main_app.root_path
+        %li= link_to "About me", '/about_me'
+        %li= link_to "Links", '/links'
+        %li= link_to "Blog", main_app.articles_path
+        %li= link_to "Projects", main_app.projects_path
+        %li= link_to "Tutorials", main_app.tutorials_path
+        %li= link_to "Forums", "/forums"
+        - if current_user && current_user.forem_admin
+          %li= link_to "Moderate", admin_forums_path
+
+      %ul.nav.pull-right
+        - if current_user
+          %li= link_to "Welcome #{current_user.username}", '#'
+          %li= link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
+        - else
+          %li= link_to "Login", main_app.new_user_session_path
+          %li= link_to "Register", main_app.new_user_registration_path
+
+

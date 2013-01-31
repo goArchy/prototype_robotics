@@ -1,0 +1,19 @@
+.navbar
+  .navbar-inner
+    = link_to image_tag("Logo_10.png", :size => "300x150"), root_path, :class => "brand"
+    = link_to "Admin", "/admin", :class => "brand"
+    %ul.nav
+      %li= link_to "Users", admin_users_path
+      %li= link_to "Articles", admin_articles_path
+      %li= link_to "Projects", admin_projects_path
+      %li= link_to "Tutorials", admin_tutorials_path
+
+    %ul.nav.pull-right
+      - if current_user
+        %li= link_to "Welcome Admin", '#'
+        %li= link_to('Logout', destroy_user_session_path, :method => :delete)
+      - else
+        %li= link_to "Login", new_user_session_path
+        %li= link_to "Register", new_user_registration_path
+
+

@@ -1,0 +1,23 @@
+.board
+  %h1.inline Admin Tutorials List
+  .pull-right= link_to 'New Tutorial', new_admin_tutorial_path, :class => "btn btn-success"
+
+  %table
+    %tr
+      %th Image
+      %th Name
+      %th Number of Steps
+      %th Actions
+
+    - @tutorials.each do |tutorial|
+      %tr
+        %td= link_to image_tag(tutorial.image.url(:thumb)), tutorial_path(tutorial)
+        %td= link_to tutorial.name, tutorial_path(tutorial)
+        %td= tutorial.steps.count
+        %td
+          = link_to 'Edit', edit_admin_tutorial_path(tutorial), :class => "btn btn-warning"
+          = link_to 'Destroy', admin_tutorial_path(tutorial), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+
+  %p
+
+  = link_to 'New Tutorial', new_admin_tutorial_path

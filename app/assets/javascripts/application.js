@@ -7,7 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require jquery.flexslider-min
 //= require ckeditor/ckeditor
 //= require twitter/bootstrap
 
