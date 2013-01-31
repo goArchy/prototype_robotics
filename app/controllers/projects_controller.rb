@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  before_filter :get_categories, :only => [:index, :search_projects]
   before_filter :authenticate, :except => [:index, :show, :search_projects]
 
   def index
@@ -50,15 +49,6 @@ class ProjectsController < ApplicationController
   def search_projects
     @projects = Project.all.select{|p| p.category == params[:category] && p.published == true }
     render "index"
-  end
-
-  def get_categories
-    @project_categories = []
-    Project.all.each do |p|
-      if !@project_categories.include?(p.category)
-        @project_categories.push(p.category)
-      end
-    end
   end
 
 end
