@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128065657) do
+ActiveRecord::Schema.define(:version => 20130131040708) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -188,6 +188,7 @@ ActiveRecord::Schema.define(:version => 20130128065657) do
     t.boolean  "remove_image"
     t.integer  "user_id"
     t.string   "slug"
+    t.boolean  "deleted"
   end
 
   add_index "projects", ["slug"], :name => "index_spree_projects_on_slug", :unique => true

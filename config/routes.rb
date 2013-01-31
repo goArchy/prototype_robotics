@@ -9,6 +9,7 @@ PrototypeRobotics::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
+  resources :dashboard
   resources :projects
   resources :tutorials
   resources :steps

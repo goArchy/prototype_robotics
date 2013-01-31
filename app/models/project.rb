@@ -4,6 +4,8 @@ class Project < ActiveRecord::Base
   has_many :steps
   has_many :galleries
 
+  scope :valid, lambda { where("deleted != ?", true) }
+
   accepts_nested_attributes_for :steps
 
   has_attached_file :image, :styles => { :large => "640x480>", :medium => "320x240>", :thumb => "100x100>" }
