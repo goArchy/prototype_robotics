@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    .container-fluid
+    .container
       .row-fluid
         .span8
           #logo
@@ -15,7 +15,7 @@
     = render :partial => 'layouts/analytics'
     = render :partial => 'layouts/skimlinks'
   %body
-    .container-fluid
+    .container
       .row-fluid
         = render :partial => 'shared/forem_menu'
         = render :partial => 'layouts/notifications'
