@@ -25,5 +25,12 @@
           = render "forem/moderation/options", :f => f
   = forem_pages_widget(@posts)
   #posts
-    = render :partial => "forem/posts/post", :collection => @posts
+    %table
+      %tr
+        %th Posted By
+        %th Post
+        - if forem_user
+          %th Actions
+      = render :partial => "forem/posts/post", :collection => @posts
+
   = forem_pages_widget(@posts)
