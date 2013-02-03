@@ -18,17 +18,17 @@
       = f.label :description
       .input= f.cktext_area :description
     .clearfix
-      = f.label :featured
-      .input= f.check_box :featured
+      .inline
+        = f.check_box :featured
+      .inline
+        = f.label :featured
     .clearfix
-      = f.label :published
-      .input= f.check_box :published
-    .clearfix
-      = f.label :remove_image
-      .input= f.check_box :remove_image
+      .inline
+        .input= f.check_box :published
+      .inline
+        = f.label :published
     - if @article.image
-      .clearfix
-        .centered_image= image_tag(@article.image.url(:slider), :class => "imgshadow")
+      = image_tag(@article.image.url(:thumb), :class => "imgshadow")
     .clearfix
       = f.label :image
       .input= f.file_field :image
