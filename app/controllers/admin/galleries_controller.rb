@@ -51,9 +51,4 @@ class Admin::GalleriesController < Admin::AdminController
     redirect_to :back
   end
 
-  def remove_image
-    @image = Image.find(params[:image_id])
-    @image.destroy
-    redirect_to :back, notice: "Image removed successfully"
-  end
 end

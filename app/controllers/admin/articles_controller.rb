@@ -1,5 +1,4 @@
 class Admin::ArticlesController < Admin::AdminController
-  before_filter :remove_image, :only => [:edit]
 
   def index
     @articles = Article.all
@@ -41,15 +40,4 @@ class Admin::ArticlesController < Admin::AdminController
     redirect_to admin_articles_path
   end
 
-  def remove_image
-    @article = Article.find(params[:id])
-    if @article.remove_image?
-      begin
-        @article.image.destroy
-      rescue
-      end
-      @article.remove_image = false
-      @article.save
-    end
-  end
 end

@@ -1,5 +1,4 @@
 class Admin::StepsController < Admin::AdminController
-  before_filter :remove_image, :only => [:edit]
 
   def index
     @steps = Step.all
@@ -39,18 +38,6 @@ class Admin::StepsController < Admin::AdminController
     @step = Step.find(params[:id])
     @step.destroy
     redirect_to admin_tutorials_path
-  end
-
-  def remove_image
-    @step = Step.find(params[:id])
-    if @step.remove_image?
-      begin
-        @step.image.destroy
-      rescue
-      end
-      @step.remove_image = false
-      @step.save
-    end
   end
 
 end
