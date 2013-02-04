@@ -1,9 +1,10 @@
 %tr
-  %td
+  %td{:width => "100px"}
     %a{:name => "post-#{post.id}"}
     .user
       = link_to_if Forem.user_profile_links, post.user.username, [main_app, post.user]
       .icon= forem_avatar(post.user, :size => 60)
+    %time{:datetime => post.created_at.to_s(:db)}= "#{time_ago_in_words(post.created_at)} #{t("ago")}"
   %td
     - if post.pending_review?
       .moderation
@@ -16,11 +17,10 @@
               = render "forem/posts/moderation_tools", :post => post
 
     %a{:href => "#post-#{post.id}"}
-      %time{:datetime => post.created_at.to_s(:db)}= "#{time_ago_in_words(post.created_at)} #{t("ago")}"
     = forem_format(post.text)
     - if post.reply_to
       %span.in_reply_to
-        = link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user}", "#post-#{post.reply_to.id}"
+        = link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user.username}", "#post-#{post.reply_to.id}"
   - if forem_user
     %td
       %ul.actions
