@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
 
-  def name
+  def to_s
     if username
       username
     else

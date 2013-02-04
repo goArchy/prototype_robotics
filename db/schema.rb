@@ -188,7 +188,7 @@ ActiveRecord::Schema.define(:version => 20130131040708) do
     t.boolean  "remove_image"
     t.integer  "user_id"
     t.string   "slug"
-    t.boolean  "deleted"
+    t.boolean  "deleted",         :default => false
   end
 
   add_index "projects", ["slug"], :name => "index_spree_projects_on_slug", :unique => true
