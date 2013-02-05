@@ -10,6 +10,7 @@ PrototypeRobotics::Application.routes.draw do
   devise_for :users
 
   resources :dashboard
+  match "change_user_password" => "passwords#change_password"
   resources :projects
   resources :tutorials
   resources :steps

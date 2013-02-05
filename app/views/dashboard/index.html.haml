@@ -1,6 +1,19 @@
 %h2= "Welcome #{current_user.username}"
 
 %h3
+  = link_to "Change Password", "#", :id => "change_password"
+
+  #password
+    = form_tag change_user_password_path do
+      .clearfix
+        = label_tag :password
+        = text_field_tag :password
+      .clearfix
+        = label_tag :password_confirmation
+        = text_field_tag :password_confirmation
+      = submit_tag "change"
+
+%h3
   My Projects
   .pull-right= link_to "New Project", new_project_path(:id => current_user.id), :class => "btn btn-success"
 
@@ -23,4 +36,13 @@
           %td
             = link_to 'Edit', edit_project_path(project), :class => "btn btn-warning"
             = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+
+:javascript
+  $(document).ready(function(){
+    $("#password").hide();
+  });
+  $("#change_password").click(function(){
+    $("#password").slideToggle();
+  });
+
 
