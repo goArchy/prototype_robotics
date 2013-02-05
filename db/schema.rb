@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131040708) do
+ActiveRecord::Schema.define(:version => 20130205210751) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(:version => 20130131040708) do
     t.datetime "attachment_updated_at"
     t.text     "alt"
     t.integer  "gallery_id"
+    t.string   "text"
   end
 
   add_index "images", ["viewable_id"], :name => "index_assets_on_viewable_id"
@@ -229,8 +230,8 @@ ActiveRecord::Schema.define(:version => 20130131040708) do
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                      :default => 0,                :null => false
-    t.integer  "failed_attempts",                    :default => 0,                :null => false
+    t.integer  "sign_in_count",                        :default => 0,                :null => false
+    t.integer  "failed_attempts",                      :default => 0,                :null => false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -245,13 +246,14 @@ ActiveRecord::Schema.define(:version => 20130131040708) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "remember_created_at"
-    t.string   "api_key",              :limit => 40
+    t.string   "api_key",                :limit => 40
+    t.boolean  "forem_admin",                          :default => false
+    t.string   "forem_state",                          :default => "pending_review"
     t.string   "username"
     t.boolean  "active"
-    t.boolean  "forem_admin",                        :default => false
-    t.string   "forem_state",                        :default => "pending_review"
-    t.boolean  "forem_auto_subscribe",               :default => false
+    t.boolean  "forem_auto_subscribe",                 :default => false
     t.boolean  "admin"
+    t.datetime "reset_password_sent_at"
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
