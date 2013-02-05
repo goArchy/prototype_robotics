@@ -44,7 +44,7 @@
           .span3
             = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
           %h4= link_to project.name, project_path(project)
-          =h truncate(project.description.html_safe, :length => 100 )
+          =h truncate(project.description, :length => 100 ).html_safe
   .span6
     %h2.inline Recent Tutorials
     %h5.inline= link_to "view all tutorials", tutorials_path
@@ -54,5 +54,5 @@
           .span3
             = link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
           %h4= link_to tutorial.name, tutorial_path(tutorial)
-          =h truncate(tutorial.description.html_safe, :length => 100 )
+          =h truncate(tutorial.description, :length => 100 ).html_safe
 

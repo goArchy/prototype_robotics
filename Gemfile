@@ -35,7 +35,7 @@ group :test do
   gem 'simplecov'
 end
 
-gem "ckeditor", "3.7.0.rc3"
+gem "ckeditor"
 gem 'pg_search'
 gem "friendly_id"
 
