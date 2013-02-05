@@ -50,6 +50,17 @@ PrototypeRobotics::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  # set up mailer configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => ENV[:email_username],
+    :password             => ENV[:email_password],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
   # Enable threaded mode
   # config.threadsafe!
 
@@ -60,5 +71,4 @@ PrototypeRobotics::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-#  GA.tracker = ENV["GOOGLE_ANALYTICS"]
 end

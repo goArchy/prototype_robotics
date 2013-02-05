@@ -17,11 +17,6 @@ module PrototypeRobotics
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
-
-      #loads application's deface view overrides
-      Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/*.rb")) do |c|
-        Rails.application.config.cache_classes ? require(c) : load(c)
-      end
     end
 
     # Settings in config/environments/* take precedence over those specified here.
