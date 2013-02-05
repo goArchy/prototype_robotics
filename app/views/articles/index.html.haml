@@ -10,7 +10,7 @@
         = link_to image_tag(post.image.url(:medium), :class => "imgshadow"), article_path(post)
       .span9
         %h3= link_to post.name, post
-        = truncate(post.description.html_safe, :length => 300)
+        = truncate(post.description, :length => 300).html_safe
         %p
         .post_footer= "Most likely posted By: JD | #{post.created_at.strftime("Published on %m/%d/%Y at %I:%M%p")}"
     %hr
