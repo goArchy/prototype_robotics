@@ -17,3 +17,5 @@
 /public*
 /public/system/images/*
 public/*
+
+config/environments/production.rb
