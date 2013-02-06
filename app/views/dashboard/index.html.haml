@@ -6,12 +6,16 @@
   #password
     = form_tag change_user_password_path do
       .clearfix
+        = "Note: after changing your password, you must log back in with your new password"
+      .clearfix
         = label_tag :password
-        = text_field_tag :password
+        = password_field_tag :password
       .clearfix
         = label_tag :password_confirmation
-        = text_field_tag :password_confirmation
-      = submit_tag "change"
+        = password_field_tag :password_confirmation
+      .clearfix
+        = hidden_field_tag :user_id, current_user.id
+      = submit_tag "Change Password"
 
 %h3
   My Projects
