@@ -21,13 +21,14 @@ body{
 .main_app{
   .display_box{
     display: inline-block;
-    width: 200px;
-    height: 170px;
+    width: 170px;
+    min-height: 200px;
     //background: gray;
     border-radius: 5px;
     padding-top: 10px;
     border: 1px gray solid;
     margin: 10px 10px;
+    vertical-align: top;
     .display_image{
       width: 80%;
       height: 70%;
@@ -230,6 +231,11 @@ body{
     li {
       margin-top: 10px; 
     }
+  }
+
+  .search_project{
+    font-size: 1.0em; 
+    margin: 10px 0px
   }
 
 }
