@@ -5,12 +5,12 @@
       = f.text_field :name
     .clearfix
       = f.label :description
-      = f.cktext_area :description
+      = f.text_area :description
     .clearfix
       = f.label :category
       = f.text_field :category
-    .clearfix
-      - if @project.image
+    - if @project.image
+      .clearfix
         = image_tag(@project.image.url(:thumb), :class => "imgshadow")
     .clearfix
       = f.label :image
