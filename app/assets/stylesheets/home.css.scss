@@ -22,7 +22,8 @@ body{
   .display_box{
     display: inline-block;
     width: 170px;
-    min-height: 200px;
+    height: 200px;
+    vertical-align: top;
     //background: gray;
     border-radius: 5px;
     padding-top: 10px;
