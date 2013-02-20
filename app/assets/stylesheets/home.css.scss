@@ -191,19 +191,24 @@ body{
   }
 
   .categories {
-    margin: 15px;
+    margin: 10px;
   }
 
   .category {
     display: inline-block;
     margin-right: 5px;
-    padding: 5px;
+    padding: 10px;
     border: 1px gray solid;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
     font-weight: bold;
+    text-decoration: none;
+  }
+  .category:hover {
+    background-color: #00ADEE;
+    color: white;
   }
 
   #post_title {

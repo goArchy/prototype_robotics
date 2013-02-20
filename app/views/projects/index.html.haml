@@ -2,7 +2,7 @@
 
 .categories
   - @projects.collect{|s| s.category }.uniq.each do |category|
-    .category= link_to category, :controller => 'projects', :action => 'search_projects', :category => category  
+    = link_to category, search_projects_path(:category => category), :class => "category"
 
 .listing
   - @projects.each do |project|
