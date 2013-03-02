@@ -2,10 +2,12 @@ class ImagesController < ApplicationController
 
   def new
     @project = Project.find(params[:project])
-    unless @project.gallery
-      Gallery.create(project_id: @project.id)
+    if @project.gallery.nil?
+      @gallery = Gallery.create(project_id: @project.id)
+      @image = @gallery.images.new
+    else
+      @image = @project.gallery.images.new
     end
-    @image = @project.gallery.images.new
   end
 
   def create

@@ -25,19 +25,19 @@
 
 %hr
 
+- if @project.id.present?
   .row-fluid
     %h3.pull-left Project Gallery
     .pull-right= link_to "Add Image to Gallery", new_image_path(project: @project.id), :class => "btn"
-%hr
-  .row-fluid
-    - if @project.gallery.present?
+
+  - if @project.gallery.present?
+    %hr
+    .row-fluid
       - @project.gallery.images.each do |image|
         .inline
           %center
             .row
-              = link_to image_tag(image.attachment.url(:thumb)), image.attachment.url
+              = link_to image_tag(image.attachment.url(:thumb), :class => "imgshadow"), image.attachment.url
             .row
               = link_to "remove", image_remove_path(image), :confirm => "Are you sure you want to remove this image?"
-
-
-%hr
+  %hr
