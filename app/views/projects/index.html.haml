@@ -1,9 +1,8 @@
-%h1.title Projects List
+%h1.title= link_to "Projects List", projects_path
 
 .categories
   - @projects.collect{|s| s.category }.uniq.each do |category|
     = link_to category, search_projects_path(:category => category), :class => "category"
-
 .listing
   - @projects.each do |project|
     .display_box
