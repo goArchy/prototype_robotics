@@ -16,9 +16,18 @@
     = @project.description.html_safe
     %p
 
-  - if @project.galleries.present?
-    - @object = @project
-    = render 'shared/gallery', :content => @object
+  - if @project.gallery.present?
+    %hr
+    %center
+      %h2 Image Gallery
+      .spacer
+      .row-fluid
+        - @project.gallery.images.each do |image|
+          .inline
+            %center
+              .row-fluid
+                = link_to image_tag(image.attachment.url(:thumb), :class => "imgshadow"), image.attachment.url
+  %hr
 %p
 = render :partial => "shared/disqus", :locals => { title: @project.name }
 %p

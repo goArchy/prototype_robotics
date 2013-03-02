@@ -3,6 +3,8 @@ class Article < ActiveRecord::Base
   belongs_to :user
   has_many :galleries
 
+  scope :published, where(:published => true)
+
   has_attached_file :image, :styles => { :large => "640x480>", :medium => "320x240>", :thumb => "100x100>" }
 
   include PgSearch

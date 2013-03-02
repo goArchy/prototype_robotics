@@ -19,9 +19,9 @@ class HomeController < ApplicationController
         @featured_content.push(project)
       end
     end
-    @articles = Article.where(:published => "true").last(3)
-    @projects = Project.where(:published => "true").last(3)
-    @tutorials = Tutorial.all.last(3)
+    @articles = Article.published.order("created_at DESC").last(3)
+    @projects = Project.published.order("created_at DESC").last(3)
+    @tutorials = Tutorial.order("created_at DESC").all.last(3)
   end
 
   def search
