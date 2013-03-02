@@ -4,6 +4,6 @@ class Gallery < ActiveRecord::Base
   belongs_to :tutorial
   belongs_to :step
 
-  has_many :images, :class_name => "Image"
+  has_many :images
   accepts_nested_attributes_for :images
 end

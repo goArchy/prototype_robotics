@@ -15,6 +15,10 @@ PrototypeRobotics::Application.routes.draw do
   resources :tutorials
   resources :steps
   resources :articles, :path => "blog"
+  resources :galleries
+  resources :images do
+    get "remove" => "images#remove"
+  end
 
   match "/admin" => "admin/dashboard#index"
   namespace :admin do

@@ -1,0 +1,13 @@
+%h3 Add Image
+= form_for @image do |f|
+  .fieldset
+    .clearfix
+      = f.label :attachment
+      = f.file_field :attachment
+    .clearfix
+      = f.hidden_field :gallery_id
+
+  %p
+  .actions
+    = f.submit "Add Image", :class => "btn btn-success"
+    = link_to "cancel", :back, :class => "btn btn-danger"

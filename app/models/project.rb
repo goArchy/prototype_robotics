@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   has_many :steps
-  has_many :galleries
+  has_one :gallery
 
   scope :published, where(:published => true)
 

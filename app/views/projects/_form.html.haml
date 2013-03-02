@@ -5,7 +5,7 @@
       = f.text_field :name
     .clearfix
       = f.label :description
-      = f.text_area :description
+      = f.text_area :description, :rows => 7, :cols => 30
     .clearfix
       = f.label :category
       = f.text_field :category
@@ -23,3 +23,21 @@
   .actions
     = f.submit
 
+%hr
+
+  .row-fluid
+    %h3.pull-left Project Gallery
+    .pull-right= link_to "Add Image to Gallery", new_image_path(project: @project.id), :class => "btn"
+%hr
+  .row-fluid
+    - if @project.gallery.present?
+      - @project.gallery.images.each do |image|
+        .inline
+          %center
+            .row
+              = link_to image_tag(image.attachment.url(:thumb)), image.attachment.url
+            .row
+              = link_to "remove", image_remove_path(image), :confirm => "Are you sure you want to remove this image?"
+
+
+%hr

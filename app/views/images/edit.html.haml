@@ -1,0 +1,14 @@
+%h3 Gallery
+= form_for @image do |f|
+  .fieldset
+    .clearfix
+      = f.label :description
+      = f.text_area :description
+    .clearfix
+      = f.label :image
+      = f.file_field :image
+    .clearfix
+
+  %p
+  .actions
+    = f.submit
