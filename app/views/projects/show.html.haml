@@ -27,7 +27,7 @@
           .inline
             %center
               .row-fluid
-                %a{:href => image.attachment.url, :title => image.text}
+                %a{:href => image.attachment.url(:large), :title => image.text}
                   %img{:src => image.attachment.url(:thumb), :class => "imgshadow"}
   %hr
 %p
