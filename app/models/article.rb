@@ -13,4 +13,8 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  def posted_at
+    created_at.strftime("%m/%d/%Y")
+  end
+
 end

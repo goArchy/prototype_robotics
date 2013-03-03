@@ -5,14 +5,13 @@
   .google_ad_show= render "shared/google_ad_show"
 .listing
   %p#notice= notice
-
   %center.white_box
-    %h3= @article.name
+    %h1= @article.name
+    %h5= "posted: #{@article.posted_at}"
   %center
     = image_tag(@article.image.url(:large), :class => "imgshadow")
   %p
   .heading= @article.description.html_safe
-
   - if @article.galleries.present?
     - @object = @article
     = render 'shared/gallery', :content => @object

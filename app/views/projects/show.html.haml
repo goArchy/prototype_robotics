@@ -8,10 +8,12 @@
   %p#notice= notice
 
   %center.white_box
-    %h2= @project.name
+    %h1= @project.name
     %h5= "a project by: #{@project.user.username}" if @project.user
   %center
     = image_tag(@project.image.url(:large), :class => "imgshadow")
+    %p
+    = link_to "view image gallery", "#gallery" if @project.gallery.present?
   %p
   .white_box
     = @project.description.html_safe
