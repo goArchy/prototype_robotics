@@ -19,9 +19,9 @@ class HomeController < ApplicationController
         @featured_content.push(project)
       end
     end
-    @articles = Article.published.order("created_at ASC").last(3)
-    @projects = Project.published.order("created_at ASC").last(3)
-    @tutorials = Tutorial.order("created_at ASC").all.last(3)
+    @articles = Article.published.order("created_at ASC").last(3).reverse
+    @projects = Project.published.order("created_at ASC").last(3).reverse
+    @tutorials = Tutorial.order("created_at ASC").all.last(3).reverse
   end
 
   def search
