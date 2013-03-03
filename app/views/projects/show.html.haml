@@ -19,7 +19,7 @@
 
   - if @project.gallery.present?
     %hr
-    %center
+    %center#gallery
       %h2 Image Gallery
       .spacer
       .row-fluid
@@ -27,10 +27,15 @@
           .inline
             %center
               .row-fluid
-                = link_to image_tag(image.attachment.url(:thumb), :class => "imgshadow"), image.attachment.url
+                %a{:href => image.attachment.url, :title => image.text}
+                  %img{:src => image.attachment.url(:thumb), :class => "imgshadow"}
   %hr
 %p
 = render :partial => "shared/disqus", :locals => { title: @project.name }
 %p
   = link_to 'Back', :back
 
+:javascript
+  $(function() {
+    $('#gallery a').lightBox();
+  });
