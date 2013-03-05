@@ -3,10 +3,10 @@ Forem::PostsController.class_eval do
 
   def send_emails
     post_id = @post.id
-    if @post.reply_to_id
+    if @post.reply_to_id && User.find(@post.reply_to_id).forem_emails
       ForumNotifier.reply(post_id).deliver
     end
-    unless @post.user == @post.topic.user
+    unless @post.user == @post.topic.user && User.find(@post.reply_to_id).forem_emails
       ForumNotifier.notify(post_id).deliver
     end
     ForumNotifier.admin(post_id).deliver

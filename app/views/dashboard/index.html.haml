@@ -17,6 +17,12 @@
         = hidden_field_tag :user_id, current_user.id
       = submit_tag "Change Password"
 
+%h4
+  - if current_user.forem_emails
+    = link_to "Receiving Forum Alerts", alerts_path, :class => "btn btn-success"
+  - else
+    = link_to "Forum Alerts Stopped", alerts_path, :class => "btn btn-danger"
+
 %h3
   My Projects
   .pull-right= link_to "New Project", new_project_path(:id => current_user.id), :class => "btn btn-success"

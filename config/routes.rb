@@ -9,8 +9,9 @@ PrototypeRobotics::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
-  resources :dashboard
-  match "change_user_password" => "passwords#change_password"
+  get "dashboard" => "dashboard#index"
+  get "alerts" => "dashboard#alerts"
+  post "change_user_password" => "passwords#change_password"
   resources :projects
   resources :tutorials
   resources :steps
@@ -24,7 +25,7 @@ PrototypeRobotics::Application.routes.draw do
   namespace :admin do
     resources :users
     resources :projects
-    match "approve_project" => "projects#approve"
+    post "approve_project" => "projects#approve"
     resources :tutorials
     resources :steps
     resources :articles
@@ -34,7 +35,8 @@ PrototypeRobotics::Application.routes.draw do
   match "search_projects" => "projects#search_projects"
   match "search" => "home#search"
 
-  match "about_me" => "home#about_me"
-  match "links" => "home#links"
+  get "about_me" => "home#about_me"
+  get "links" => "home#links"
+
 end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205210751) do
+ActiveRecord::Schema.define(:version => 20130305053845) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -254,6 +254,7 @@ ActiveRecord::Schema.define(:version => 20130205210751) do
     t.boolean  "forem_auto_subscribe",                 :default => false
     t.boolean  "admin"
     t.datetime "reset_password_sent_at"
+    t.boolean  "forem_emails",                         :default => true
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
