@@ -1,4 +1,5 @@
 class Tutorial < ActiveRecord::Base
+  attr_accessible :name, :description, :user_id, :image, :image_file_name, :slug, :category
 
   has_many :steps
   has_many :galleries

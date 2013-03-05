@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  attr_accessible :name, :description, :user_id, :image, :image_file_name, :slug
 
   belongs_to :user
   has_many :steps

@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  attr_accessible :name, :description, :user_id, :image, :image_file_name, :slug, :category
 
   belongs_to :user
   has_many :galleries
