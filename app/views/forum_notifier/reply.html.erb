@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hello <%= @user.username %>,</h1>
+    <p>
+    <%= @post.user.username %> responded to your post.
+    <p>
+    Please click <a href="<%= @url %>">here</a> to view the thread.
+    <p>
+    To unsubscribe from forum related emails, please visit <a href="https://prototyperobotics.com/dashboard">your dashboard</a>.
+    <p>
+    Thanks,
+    <p>
+    PrototypeRobotics.com
+    <p>
+  </body>
+</html>
