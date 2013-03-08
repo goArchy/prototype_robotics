@@ -15,9 +15,8 @@
 
 .row-fluid
   .span7.visible-desktop
-    #wrapper
-      %h2 Featured Content
-      = render 'shared/nivo_slider', :content => @featured_content
+    %h2 Featured Content
+    = render 'shared/nivo_slider', :content => @featured_content
   .span5
     %h2.inline Recent Articles
     %h5.inline= link_to "view all articles", articles_path

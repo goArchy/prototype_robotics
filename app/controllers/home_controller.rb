@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
   def add_vars
     @featured_content = Article.all.select{|a| a.featured? && a.published?}
-    @featured_projects = Project.all.select{|p| p.featured? && p.published?}
+    @featured_projects = Project.all.select{|p| p.featured? && p.published? && !p.deleted? }
     if !@featured_projects.empty?
       @featured_projects.each do |project|
         @featured_content.push(project)
@@ -31,7 +31,8 @@ class HomeController < ApplicationController
 
       @projects = []
       @search_results.select{|p| p.searchable_type == "Project"}.each do |project|
-        @projects.push(Project.find(project.searchable_id))
+        project = Project.find(project.searchable_id)
+        @projects.push(project) if !project.deleted?
       end
 
       @articles = []
