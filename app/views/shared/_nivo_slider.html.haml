@@ -1,0 +1,13 @@
+.slider-wrapper.theme-default#featured
+  #slider.nivoSlider
+    - content.each do |c|
+      .item
+        %center
+          %a{:href => c}
+            %img{:src => c.image.url(:large), :title => c.name}
+
+
+:javascript
+  $(document).ready(function(){
+    $('#slider').nivoSlider();
+  });
