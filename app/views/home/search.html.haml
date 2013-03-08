@@ -2,44 +2,24 @@
   .pad
     %h1= "Search Results for '#{@search}'"
 
-    - if @projects.empty? && @articles.empty? && @tutorials.empty?
+    - if @results.empty?
       %h3 Your search did not return any results.
     - else
-      %h3= "Your search returned #{@search_results.count} results"
+      %h3= "Your search returned #{@results.count} results"
 
     .search_group
-      - if !@projects.empty?
-        %h2 Projects
-        %table.table-striped.table-bordered
-          %tr
-            %th Name
-            %th Description
-          - @projects.each do |project|
-            %tr
-              %td= link_to project.name, project
-              %td=h truncate(project.description.html_safe, :length => 250)
-
-    .search_group
-      - if !@articles.empty?
-        %h2 Articles
-        %table.table-striped.table-bordered
-          %tr
-            %th Name
-            %th Description
-          - @articles.each do |article|
-            %tr
-              %td= link_to article.name, article
-              %td=h truncate(article.description.html_safe, :length => 250)
-
-    .search_group
-      - if !@tutorials.empty?
-        %h2 Tutorials
-        %table.table-striped.table-bordered
-          %tr
-            %th Name
-            %th Description
-          - @tutorials.each do |tutorial|
-            %tr
-              %td= link_to tutorial.name, tutorial
-              %td=h truncate(tutorial.description.html_safe, :length => 250)
+      - if !@results.empty?
+        %h2 Results
+        %ol
+          - @results.each do |result|
+            %li
+              .well
+                .row-fluid
+                  .span2
+                    = link_to image_tag(result.image.url(:thumb), :class => "imgshadow"), result
+                  .span10
+                    %h4
+                      = link_to result.name, result
+                      = "(#{result.class.name})"
+                    =h truncate(result.description, :length => 250 ).html_safe
 

@@ -29,20 +29,19 @@ class HomeController < ApplicationController
       @search = params["search"]
       @search_results = PgSearch.multisearch(@search)
 
-      @projects = []
+      @results = []
       @search_results.select{|p| p.searchable_type == "Project"}.each do |project|
-        project = Project.find(project.searchable_id)
-        @projects.push(project) if !project.deleted?
+        p = Project.find(project.searchable_id)
+        @results.push(p) if !p.deleted? && p.published
       end
 
-      @articles = []
       @search_results.select{|p| p.searchable_type == "Article"}.each do |article|
-        @articles.push(Article.find(article.searchable_id))
+        a = Article.find(article.searchable_id)
+        @results.push(a) if a.published
       end
 
-      @tutorials = []
       @search_results.select{|p| p.searchable_type == "Tutorial"}.each do |tutorial|
-        @tutorials.push(Tutorial.find(tutorial.searchable_id))
+        @results.push(Tutorial.find(tutorial.searchable_id))
       end
       render 'home/search'
     else

@@ -13,24 +13,41 @@
       or you can check it out on Amazon:
       = link_to "Arduino Robotics", "http://www.amazon.com/Arduino-Robotics-John-David-Warren/dp/1430231831"
 
-.row-fluid
-  .span7.visible-desktop
-    %h2 Featured Content
-    = render 'shared/nivo_slider', :content => @featured_content
-  .span5
-    %h2.inline Recent Articles
-    %h5.inline= link_to "view all articles", articles_path
-    - @articles.each do |article|
-      .well
-        .article
-          .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
-          %h3= article.name
-          %h5
-            - if article.user
-              = "posted by: #{article.user.username}"
-            - else
-              n/a
-          %h5= article.created_at.strftime("Date: %m/%d/%Y")
+.visible-desktop
+  .row-fluid
+    .span7
+      %h2 Featured Content
+      = render 'shared/nivo_slider', :content => @featured_content
+    .span5
+      %h2.inline Recent Articles
+      %h5.inline= link_to "view all articles", articles_path
+      - @articles.each do |article|
+        .well
+          .article
+            .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+            %h3= article.name
+            %h5
+              - if article.user
+                = "posted by: #{article.user.username}"
+              - else
+                n/a
+            %h5= article.created_at.strftime("Date: %m/%d/%Y")
+.hidden-desktop
+  .row-fluid
+    .span12
+      %h2.inline Recent Articles
+      %h5.inline= link_to "view all articles", articles_path
+      - @articles.each do |article|
+        .well
+          .article
+            .article_image= link_to image_tag(article.image.url(:thumb), :class => "imgshadow"), article_path(article)
+            %h3= article.name
+            %h5
+              - if article.user
+                = "posted by: #{article.user.username}"
+              - else
+                n/a
+            %h5= article.created_at.strftime("Date: %m/%d/%Y")
 
 %hr
 .row-fluid
@@ -40,18 +57,20 @@
     - @projects.each do |project|
       .well
         .row-fluid
-          .span3
+          .span3.pad
             = link_to image_tag(project.image.url(:thumb), :class => "imgshadow"), project_path(project)
-          %h4= link_to project.name, project_path(project)
-          =h truncate(project.description, :length => 100 ).html_safe
+          .span9
+            %h4= link_to project.name, project_path(project)
+            =h truncate(project.description, :length => 100 ).html_safe
   .span6
     %h2.inline Recent Tutorials
     %h5.inline= link_to "view all tutorials", tutorials_path
     - @tutorials.each do |tutorial|
       .well
         .row-fluid
-          .span3
+          .span3.pad
             = link_to image_tag(tutorial.image.url(:thumb), :class => "imgshadow"), tutorial_path(tutorial)
-          %h4= link_to tutorial.name, tutorial_path(tutorial)
-          =h truncate(tutorial.description, :length => 100 ).html_safe
+          .span9
+            %h4= link_to tutorial.name, tutorial_path(tutorial)
+            =h truncate(tutorial.description, :length => 100 ).html_safe
 
