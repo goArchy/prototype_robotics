@@ -17,6 +17,13 @@
     height: 500px;
     overflow: hidden;
   }
+  .nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    max-height: 500px;
+    max-width: none;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -27,14 +34,15 @@
     position: relative;
     width: 100%;
   }
+  .nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    max-height: 400px;
+    max-width: none;
+  }
 }
 
-.nivoSlider img {
-  position:absolute;
-  top:0px;
-  left:0px;
-  max-width: none;
-}
 .nivo-main-image {
   display: block !important;
   position: relative !important; 
