@@ -14,14 +14,14 @@
     position:relative;
     width:100%;
     /* height:auto; */
-    height: 500px;
+    max-height: 580px;
     overflow: hidden;
   }
   .nivoSlider img {
     position:absolute;
     top:0px;
     left:0px;
-    max-height: 500px;
+    max-height: 580px;
     max-width: none;
   }
 }
@@ -29,8 +29,8 @@
 @media (max-width: 1200px) {
   .nivoSlider {
     margin-top: 51px;
-    height: 400px;
     overflow: hidden;
+    max-height: 500px;
     position: relative;
     width: 100%;
   }
@@ -38,7 +38,7 @@
     position:absolute;
     top:0px;
     left:0px;
-    max-height: 400px;
+    max-height: 500px;
     max-width: none;
   }
 }
@@ -90,7 +90,8 @@
   color:#fff;
   width:100%;
   z-index:8;
-  padding: 5px 10px;
+  padding: 10px 10px;
+  font-size: 1.3em;
   opacity: 0.8;
   overflow: hidden;
   display: none;

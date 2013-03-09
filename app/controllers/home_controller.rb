@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
   def add_vars
     @featured_content = Article.all.select{|a| a.featured? && a.published?}
-    @featured_projects = Project.all.select{|p| p.featured? && p.published?}
+    @featured_projects = Project.all.select{|p| p.featured? && p.published? && !p.deleted? }
     if !@featured_projects.empty?
       @featured_projects.each do |project|
         @featured_content.push(project)
@@ -29,19 +29,19 @@ class HomeController < ApplicationController
       @search = params["search"]
       @search_results = PgSearch.multisearch(@search)
 
-      @projects = []
+      @results = []
       @search_results.select{|p| p.searchable_type == "Project"}.each do |project|
-        @projects.push(Project.find(project.searchable_id))
+        p = Project.find(project.searchable_id)
+        @results.push(p) if !p.deleted? && p.published
       end
 
-      @articles = []
       @search_results.select{|p| p.searchable_type == "Article"}.each do |article|
-        @articles.push(Article.find(article.searchable_id))
+        a = Article.find(article.searchable_id)
+        @results.push(a) if a.published
       end
 
-      @tutorials = []
       @search_results.select{|p| p.searchable_type == "Tutorial"}.each do |tutorial|
-        @tutorials.push(Tutorial.find(tutorial.searchable_id))
+        @results.push(Tutorial.find(tutorial.searchable_id))
       end
       render 'home/search'
     else

@@ -1,13 +1,12 @@
 .slider-wrapper.theme-default#featured
   #slider.nivoSlider
     - content.each do |c|
-      .item
-        %center
-          %a{:href => c}
-            %img{:src => c.image.url(:large), :title => c.name}
+      = link_to image_tag(c.image.url(:large), :title => c.name), c
 
 
 :javascript
   $(document).ready(function(){
-    $('#slider').nivoSlider();
+    $('#slider').nivoSlider({
+      pauseTime: 5000
+    });
   });
