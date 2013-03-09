@@ -6,6 +6,8 @@ class Project < ActiveRecord::Base
   has_one :gallery
 
   scope :published, where(:published => true)
+  scope :active, where(:deleted => false)
+  scope :featured, where(:featured => true)
 
   accepts_nested_attributes_for :steps
 
@@ -16,5 +18,9 @@ class Project < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  def active?
+    published == true && deleted == false
+  end
 
 end

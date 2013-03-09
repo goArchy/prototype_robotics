@@ -9,7 +9,7 @@
     .clearfix
       = f.label :category
       = f.text_field :category
-    - if @project.image
+    - if @project.image_file_name
       .clearfix
         = image_tag(@project.image.url(:thumb), :class => "imgshadow")
     .clearfix
@@ -41,3 +41,4 @@
             .row
               = link_to "remove", image_remove_path(image), :confirm => "Are you sure you want to remove this image?"
   %hr
+

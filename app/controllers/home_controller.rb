@@ -12,15 +12,15 @@ class HomeController < ApplicationController
   end
 
   def add_vars
-    @featured_content = Article.all.select{|a| a.featured? && a.published?}
-    @featured_projects = Project.all.select{|p| p.featured? && p.published? && !p.deleted? }
+    @featured_content = Article.published.featured
+    @featured_projects = Project.active.published.featured
     if !@featured_projects.empty?
       @featured_projects.each do |project|
         @featured_content.push(project)
       end
     end
     @articles = Article.published.order("created_at ASC").last(3).reverse
-    @projects = Project.published.order("created_at ASC").last(3).reverse
+    @projects = Project.active.published.order("created_at ASC").last(3).reverse
     @tutorials = Tutorial.order("created_at ASC").all.last(3).reverse
   end
 
@@ -32,12 +32,12 @@ class HomeController < ApplicationController
       @results = []
       @search_results.select{|p| p.searchable_type == "Project"}.each do |project|
         p = Project.find(project.searchable_id)
-        @results.push(p) if !p.deleted? && p.published
+        @results.push(p) if p.active?
       end
 
       @search_results.select{|p| p.searchable_type == "Article"}.each do |article|
         a = Article.find(article.searchable_id)
-        @results.push(a) if a.published
+        @results.push(a) if a.active?
       end
 
       @search_results.select{|p| p.searchable_type == "Tutorial"}.each do |tutorial|

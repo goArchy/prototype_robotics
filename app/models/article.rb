@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   has_many :galleries
 
   scope :published, where(:published => true)
+  scope :featured, where(:featured => true)
 
   has_attached_file :image, :styles => { :large => "640x480>", :medium => "320x240>", :thumb => "100x100>" }
 
@@ -16,6 +17,10 @@ class Article < ActiveRecord::Base
 
   def posted_at
     created_at.strftime("%m/%d/%Y")
+  end
+
+  def active?
+    published == true
   end
 
 end
