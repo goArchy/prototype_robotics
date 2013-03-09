@@ -14,7 +14,7 @@
       .row-fluid
         .span8
           #logo
-            = image_tag "Logo_10.png", :width => "600px", :class => "logo"
+            = link_to image_tag("Logo_10.png", :width => "600px", :class => "logo"), root_path
         .span4
           .pull-right= render :partial => 'layouts/ad_top'
       .row-fluid

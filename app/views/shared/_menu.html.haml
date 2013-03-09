@@ -2,9 +2,9 @@
   .navbar-inner
     .container
       %ul.nav
-        %li= link_to "Home", root_path
-        %li= link_to "About me", '/about_me'
-        %li= link_to "Links", '/links'
+        %li.visible-desktop= link_to "Home", root_path
+        %li.visible-desktop= link_to "About me", '/about_me'
+        %li.visible-desktop= link_to "Links", '/links'
         %li= link_to "Blog", articles_path
         %li= link_to "Projects", projects_path
         %li= link_to "Tutorials", tutorials_path
