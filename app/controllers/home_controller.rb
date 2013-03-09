@@ -19,6 +19,7 @@ class HomeController < ApplicationController
         @featured_content.push(project)
       end
     end
+    @featured_content = @featured_content.sort{|x,y| y.created_at <=> x.created_at }
     @articles = Article.published.order("created_at ASC").last(3).reverse
     @projects = Project.active.published.order("created_at ASC").last(3).reverse
     @tutorials = Tutorial.order("created_at ASC").all.last(3).reverse
