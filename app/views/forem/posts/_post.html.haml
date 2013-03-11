@@ -20,6 +20,7 @@
     %a{:href => "#post-#{post.id}"}
     = post.text.html_safe
     - if post.reply_to
+      %p
       %span.in_reply_to
         = link_to "#{t("forem.post.in_reply_to")} #{post.reply_to.user}", "#post-#{post.reply_to.id}"
   - if forem_user
