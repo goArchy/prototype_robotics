@@ -2,19 +2,27 @@
   %center
     %h1
       .title Welcome to Prototype Robotics
-    %i the new home of Rediculouslygoodlooking.com
+    %i
+      the new home of
+      = link_to "Rediculouslygoodlooking.com", 'http://rediculous.prototyperobotics.com'
   .heading
-    My old website
-    = link_to "rediculouslygoodlooking.com", 'http://rediculous.prototyperobotics.com'
-    was pretty basic, so I thought I would update it - I hope you will bear with me as I improve the site.
-    %p
-      If you are visiting my website to find out more about my book "Arduino Robotics",
-      = link_to "click here", "http://prototyperobotics.com/blog/arduino-robotics"
-      or you can check it out on Amazon:
-      = link_to "Arduino Robotics", "http://www.amazon.com/Arduino-Robotics-John-David-Warren/dp/1430231831"
-    %p
-      If you would like to post a question or comment, check out the new
-      = link_to "Forums.", forem.forums_path
+    .row-fluid
+      .span1
+        = link_to image_tag("book.jpg", :class => "imgshadow"), "#"
+      .span11
+        %p
+          If you are here to find out more about my book "Arduino Robotics",
+          = link_to "click here", "http://prototyperobotics.com/blog/arduino-robotics"
+          or you can check it out on Amazon:
+          = link_to "Arduino Robotics.", "http://www.amazon.com/Arduino-Robotics-John-David-Warren/dp/1430231831"
+        %p
+          This site exists to help anyone who needs help, so if you would like to post a question or comment or need help with a specific project, please do so on the new
+          = link_to "Forums.", forem.forums_path
+          = " - I will personally answer your posts as soon as I get a chance."
+        %p
+          For those who have built a project from my book, please consider sharing it on my site. Once you register, you can go to
+          = link_to "your Dashboard", dashboard_path
+          and create a new project. You can add a description of your project and some images to show off your work.
 
 
 .visible-desktop
