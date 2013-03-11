@@ -21,10 +21,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:project][:user_id])
-    verify_user(@user)
-    @project = @user.projects.new(params[:project])
+    @project = current_user.projects.new(params[:project])
     if @project.save
+      send_email
       redirect_to dashboard_path, notice: 'Project was successfully created.'
     else
       render action: "new"
@@ -49,6 +48,11 @@ class ProjectsController < ApplicationController
     redirect_to dashboard_path, notice: 'Project was successfully deleted.'
   end
 
+  def search_projects
+    @projects = Project.published.active.select{|p| p.category == params[:category] }
+    render "index"
+  end
+
   def verify_user(user)
     if user == current_user
       return true
@@ -57,9 +61,10 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def search_projects
-    @projects = Project.published.active.select{|p| p.category == params[:category] }
-    render "index"
+  def send_email
+    ProjectNotifier.admin(@project.id).deliver
+  rescue
+    "The email failed yo"
   end
 
 end
