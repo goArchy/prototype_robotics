@@ -22,7 +22,7 @@ class ForumNotifier < ActionMailer::Base
     @post = Forem::Post.find(post_id)
     @user = @post.topic.user
     @url = forem.forum_topic_url(@post.topic.forum, @post.topic)
-    @to = User.select{|s| s.admin == true }.map(&:email)
+    @to = User.admins.map(&:email)
     mail(:to => @to, :subject => "PrototypeRobotics Forums: user #{@post.user.username} made a post to thread #{@post.topic.subject}.")
   end
 

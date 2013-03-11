@@ -5,7 +5,7 @@ class ProjectNotifier < ActionMailer::Base
     @project = Project.find(project_id)
     @user = @project.user
     @url = project_url(@project)
-    @to = User.select{|s| s.admin == true }.map(&:email)
+    @to = User.admins.map(&:email)
     mail(:to => @to, :subject => "PrototypeRobotics: user #{@user.username} just created project: #{@project.name}.")
   end
 
