@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(params[:project])
     if @project.save
+      @project.notifications.create(message: "#{@project.user.username} just created project #{@project.name}.")
       send_email
       redirect_to dashboard_path, notice: 'Project was successfully created.'
     else
@@ -34,6 +35,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     verify_user(@project.user)
     if @project.update_attributes(params[:project])
+      @project.notifications.create(message: "#{@project.user.username} just updated project #{@project.name}.")
       redirect_to dashboard_path, notice: 'Project was successfully updated.'
     else
       render action: "edit"

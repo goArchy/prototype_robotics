@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305053845) do
+ActiveRecord::Schema.define(:version => 20130311045531) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -169,6 +169,16 @@ ActiveRecord::Schema.define(:version => 20130305053845) do
   add_index "images", ["viewable_id"], :name => "index_assets_on_viewable_id"
   add_index "images", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
 
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "post_id"
+    t.string   "message"
+    t.boolean  "read",       :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "pg_search_documents", :force => true do |t|
     t.text     "content"
     t.integer  "searchable_id"
@@ -182,10 +192,10 @@ ActiveRecord::Schema.define(:version => 20130305053845) do
     t.text     "description"
     t.string   "category"
     t.string   "image_file_name"
-    t.boolean  "published"
+    t.boolean  "published",       :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "featured"
+    t.boolean  "featured",        :default => false
     t.boolean  "remove_image"
     t.integer  "user_id"
     t.string   "slug"

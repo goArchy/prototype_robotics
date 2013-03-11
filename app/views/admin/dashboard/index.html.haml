@@ -1,19 +1,36 @@
 .dashboard
-  %h3 Admin Panel
+  %h2 Admin Panel
 
-  %table
-    %tr
-      %th Image
-      %th Name
-      %th Type
-      %th Actions
-
-    - Project.all.select{|s| s.published != true }.each do |project|
+  - if Notification.active.present?
+    %hr
+    %h3 Notifications
+    %table
       %tr
-        %td= link_to image_tag(project.image.url(:thumb)), project_path(project)
-        %td= link_to project.name, admin_project_path(project)
-        %td= project.category
-        %td
-          = link_to 'Edit', edit_admin_project_path(project), :class => "btn btn-warning"
-          = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
-          = link_to 'Approve', admin_approve_project_path(id: project), :class => "btn btn-success" unless project.published
+        %th Date
+        %th Message
+        %th Actions
+      - Notification.active.each do |notice|
+        %tr
+          %td= notice.created_at.strftime("%m/%d/%Y at %I:%M%p")
+          %td= notice.message
+          %td
+            = link_to 'Remove', admin_read_notice_path(id: notice), :class => "btn btn-danger"
+
+  - if Project.pending.present?
+    %hr
+    %h3 Pending Projects
+    %table
+      %tr
+        %th Image
+        %th Name
+        %th Type
+        %th Actions
+      - Project.pending.each do |project|
+        %tr
+          %td= link_to image_tag(project.image.url(:thumb)), project_path(project)
+          %td= link_to project.name, admin_project_path(project)
+          %td= project.category
+          %td
+            = link_to 'Edit', edit_admin_project_path(project), :class => "btn btn-warning"
+            = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+            = link_to 'Approve', admin_approve_project_path(id: project), :class => "btn btn-success" unless project.published

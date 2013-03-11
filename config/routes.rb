@@ -30,6 +30,8 @@ PrototypeRobotics::Application.routes.draw do
     resources :steps
     resources :articles
     resources :galleries
+    get "read_notice"       => "dashboard#read_notice"
+    get "read_all_notices"  => "dashboard#read_all_notices"
   end
 
   match "search_projects" => "projects#search_projects"

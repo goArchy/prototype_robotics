@@ -3,9 +3,11 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   has_many :steps
+  has_many :notifications
   has_one :gallery
 
   scope :published, where(:published => true)
+  scope :pending, where(:published => false)
   scope :active, where(:deleted => false)
   scope :featured, where(:featured => true)
 
