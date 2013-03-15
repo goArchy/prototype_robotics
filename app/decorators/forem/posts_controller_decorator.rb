@@ -4,13 +4,15 @@ Forem::PostsController.class_eval do
   def send_emails
     post_id = @post.id
     Notification.create(message: "#{@post.user.username} posted to the forums.", post_id: post_id)
-    @reply_to_user = User.find(@post.reply_to_id) if @post.reply_to_id
+    @reply_to_user = Forem::Post.find(@post.reply_to_id).user if @post.reply_to_id
     if @reply_to_user && @reply_to_user.forem_emails
       ForumNotifier.reply(post_id).deliver
     elsif @post.user != @post.topic.user && @reply_to_user != @post.topic.user && @post.topic.user.forem_emails
       ForumNotifier.notify(post_id).deliver
     end
     ForumNotifier.admin(post_id).deliver
+  rescue
+    "oops!"
   end
 
 end
