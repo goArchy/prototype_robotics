@@ -19,6 +19,7 @@ class Admin::ProjectsController < Admin::AdminController
   def create
     @project = Project.new(params[:project])
     if @project.save
+      update_admin_attributes
       redirect_to admin_projects_path, notice: 'Project was successfully created.'
     else
       render action: "new"
@@ -28,6 +29,7 @@ class Admin::ProjectsController < Admin::AdminController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
+      update_admin_attributes
       redirect_to edit_admin_project_path(@project), notice: 'Project was successfully updated.'
     else
       render action: "edit"
@@ -45,6 +47,12 @@ class Admin::ProjectsController < Admin::AdminController
     @project.published = true
     @project.save
     redirect_to admin_projects_path
+  end
+
+  def update_admin_attributes
+    @project.featured = true if params[:project][:featured] == "1"
+    @project.published = true if params[:project][:published] == "1"
+    @project.save
   end
 
 end
