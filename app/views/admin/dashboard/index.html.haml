@@ -9,7 +9,7 @@
         %th Date
         %th Message
         %th Actions
-      - Notification.active.each do |notice|
+      - Notification.active.order("created_at DESC").each do |notice|
         %tr
           %td= notice.created_at.strftime("%m/%d/%Y at %I:%M%p")
           %td= notice.message
